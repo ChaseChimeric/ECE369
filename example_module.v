@@ -4,11 +4,11 @@
 module example_module #(
     DATA_WIDTH = 32
 ) (
-    input [DATA_WIDTH-1:0] din;
-    input clk;
-    input resetn;
-    output last_bit_one;
-    output reg [DATA_WIDTH-1:0] dout;
+    input [DATA_WIDTH-1:0] din,
+    input clk,
+    input resetn,
+    output last_bit_one,
+    output reg [DATA_WIDTH-1:0] dout,
 );
     // Internal signals / registers
     reg [DATA_WIDTH-1:0] din_clocked_copy;
