@@ -19,8 +19,15 @@ module PCAdder_tb();
     );
 
 	initial begin
-	
-    /* Please fill in the implementation here... */
+    PCResult <= 0;
+	#50;
+    PCResult <= 32'd17;
+    // should be d21
+    #50;
+    PCResult <= 32'd10;
+    // should be d14
+    #50;
+
 	
 	end
 
