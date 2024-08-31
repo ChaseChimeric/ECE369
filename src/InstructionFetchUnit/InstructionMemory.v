@@ -36,12 +36,30 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-module InstructionMemory(Address, Instruction); 
-
+module InstructionMemory # (
+    parameter MEM_DEPTH = 1024
+)
+(
+    Address, 
+    Instruction
+); 
     input [31:0] Address;        // Input Address 
 
     output reg [31:0] Instruction;    // Instruction at memory location Address
+    reg [31:0] mem [MEM_DEPTH-1:0];
+    integer count;
     
     /* Please fill in the implementation here */
-
+    initial  
+    begin
+        for(count = 0;count<MEM_DEPTH;count = count + 1) begin
+            mem[count] = count*3;
+        
+        
+        end
+    
+    end
+    always @ (*) begin
+         Instruction <= mem[Address >> 2];
+      end
 endmodule

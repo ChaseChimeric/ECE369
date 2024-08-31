@@ -27,17 +27,19 @@ module ProgramCounter_tb();
 	end
 
 	initial begin
-	   Reset = 1;
-	   Address = 0;
-	   # 12
-	   Reset = 0;
-	   Address = 100;
-	   # 12
-	   Reset = 0;
-	   Address = 200;
-	   #12
-	   Reset = 1;
-	   Address = 0;
+	   Reset <= 1;
+	   Address <= 0;
+	   # 24
+	   Reset <= 0;
+	   Address <= 100;
+	   # 24
+	   Reset <= 0;
+	   Address <= 200;
+	   # 24
+	   Reset <= 1;
+	   Address <= 0;
+	   #24
+	   $finish;
 	end
 
 endmodule

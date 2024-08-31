@@ -13,14 +13,20 @@ module InstructionMemory_tb();
 
     reg [31:0] Address;
 
-	InstructionMemory u0(
+	InstructionMemory u0 (
 		.Address(Address),
         .Instruction(Instruction)
 	);
-
+        integer count;
 	initial begin
-	
-    /* Please fill in the implementation here... */
+	   
+	   for(count =0; count < 200;count = count +1) begin
+	       Address = count;
+	       #10;
+	   end
+	   
+	   $finish;
+    
 	
 	end
 
