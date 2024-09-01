@@ -14,10 +14,10 @@ with open(".gitignore", "r") as inputFile:
 
             pass
         else:
-            if '*' in s:
-                s = s[:-2]
+            if '#' in s:
+                s = s[1:]
             else:
-                s += "**"
+                s = "#" + s
         output += s + '\n'
 with open(".gitignore", "w") as outputfile:
     outputfile.write(output)
