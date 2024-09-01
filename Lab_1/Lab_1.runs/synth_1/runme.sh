@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/ryfon/OneDrive/Documents/git/ECE369/Lab_1/Lab_1.runs/synth_1'
+HD_PWD='C:/Users/ryfon/Documents/Code/ECE369/Lab_1/Lab_1.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log PCAdder_tb.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source PCAdder_tb.tcl
+EAStep vivado -log InstructionFetchUnit.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source InstructionFetchUnit.tcl

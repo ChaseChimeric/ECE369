@@ -26,8 +26,7 @@ module PCAdder_tb();
     #50;
     PCResult <= 32'd10;
     // should be d14
-    #50
-    $finish;
+    #50;
 
 	
 	end
