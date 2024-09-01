@@ -46,6 +46,7 @@ module InstructionMemory # (
     input [31:0] Address;        // Input Address 
 
     output [31:0] Instruction;    // Instruction at memory location Address
+    output [31:0] Instruction;    // Instruction at memory location Address
     reg [31:0] mem [MEM_DEPTH-1:0];
     
     integer count;

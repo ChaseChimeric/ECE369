@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log PCAdder_tb.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source PCAdder_tb.tcl
+    with args -log InstructionFetchUnit.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source InstructionFetchUnit.tcl
 
 
 
@@ -8,16 +8,15 @@
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Wed Aug 28 22:03:44 2024
+  **** Start of session at: Sat Aug 31 21:42:39 2024
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source PCAdder_tb.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 513.582 ; gain = 200.230
-Command: read_checkpoint -auto_incremental -incremental C:/Users/ryfon/OneDrive/Documents/git/ECE369/Lab_1/Lab_1.srcs/utils_1/imports/synth_1/PCAdder_tb.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/ryfon/OneDrive/Documents/git/ECE369/Lab_1/Lab_1.srcs/utils_1/imports/synth_1/PCAdder_tb.dcp for incremental synthesis
+source InstructionFetchUnit.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/ryfon/Documents/Code/ECE369/Lab_1/Lab_1.srcs/utils_1/imports/synth_1/ProgramCounter_tb.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/ryfon/Documents/Code/ECE369/Lab_1/Lab_1.srcs/utils_1/imports/synth_1/ProgramCounter_tb.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top PCAdder_tb -part xc7a100tcsg324-2L
+Command: synth_design -top InstructionFetchUnit -part xc7a100tcsg324-2L
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
@@ -25,30 +24,38 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3800
+INFO: [Synth 8-7075] Helper process launched with PID 17052
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 975.117 ; gain = 451.020
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 991.141 ; gain = 450.148
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'PCAdder_tb' [C:/Users/ryfon/OneDrive/Documents/git/ECE369/src/InstructionFetchUnit/PCAdder_tb.v:10]
-INFO: [Synth 8-6157] synthesizing module 'PCAdder' [C:/Users/ryfon/OneDrive/Documents/git/ECE369/src/InstructionFetchUnit/PCAdder.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'PCAdder' (0#1) [C:/Users/ryfon/OneDrive/Documents/git/ECE369/src/InstructionFetchUnit/PCAdder.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'PCAdder_tb' (0#1) [C:/Users/ryfon/OneDrive/Documents/git/ECE369/src/InstructionFetchUnit/PCAdder_tb.v:10]
+INFO: [Synth 8-11241] undeclared symbol 'Address', assumed default net type 'wire' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v:53]
+INFO: [Synth 8-6157] synthesizing module 'InstructionFetchUnit' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v:41]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionMemory.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (0#1) [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionMemory.v:39]
+WARNING: [Synth 8-689] width (1) of port connection 'Address' does not match port width (32) of module 'InstructionMemory' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v:53]
+INFO: [Synth 8-6157] synthesizing module 'PCAdder' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/PCAdder.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'PCAdder' (0#1) [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/PCAdder.v:22]
+INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/ProgramCounter.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/ProgramCounter.v:27]
+WARNING: [Synth 8-689] width (1) of port connection 'Address' does not match port width (32) of module 'ProgramCounter' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionFetchUnit' (0#1) [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v:41]
+WARNING: [Synth 8-3848] Net Address in module/entity InstructionFetchUnit does not have driver. [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v:53]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1083.480 ; gain = 559.383
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1100.793 ; gain = 559.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1083.480 ; gain = 559.383
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1100.793 ; gain = 559.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1083.480 ; gain = 559.383
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1100.793 ; gain = 559.801
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-2L
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1083.480 ; gain = 559.383
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1104.363 ; gain = 563.371
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -57,6 +64,8 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -75,22 +84,67 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3330] design PCAdder_tb has an empty top module
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[31] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[30] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[29] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[28] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[27] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[26] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[25] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[24] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[23] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[22] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[21] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[20] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[19] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[18] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[17] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[16] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[15] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[14] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[13] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[12] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[11] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[10] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[9] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[8] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[7] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[6] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[5] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[4] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[3] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[2] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[1] driven by constant 0
+WARNING: [Synth 8-3917] design InstructionFetchUnit has port Instruction[0] driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1304.383 ; gain = 763.391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------------+------------+---------------+----------------+
+|Module Name       | RTL Object | Depth x Width | Implemented As | 
++------------------+------------+---------------+----------------+
+|InstructionMemory | mem        | 1024x13       | LUT            | 
++------------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -108,37 +162,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -151,36 +205,38 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+-+-----+------+
-| |Cell |Count |
-+-+-----+------+
-+-+-----+------+
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |    64|
++------+-----+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |     0|
+|1     |top      |       |    64|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1277.633 ; gain = 753.535
+Synthesis finished with 0 errors, 0 critical warnings and 36 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1304.383 ; gain = 763.391
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1277.633 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1304.383 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1379.379 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1406.246 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 3b6d55b2
+Synth Design complete | Checksum: e0d5dbae
 INFO: [Common 17-83] Releasing license: Synthesis
-19 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+24 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1379.379 ; gain = 861.574
-INFO: [Common 17-1381] The checkpoint 'C:/Users/ryfon/OneDrive/Documents/git/ECE369/Lab_1/Lab_1.runs/synth_1/PCAdder_tb.dcp' has been generated.
-INFO: [Vivado 12-24828] Executing command : report_utilization -file PCAdder_tb_utilization_synth.rpt -pb PCAdder_tb_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 28 22:04:23 2024...
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1406.246 ; gain = 871.578
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1406.246 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ryfon/Documents/Code/ECE369/Lab_1/Lab_1.runs/synth_1/InstructionFetchUnit.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file InstructionFetchUnit_utilization_synth.rpt -pb InstructionFetchUnit_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Aug 31 21:43:01 2024...
