@@ -13,13 +13,11 @@ module InstructionMemory_tb();
 
     reg [31:0] Address;
 
-	InstructionMemory #(
-	   .MEM_DEPTH(256)
-	) u0 (
+	InstructionMemory u0 (
 		.Address(Address),
         .Instruction(Instruction)
 	);
-        integer count;
+    integer count;
 	initial begin
 	   
 	   for(count =0; count < 200;count = count +1) begin
@@ -28,8 +26,7 @@ module InstructionMemory_tb();
 	   end
 	   
 	   $finish;
-    
-	
+
 	end
 
 endmodule
