@@ -13,7 +13,9 @@ module InstructionMemory_tb();
 
     reg [31:0] Address;
 
-	InstructionMemory u0 (
+	InstructionMemory #(
+	   .MEM_DEPTH(256)
+	) u0 (
 		.Address(Address),
         .Instruction(Instruction)
 	);
