@@ -58,6 +58,6 @@ module InstructionMemory # (
         end
     end
     
-    assign Instruction = mem[Address >> 2];
+    assign Instruction = mem[Address >> 2][6:0];
     
 endmodule
