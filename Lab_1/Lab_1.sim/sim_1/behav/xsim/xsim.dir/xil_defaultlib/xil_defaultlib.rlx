@@ -1,0 +1,10 @@
+0.7
+2020.2
+May 22 2024
+19:03:11
+C:/Users/ryfon/Documents/Code/ECE369/Lab_1/Lab_1.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
+C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v,1725239073,verilog,,C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionMemory.v,C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/PCAdder.v;C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionMemory.v;C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/ProgramCounter.v,InstructionFetchUnit,,,,,,,,
+C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit_tb.v,1725238435,verilog,,,C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v,InstructionFetchUnit_tb,,,,,,,,
+C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionMemory.v,1725169356,verilog,,C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/PCAdder.v,,InstructionMemory,,,,,,,,
+C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/PCAdder.v,1725162121,verilog,,C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/ProgramCounter.v,,PCAdder,,,,,,,,
+C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/ProgramCounter.v,1725162121,verilog,,C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit_tb.v,,ProgramCounter,,,,,,,,

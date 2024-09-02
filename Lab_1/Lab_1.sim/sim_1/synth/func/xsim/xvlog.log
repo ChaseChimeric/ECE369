@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/ECE369/Lab_1/Lab_1.sim/sim_1/synth/func/xsim/InstructionFetchUnit_tb_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionFetchUnit
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionFetchUnit_tb

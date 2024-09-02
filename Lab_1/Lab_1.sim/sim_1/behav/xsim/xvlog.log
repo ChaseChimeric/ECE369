@@ -1,0 +1,21 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-311] analyzing module InstructionFetchUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'InstructionMemory' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionMemory.v:39]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'PCAdder' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/PCAdder.v:22]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ProgramCounter' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/ProgramCounter.v:27]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-311] analyzing module InstructionFetchUnit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'InstructionFetchUnit' [C:/Users/ryfon/Documents/Code/ECE369/src/InstructionFetchUnit/InstructionFetchUnit.v:44]
+INFO: [VRFC 10-311] analyzing module InstructionFetchUnit_tb
