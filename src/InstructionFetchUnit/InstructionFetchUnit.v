@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 
+
 ////////////////////////////////////////////////////////////////////////////////
 // Team Members:
 // Overall percent effort of each team meber:
@@ -49,18 +50,18 @@ module InstructionFetchUnit(
   wire [31:0] internalPCResult;
   wire [31:0] internalInstruction;
 
-  InstructionMemory u0(
-                      .Address(Address),
+  InstructionMemory mem0(
+                      .Address(internalPCResult),
                       .Instruction(internalInstruction)
                     );
 
-  PCAdder u1(
+  PCAdder add0(
             .PCResult(internalPCResult),
             .PCAddResult(PCAddResult)
           );
 
-  ProgramCounter u2(
-                   .Address(Address),
+  ProgramCounter pc0(
+                   .Address(PCAddResult),
                    .PCResult(internalPCResult),
                    .Reset(Reset),
                    .Clk(Clk)

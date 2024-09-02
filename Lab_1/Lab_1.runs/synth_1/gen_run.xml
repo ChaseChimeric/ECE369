@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-2L" LaunchTime="1725165757" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ProgramCounter_tb.dcp">
-  <File Type="PA-TCL" Name="InstructionFetchUnit.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="InstructionFetchUnit_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="InstructionFetchUnit_reports.tcl"/>
-  <File Type="RDS-RDS" Name="InstructionFetchUnit.vds"/>
-  <File Type="RDS-UTIL" Name="InstructionFetchUnit_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="InstructionFetchUnit_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="InstructionFetchUnit.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="InstructionFetchUnit_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="InstructionFetchUnit_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-2L" LaunchTime="1725240698" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ProgramCounter_tb.dcp">
+  <File Type="PA-TCL" Name="top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top.vds"/>
+  <File Type="RDS-UTIL" Name="top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../src/ClockDivider/ClkDiv.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/InstructionFetchUnit/InstructionFetchUnit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../src/InstructionFetchUnit/InstructionMemory.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -32,7 +46,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../src/InstructionFetchUnit/InstructionFetchUnit.v">
+    <File Path="$PPRDIR/../src/Two4DigitDisplay/SevenSegment.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/Two4DigitDisplay/Two4DigitDisplay.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/InstructionFetchUnit/top.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -41,15 +69,7 @@
     </File>
     <File Path="$PPRDIR/../src/InstructionFetchUnit/InstructionMemory_tb.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../src/InstructionFetchUnit/ProgramCounter_tb.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -57,7 +77,15 @@
     </File>
     <File Path="$PPRDIR/../src/InstructionFetchUnit/PCAdder_tb.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/InstructionFetchUnit/ProgramCounter_tb.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -65,11 +93,18 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="InstructionFetchUnit"/>
+      <Option Name="TopModule" Val="top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../src/Two4DigitDisplay/Two4DigitDisplay.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>

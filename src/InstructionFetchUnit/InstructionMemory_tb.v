@@ -25,7 +25,7 @@ module InstructionMemory_tb();
 	       #10;
 	   end
 	   
-	   $finish;
+
 
 	end
 
