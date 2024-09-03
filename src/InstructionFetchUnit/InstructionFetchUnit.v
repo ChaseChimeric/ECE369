@@ -51,21 +51,21 @@ module InstructionFetchUnit(
   wire [31:0] internalInstruction;
 
   InstructionMemory mem0(
-                      .Address(internalPCResult),
-                      .Instruction(internalInstruction)
-                    );
+    .Address(internalPCResult),
+    .Instruction(internalInstruction)
+  );
 
   PCAdder add0(
-            .PCResult(internalPCResult),
-            .PCAddResult(PCAddResult)
-          );
+    .PCResult(internalPCResult),
+    .PCAddResult(PCAddResult)
+  );
 
   ProgramCounter pc0(
-                   .Address(PCAddResult),
-                   .PCResult(internalPCResult),
-                   .Reset(Reset),
-                   .Clk(Clk)
-                 );
+    .Address(PCAddResult),
+    .PCResult(internalPCResult),
+    .Reset(Reset),
+    .Clk(Clk)
+  );
 
   assign PCResult = internalPCResult;
   assign Instruction = internalInstruction;

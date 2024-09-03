@@ -31,13 +31,13 @@ module ProgramCounter(Address, PCResult, Reset, Clk);
 
 	output reg [31:0] PCResult;
 
-    always @(posedge Clk) begin
-           if(Reset) begin
-                PCResult <= 0;
-           end else begin
-                PCResult <= Address;
-           end
-    end
+     always @(posedge Clk) begin
+          if(Reset) begin
+               PCResult <= 0;
+          end else begin
+               PCResult <= Address;
+          end
+     end
 
 endmodule
 

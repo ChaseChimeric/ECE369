@@ -7,8 +7,6 @@ module top(
     input Reset,
     output [6:0] out7,
     output [7:0] en_out
-
-
 );
 
     wire clockMod;

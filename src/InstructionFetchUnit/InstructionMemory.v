@@ -50,7 +50,6 @@ module InstructionMemory # (
     
     integer count;
     
-    /* Please fill in the implementation here */
     initial  
     begin
         for(count = 0;count<MEM_DEPTH;count = count + 1) begin
