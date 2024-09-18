@@ -34,7 +34,17 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
 
 	output [31:0] ALUResult;	// answer
 	output Zero;	    // Zero=1 if ALUResult == 0
+	
+	assign Zero = (ALUControl == 32'd0);
 
+	
+	always @(*) begin
+		case(ALUControl) 
+			32'd0: ALUResult = A + B;
+			32'd1: ALUResult = A - B;
+			default: ALUResult = 0;
+		endcase
+	end
     /* Please fill in the implementation here... */
 
 endmodule
