@@ -26,16 +26,25 @@
 //   operations needed to support. 
 ////////////////////////////////////////////////////////////////////////////////
 
-module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
+module ALU32Bit# (
+	parameter SIZE = 32
+)
+(
+	ALUControl, 
+	A, 
+	B, 
+	ALUResult, 
+	Zero
+);
 
 	input [3:0] ALUControl; // control bits for ALU operation
                                 // you need to adjust the bitwidth as needed
-	input [31:0] A, B;	    // inputs
+	input [SIZE-1:0] A, B;	    // inputs
 
-	output [31:0] ALUResult;	// answer
+	output [SIZE-1:0] ALUResult;	// answer
 	output Zero;	    // Zero=1 if ALUResult == 0
 	
-	assign Zero = (ALUControl == 32'd0);
+	assign Zero = (ALUControl == SIZE'd0);
 
 	
 	always @(*) begin
