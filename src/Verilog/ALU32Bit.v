@@ -41,13 +41,13 @@ module ALU32Bit# (
                                 // you need to adjust the bitwidth as needed
 	input [SIZE-1:0] A, B;	    // inputs
 
-	output [SIZE-1:0] ALUResult;	// answer
+	output reg [SIZE-1:0] ALUResult;	// answer
 	output Zero;	    // Zero=1 if ALUResult == 0
 	
-	assign Zero = (ALUControl == SIZE'd0);
+	assign Zero = (ALUControl == 0);
 
 	
-	always @(*) begin
+	always @(A, B, ALUControl) begin
 		case(ALUControl) 
 			32'd0: ALUResult = A + B;
 			32'd1: ALUResult = A - B;

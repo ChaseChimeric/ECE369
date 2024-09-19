@@ -36,7 +36,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module DataMemory # (
-    parameter MEM_DEPTH = 1024;
+    parameter MEM_DEPTH = 1024
 )
 (
     Address, 
