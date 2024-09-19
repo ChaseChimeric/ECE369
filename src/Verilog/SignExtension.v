@@ -14,5 +14,14 @@ module SignExtension(in, out);
     output [31:0] out;
     
     /* Fill in the implementation here ... */
+    always @(*) begin
+        if(in[15])begin
+          out =  {16'hFFFF, in}; 
+        end
+        else begin
+            out = {16'd0,in};
+        end
+
+    end
 
 endmodule
