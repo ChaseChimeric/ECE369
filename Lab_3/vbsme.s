@@ -1,7 +1,8 @@
 #  Fall 2024
 #  Team Members:    
+# Ryan Fong, Ahmad Qureshi, Ryan McDermott
 #  % Effort    :   
-#
+# 33, 33, 33
 # ECE369A,  
 # 
 
@@ -22,16 +23,16 @@
 # small size for validation and debugging purpose
 # The result should be 0, 2
 asize0:  .word    4,  4,  2, 2    #i, j, k, l
-frame0:  .word    0,  0,  1,  2,#change to 2 <<< 
-         .word    0,  0,  3,  5
-         .word    0,  0,  1,  2
-         .word    0,  0,  3,  4, 
+frame0:  .word    0,  0,  1,  2, 
+         .word    0,  0,  3,  4
+         .word    0,  0,  0,  0
+         .word    0,  0,  0,  0, 
 window0: .word    1,  2, 
          .word    3,  4, 
 # test 1 For the 16X16 frame size and 4X4 window size
 # The result should be 12, 12
 asize1:  .word    16, 16, 4, 4    #i, j, k, l
-frame1:  .word    6, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+frame1:  .word    0, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
          .word    1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
          .word    2, 3, 32, 1, 2, 3, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 
          .word    3, 4, 1, 2, 3, 4, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 
@@ -262,7 +263,7 @@ window7: .word    9, 9, 9, 9,
          .word    9, 9, 9, 9, 
          .word    9, 9, 9, 9
 
-# test 8 For the 16X16 frame and a 4X8 window size #fix CHECK thIS ONE
+# test 8 For the 16X16 frame and a 4X8 window size
 # The result should be 12, 0
 asize8:  .word    16, 16, 4, 8    #i, j, k, l
 frame8:  .word    9, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 6, 7, 7, 7, 
@@ -782,27 +783,29 @@ print_result:
 #
 # $v0 is for row / $v1 is for column
 
-# stack list:
-# idk what they did with the stack before, so we'll start at -4
-# -4 = stored x value for current position
-# -8 = stored y value for current position
-# -12 = top offset
-# -16 = right offset
-# -20 = bottom offset
-# -24 = left offset
 
+
+    # stack list:
+    # idk what they did with the stack before, so we'll start at -4
+    # -4 = stored x value for current position
+    # -8 = stored y value for current position
+    # -12 = top offset
+    # -16 = right offset
+    # -20 = bottom offset
+    # -24 = left offset
 
 # Begin subroutine
 vbsme:  
     li      $v0, 0              # reset $v0 and $V1
     li      $v1, 0
-    init:
 
-    addi $s1, $zero, 500 # minimum tracked sad
-    addi $s2, $zero, 0 # direction of movement
-    addi, $s3, $a1, 0 # load frame pointer to mutable reg
+    init:
+    addi $s1, $zero, 500    # minimum tracked sad value
+    addi $s2, $zero, 0      # direction of movement
+    addi, $s3, $a1, 0       # load frame pointer to mutable reg
+    
     # zero everything used in stack
-    sw $zero, -4($sp)
+    sw $zero, -4($sp)       # variables listed above
     sw $zero, -8($sp)
     sw $zero, -12($sp)
     sw $zero, -16($sp)
@@ -813,19 +816,19 @@ vbsme:
 
     # frame 
     movement:
-    lw $t0, -12($sp)
-    lw $t1, -20($sp)
-    add, $t2, $t0, $t1
-    lw $t0, 4($a0)
-    slt $t1, $t2, $t0
+    lw $t0, -12($sp)        # load top offset
+    lw $t1, -20($sp)        # load bottom offset
+    add, $t2, $t0, $t1      # add the two, store $t2
+    lw $t0, 0($a0)          # load window length
+    slt $t1, $t2, $t0       # check if offsets are >= than window longth
     beq $t1, $zero, contcheck
-    j contmove
+    j contmove  # continue
     contcheck:
-    lw $t0, -16($sp)
-    lw $t1, -24($sp)
-    add, $t2, $t0, $t1
-    lw $t0, 4($a0)
-    slt $t1, $t2, $t0
+    lw $t0, -16($sp)        # load right offset
+    lw $t1, -24($sp)        # load left offset
+    add, $t2, $t0, $t1      # add
+    lw $t0, 4($a0)          # load frame width
+    slt $t1, $t2, $t0       # check if offsets are still less than total width
     beq $t1, $zero, return
     
     contmove:
@@ -833,198 +836,162 @@ vbsme:
     beq $s2, $t0, right # check right
 
     addi $t0, $zero, 1
-    beq $s2, $t0, down # check down #todo
+    beq $s2, $t0, down # check down 
 
     addi $t0, $zero, 2
-    beq $s2, $t0, left # check left #todo
+    beq $s2, $t0, left # check left 
 
     addi $t0, $zero, 3
-    beq $s2, $t0, up # check up #todo
-
-
-
-
+    beq $s2, $t0, up # check up 
  
     
     forinit:
-        lw $s6, -4($sp)
-        lw $s7, -8($sp)
-        addi $s0, $zero, 0 #todo zero SUM
-        addi $t5, $a2, 0 # load new iterator
-        addi $t0, $zero, 0 # j = 0
+        addi $s0, $zero, 0          #zero sum for this frame
+        addi $t5, $a2, 0            # load new iterator over window
+        addi $t0, $zero, 0          # j = 0
     for:
-        lw $t2, 8($a0) # load window height
-        beq $t0, $t2, loopend # j != window height
+        lw $t2, 8($a0)              # load window height
+        beq $t0, $t2, loopend       # continue while j != window height
 
             for2init:
-                addi $t1, $zero, 0 # i = 0 # WTF
+                addi $t1, $zero, 0      # i = 0
             for2:
-                lw $t2, 12($a0) #window width
-                beq $t1, $t2, forend # i != window width
+                lw $t2, 12($a0)         #window width
+                beq $t1, $t2, forend    # i != window width
 
-
-            actualshit:
-            #todo   FIRST,offsets VALUE
-            sll $t3, $t1, 2 # offset of i 
-            lw $t4, 4($a0) # get frame width
-            mul $t4, $t4, $t0 # mult by y index
-            sll $t4, $t4, 2 # mult by 4 for offset
-            add $t9, $t3, $t4 # add offsets together, should now have total indexing offset
-            add $t3, $t9, $s3 # final address in array #fix(change $a1 to s reg that will be moving)
-            #fix    keep $t0-$t3
-            lw $t3 0($t3)
-            lw $t4 0($t5)
-            slt $t6, $t3, $t4 
-            beq $t6, $zero, abs21
-            abs12: # t4 - t3
-                sub $t3, $t4, $t3
-                add $s0, $s0, $t3
-                j cont
-            abs21: # t3 - t4
-                sub $t3, $t3, $t4
-                add $s0, $s0, $t3
-            cont:
-            addi $t5, $t5, 4
-
+                loopbody:
+                    sll $t3, $t1, 2         # offset of i 
+                    lw $t4, 4($a0)          # get frame width
+                    mul $t4, $t4, $t0       # mult by y index
+                    sll $t4, $t4, 2         # mult by 4 for offset
+                    add $t9, $t3, $t4       # add offsets together, should now have total indexing offset
+                    add $t3, $t9, $s3       # final address in array 
+                    
+                    lw $t3 0($t3)           # load frame val
+                    lw $t4 0($t5)           # load window val
+                    slt $t6, $t3, $t4       # check which is greater
+                    beq $t6, $zero, abs21
+                abs12: # t4 - t3
+                    sub $t3, $t4, $t3       # difference if 1 > 2
+                    add $s0, $s0, $t3
+                    j cont
+                abs21: # t3 - t4
+                    sub $t3, $t3, $t4       # difference if 2 > 1
+                    add $s0, $s0, $t3
+                cont:
+                    addi $t5, $t5, 4        # index++ on window
             for2end:
-                addi $t1, $t1, 1 # j++
+                addi $t1, $t1, 1        # j++
                 j for2
-
     forend:
-        addi $t0, $t0, 1 # i++
+        addi $t0, $t0, 1            # i++
         j for
 
-loopend: # check if sad is smaller than stored value,>> nvm am dum
-    beq $zero, $s0, foundzero
-    slt $t0, $s0, $s1 # check if current sum is lower than stored sum
+loopend:
+    beq $zero, $s0, foundzero   # if zero
+    slt $t0, $s0, $s1           # check if current sum is lower than stored sum
     bne $t0, $zero, newsum
+    j movement  # continue
+
+newsum:
+    lw $t1, -8($sp) 
+    addi $v0, $t1, 0        # set row to stored y
+    lw $t1, -4($sp)         # set row to stored x
+    addi $v1, $t1, 0
     j movement
+foundzero:
+    lw $t1, -8($sp) 
+    addi $v0, $t1, 0        # set row to stored y
+    lw $t1, -4($sp) 
+    addi $v1, $t1, 0        # set row to stored x
+    jr $ra
 
-    newsum:
-        lw $t1, -8($sp) # x in algo, actual is row number
-        addi $v0, $t1, 0
-        lw $t1, -4($sp) # y in algo, actual is col number
-        addi $v1, $t1, 0
-        j movement
-    foundzero:
-        lw $t1, -8($sp) # x in algo, actual is row number
-        addi $v0, $t1, 0
-        lw $t1, -4($sp) # y in algo, actual is col number
-        addi $v1, $t1, 0
-        jr $ra
+#______________________________________________________
+# movement functions
 
-
-   
-
-
-# Current status is it does a full loop around, now implementing offset for spiral navigation
-# implement offset addition/subtraction right before branch logic
-# increment counters on direction change
 
 right:
-    addi $s3, $s3, 4 #BREAK
-    lw $t0, -4($sp) # load current x val
+    addi $s3, $s3, 4        # increment array pointer
+    lw $t0, -4($sp)         # load current x index
+    addi $t0, $t0, 1        # increment +1
+    sw $t0, -4($sp)         # writeback, t0 is sustained
 
-    addi $t0, $t0, 1 # increment index x
-    sw $t0, -4($sp)
+    lw $t2, -16($sp)        # load offset right
+    lw $t1, 12($a0)         # load window width
+    add $t1, $t1, $t2       # add offset limit
 
-    # load offset
-    lw $t2, -16($sp)
-
-
-    lw $t1, 12($a0) # load window width
-    add $t1, $t1, $t2 # add offset limit
-    add $t0, $t0, $t1 # now current index + window width
-    # add another add for the offset from the edge for spiral movement
-    lw $t1, 4($a0) # frame width
+    add $t0, $t0, $t1       # now current index + window width + offset
+    lw $t1, 4($a0)          # frame width
     beq $t1, $t0, chdirdown # check if index is at edge
     j forinit
     chdirdown:
-    # add to offset top
-    lw $t0, -12($sp)
-    addi $t0, $t0, 1
-    sw $t0, -12($sp)
-    addi $s2, $zero, 1 # change direction to down
-    j forinit
+        # add to offset top
+        lw $t0, -12($sp)
+        addi $t0, $t0, 1
+        sw $t0, -12($sp)
+        addi $s2, $zero, 1  # change direction to down
+        j forinit
 
-down:
-    
-    lw $t1, 0($a0) # frame width BREAK
-    sll $t2, $t1, 2
-    add $s3, $s3, $t2
+down:    
+    lw $t1, 0($a0)          # frame width
+    sll $t2, $t1, 2         # convert to addr offset
+    add $s3, $s3, $t2       # add to index pointer (move down 1)
 
-    lw $t0, -8($sp) # load current y val
-    addi $t0, $t0, 1 # increment index y
+    lw $t0, -8($sp)         # load current y index
+    addi $t0, $t0, 1        # increment index y
+    sw $t0, -8($sp)         # store
 
-    sw $t0, -8($sp)
+    lw $t2, 8($a0)          # load window height
+    lw $t3, -20($sp)        # load offset bottom
+    add $t2, $t2, $t3       # add as offsets
 
-    lw $t2, 8($a0) # load window height
-    nop ########################################
-
-    lw $t3, -20($sp)
-    add $t2, $t2, $t3
-
-    add $t0, $t0, $t2 # now current index + window height
-    # add another add for the offset from the edge for spiral movement
-    # lw $t1, 0($a0) # frame width /\
-    beq $t1, $t0, chdirleft # check if index is at edge
-    j forinit
-    chdirleft:
-    lw $t0, -16($sp)
-    addi $t0, $t0, 1
-    sw $t0, -16($sp)
-    addi $s2, $zero, 2 # change direction to down
-    j forinit
+    add $t0, $t0, $t2       # current index + window height + offset 
+    beq $t1, $t0, chdirleft # check if 'index' is at edge
+    j forinit       # continue
+        chdirleft:
+        lw $t0, -16($sp)    # load right offset
+        addi $t0, $t0, 1    # add 1
+        sw $t0, -16($sp)    # writeback
+        addi $s2, $zero, 2  # change direction to down
+        j forinit   # continue
 
 left:
-    addi $s3, $s3, -4 #BREAK
-    lw $t0, -4($sp) # load current x val
-    addi $t0, $t0, -1 # dec index x
-    
-    sw $t0, -4($sp)
+    addi $s3, $s3, -4 
+    lw $t0, -4($sp)         # load current x val
+    addi $t0, $t0, -1       # dec index x
+    sw $t0, -4($sp)         # writeback
 
-    lw $t1, -24($sp)
-    sub $t2, $t0, $t1
-
-    #sub $t0, $t0, $t1 # now current index + window width
-    # add another add for the offset from the edge for spiral movement
-    #lw $t1, 4($a0) # frame width
+    lw $t1, -24($sp)        # get left offset
+    sub $t2, $t0, $t1       
     beq $zero, $t2, chdirup # check if index is at edge
     j forinit
     chdirup:
-    lw $t0, -20($sp)
-    addi $t0, $t0, 1
-    sw $t0, -20($sp)
-    addi $s2, $zero, 3 # change direction to down
-    j forinit
+        lw $t0, -20($sp)    # load offset bottom
+        addi $t0, $t0, 1    # increase
+        sw $t0, -20($sp)    # writeback
+        addi $s2, $zero, 3  # change direction to down
+        j forinit
 
 up:
-    lw $t1, 4($a0) # frame width BREAK
+    lw $t1, 4($a0)          # frame width 
     sll $t2, $t1, 2
-    
     sub $s3, $s3, $t2
 
-    lw $t0, -8($sp) # load current y val
-    addi $t0, $t0, -1 # dec index y
-    sw $t0, -8($sp)
+    lw $t0, -8($sp)         # load current y val
+    addi $t0, $t0, -1       # dec index y
+    sw $t0, -8($sp)         # writeback
 
-    lw $t2, 8($a0) # load window height
-    nop ########################################
-
-    lw $t3, -12($sp)
+    lw $t2, 8($a0)          # load window height
+    lw $t3, -12($sp)        # load top offset
     sub $t0, $t0, $t3
-
-     # now current index - window height
-    # add another add for the offset from the edge for spiral movement
-    # lw $t1, 0($a0) # frame width /\
     beq $zero, $t0, chdirright # check if index is at edge
     j forinit
     chdirright:
-    lw $t0, -24($sp)
-    addi $t0, $t0, 1
-    sw $t0, -24($sp)
-    addi $s2, $zero, 0 # change direction to down
-    j forinit
+        lw $t0, -24($sp)
+        addi $t0, $t0, 1
+        sw $t0, -24($sp)
+        addi $s2, $zero, 0  # change direction to down
+        j forinit
 
 return:
     jr $ra
