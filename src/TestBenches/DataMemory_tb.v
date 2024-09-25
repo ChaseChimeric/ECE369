@@ -30,11 +30,19 @@ module DataMemory_tb();
 		Clk <= 1'b0;
 		forever #10 Clk <= ~Clk;
 	end
-
+	integer i;
 	initial begin
-	
-    /* Please fill in the implementation here... */
-	
+	# 5;
+    for(i = 0; i < 32 * 50; i = i + 50) begin
+        WriteData <= i;
+        Address <= i/50 * 4;
+        MemWrite <= (i / 50) % 2;
+        # 20;
+        MemWrite <= 0;
+        MemRead <= ((i/50) % 3)%2;   
+        # 20;     
+    end
+	$finish;
 	end
 
 endmodule
