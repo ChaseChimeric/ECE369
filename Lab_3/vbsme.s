@@ -479,7 +479,7 @@ window14:   .word    9, 9, 9, 9,
 
 
          
-newline: .asciiz     "\n" 
+newline: .asciiz     "\n"
 
 
 ########################################################################################################################
@@ -793,6 +793,8 @@ print_result:
     # -16 = right offset
     # -20 = bottom offset
     # -24 = left offset
+    # -28 = final x
+    # -32 = final y
 
 # Begin subroutine
 vbsme:  
@@ -800,7 +802,7 @@ vbsme:
     li      $v1, 0
 
     init:
-    addi $s1, $zero, 500    # minimum tracked sad value
+    addi $s1, $zero, 32000    # minimum tracked sad value
     addi $s2, $zero, 0      # direction of movement
     addi, $s3, $a1, 0       # load frame pointer to mutable reg
     
@@ -811,25 +813,39 @@ vbsme:
     sw $zero, -16($sp)
     sw $zero, -20($sp)
     sw $zero, -24($sp)
+    sw $zero, -28($sp)
+    sw $zero, -32($sp)
+
+    #calculate final index
+    lw $t0, 12($a0) # x
+    addi $t0, $t0, -1
+    lw $t1, 4($a0)
+    sub $t2, $t1, $t0
+    srl $t3, $t2, 1
+    sw $t3, -28($sp)
+
+    lw $t0, 8($a0) # y
+    addi $t0, $t0, -1
+    lw $t1, 0($a0)
+    sub $t2, $t1, $t0
+    srl $t3, $t2, 1
+    sw $t3, -32($sp)
+
 
     j forinit
 
+
     # frame 
     movement:
-    lw $t0, -12($sp)        # load top offset
-    lw $t1, -20($sp)        # load bottom offset
-    add, $t2, $t0, $t1      # add the two, store $t2
-    lw $t0, 0($a0)          # load window length
-    slt $t1, $t2, $t0       # check if offsets are >= than window longth
-    beq $t1, $zero, contcheck
+    lw $t0, -4($sp)
+    lw $t1, -28($sp)
+
+    beq $t1, $t0, contcheck
     j contmove  # continue
     contcheck:
-    lw $t0, -16($sp)        # load right offset
-    lw $t1, -24($sp)        # load left offset
-    add, $t2, $t0, $t1      # add
-    lw $t0, 4($a0)          # load frame width
-    slt $t1, $t2, $t0       # check if offsets are still less than total width
-    beq $t1, $zero, return
+    lw $t0, -8($sp)
+    lw $t1, -32($sp)
+    beq $t1, $t0, return
     
     contmove:
     addi $t0, $zero, 0
@@ -897,6 +913,7 @@ newsum:
     lw $t1, -8($sp) 
     addi $v0, $t1, 0        # set row to stored y
     lw $t1, -4($sp)         # set row to stored x
+    addi, $s1, $s0, 0
     addi $v1, $t1, 0
     j movement
 foundzero:
@@ -919,8 +936,8 @@ right:
     lw $t2, -16($sp)        # load offset right
     lw $t1, 12($a0)         # load window width
     add $t1, $t1, $t2       # add offset limit
-
     add $t0, $t0, $t1       # now current index + window width + offset
+
     lw $t1, 4($a0)          # frame width
     beq $t1, $t0, chdirdown # check if index is at edge
     j forinit
