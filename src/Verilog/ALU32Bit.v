@@ -37,21 +37,28 @@ module ALU32Bit# (
 	Zero
 );
 
-	input [3:0] ALUControl; // control bits for ALU operation
+	input [2:0] ALUControl; // control bits for ALU operation
                                 // you need to adjust the bitwidth as needed
 	input [SIZE-1:0] A, B;	    // inputs
 
-	output reg [SIZE-1:0] ALUResult;	// answer
+	reg [SIZE-1:0] ALUResult_int;	// answer
+	output ALUResult;
 	output Zero;	    // Zero=1 if ALUResult == 0
 	
 	assign Zero = (ALUControl == 0);
+	assign ALUResult = ALUResult_int;
 
-	
 	always @(A, B, ALUControl) begin
 		case(ALUControl) 
-			32'd0: ALUResult = A + B;
-			32'd1: ALUResult = A - B;
-			default: ALUResult = 0;
+			3'd0: ALUResult_int = A + B; 	// If sel is 0, adder
+			3'd1: ALUResult_int = A - B; 	// If sel is 1, subtracter
+			3'd2: ALUResult_int = A * B; 	// If sel is 2, multiplier
+			3'd3: ALUResult_int = A | B; 	// If sel is 3, bitwise OR
+			3'd4: ALUResult_int = A & B; 	// If sel is 4, bitwise AND
+			3'd5: ALUResult_int = A ^ B; 	// If sel is 5, bitwise XOR
+			3'd6: ALUResult_int = A >> B; 	// If sel is 6, A shifted right by B
+			3'd7: ALUResult_int = A << B; 	// If sel is 7, A shifted left by B 
+			default: ALUResult_int = 0;
 		endcase
 	end
     /* Please fill in the implementation here... */
