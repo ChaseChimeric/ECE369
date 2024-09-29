@@ -804,40 +804,40 @@ vbsme:
     li      $v1, 0
 
     init:
-    addi $s1, $zero, 32000  # minimum tracked sad value
-    addi $s2, $zero, 0      # direction of movement
-    addi, $s3, $a1, 0       # load frame pointer to mutable reg
-    
-    # zero everything used in stack
-    sw $zero, -4($sp)       # | variables listed above
-    sw $zero, -8($sp)       # |
-    sw $zero, -12($sp)      # |
-    sw $zero, -16($sp)      # |
-    sw $zero, -20($sp)      # |
-    sw $zero, -24($sp)      # |
-    sw $zero, -28($sp)      # |
-    sw $zero, -32($sp)      # |
+        addi $s1, $zero, 32000  # minimum tracked sad value
+        addi $s2, $zero, 0      # direction of movement
+        addi, $s3, $a1, 0       # load frame pointer to mutable reg
+        
+        # zero everything used in stack
+        sw $zero, -4($sp)       # | variables listed above
+        sw $zero, -8($sp)       # |
+        sw $zero, -12($sp)      # |
+        sw $zero, -16($sp)      # |
+        sw $zero, -20($sp)      # |
+        sw $zero, -24($sp)      # |
+        sw $zero, -28($sp)      # |
+        sw $zero, -32($sp)      # |
 
-    #calculate final indexes
-    lw $t0, 12($a0)         # load window width
-    addi $t0, $t0, -1       # sub 1
-    lw $t1, 4($a0)          # load frame width
-    sub $t2, $t1, $t0       # subtract window from frame
-    srl $t3, $t2, 1         # divide by 2
-    sw $t3, -28($sp)        # store final x index
+        #calculate final indexes
+        lw $t0, 12($a0)         # load window width
+        addi $t0, $t0, -1       # sub 1
+        lw $t1, 4($a0)          # load frame width
+        sub $t2, $t1, $t0       # subtract window from frame
+        srl $t3, $t2, 1         # divide by 2
+        sw $t3, -28($sp)        # store final x index
 
-    lw $t0, 8($a0)          # load window height
-    addi $t0, $t0, -1       # sub 1
-    lw $t1, 0($a0)          # load frame height
-    sub $t2, $t1, $t0       # subtract window from frame
-    srl $t3, $t2, 1         # div 2
-    sw $t3, -32($sp)        # store
-
+        lw $t0, 8($a0)          # load window height
+        addi $t0, $t0, -1       # sub 1
+        lw $t1, 0($a0)          # load frame height
+        sub $t2, $t1, $t0       # subtract window from frame
+        srl $t3, $t2, 1         # div 2
+        sw $t3, -32($sp)        # store
 
     j forinit
 
 
-    # frame 
+#________________________________________________
+# handles branch logic for frame traversal/offset functions
     movement:
         lw $t0, -4($sp)         # load current x
         lw $t1, -28($sp)        # load final index
@@ -861,7 +861,9 @@ vbsme:
         addi $t0, $zero, 3      # | check up 
         beq $s2, $t0, up        # |
  
-    
+#__________________________________________________
+# for loop, calculates sad for frame/window
+
     forinit:
         addi $s0, $zero, 0          #zero sum for this frame
         addi $t5, $a2, 0            # load new iterator over window
