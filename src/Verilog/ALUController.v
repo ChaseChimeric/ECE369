@@ -29,7 +29,14 @@ module ALUController (
                 6'b100110: opCode = XOR;    // XOR instruction, funct = 100110
                 6'b000000: opCode = SHL;    // SLL instruction, funct = 000000
                 6'b000010: opCode = SHR;    // SRL instruction, funct = 000010 
-                default: 
+                default:   opCode = AND;    // Fatal Error, just do an AND if R type not supported 
+            endcase
+        end
+
+        // Mul op code not zero for some reason
+        if (op == 6'b011100) begin
+            case (funct)
+                6'b000010: opCode = MUL;    // MUL instruction, funct = 000010
             endcase
         end
     end
