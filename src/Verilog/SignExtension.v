@@ -5,15 +5,15 @@
 // Module - SignExtension.v
 // Description - Sign extension module.
 ////////////////////////////////////////////////////////////////////////////////
-module SignExtension(in, out);
+module SignExtension(sign_extend_in, sign_extend_out);
 
     /* A 16-Bit input word */
-    input [15:0] in;
+    input [15:0] sign_extend_in;
     
     /* A 32-Bit output word */
-    output [31:0] out;
+    output [31:0] sign_extend_out;
     
     /* Fill in the implementation here ... */
-     assign out = in[15] ? {16'hFFFF, in} : {16'd0,in};
+     assign sign_extend_out = sign_extend_in[15] ? {16'hFFFF, sign_extend_in} : {16'd0, sign_extend_in};
 
 endmodule

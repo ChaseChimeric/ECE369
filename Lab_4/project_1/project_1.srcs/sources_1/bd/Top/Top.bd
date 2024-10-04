@@ -1,0 +1,166 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7k70tfbv676-1",
+      "gen_directory": "../../../../project_1.gen/sources_1/bd/Top",
+      "name": "Top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2"
+    },
+    "design_tree": {
+      "Execute_0": "",
+      "Instruction_Fetch_0": ""
+    },
+    "components": {
+      "Execute_0": {
+        "parameters": {
+          "ACTIVE_SIM_BD": {
+            "value": "Execute.bd"
+          },
+          "ACTIVE_SYNTH_BD": {
+            "value": "Execute.bd"
+          },
+          "ENABLE_DFX": {
+            "value": "0"
+          },
+          "LIST_SIM_BD": {
+            "value": "Execute.bd"
+          },
+          "LIST_SYNTH_BD": {
+            "value": "Execute.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          }
+        },
+        "ports": {
+          "funct_0": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "op_0": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "data_at_25_21": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "data_at_20_16": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instr_15_0": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "ALU_imm_reg": {
+            "direction": "I"
+          },
+          "ALU_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Zero_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ZeroInverted": {
+            "direction": "I"
+          },
+          "Inverted": {
+            "direction": "I"
+          }
+        },
+        "post_compiled_compname": "Execute_inst_0",
+        "architecture": "kintex7",
+        "variant_info": {
+          "Execute.bd": {
+            "scoped_diagram": "Execute_inst_0.bd",
+            "design_checksum": "0x68C726B1",
+            "ref_name": "Execute",
+            "ref_subinst_path": "Top_Execute_0",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
+          }
+        }
+      },
+      "Instruction_Fetch_0": {
+        "parameters": {
+          "ACTIVE_SIM_BD": {
+            "value": "Instruction_Fetch.bd"
+          },
+          "ACTIVE_SYNTH_BD": {
+            "value": "Instruction_Fetch.bd"
+          },
+          "ENABLE_DFX": {
+            "value": "0"
+          },
+          "LIST_SIM_BD": {
+            "value": "Instruction_Fetch.bd"
+          },
+          "LIST_SYNTH_BD": {
+            "value": "Instruction_Fetch.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          }
+        },
+        "ports": {
+          "AdderSel": {
+            "direction": "I"
+          },
+          "Clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "Instruction_0": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "NextInstrSel": {
+            "direction": "I"
+          },
+          "Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "j_amount": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "jr_val": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          }
+        },
+        "post_compiled_compname": "Instruction_Fetch_inst_0",
+        "architecture": "kintex7",
+        "variant_info": {
+          "Instruction_Fetch.bd": {
+            "scoped_diagram": "Instruction_Fetch_inst_0.bd",
+            "design_checksum": "0x775283E7",
+            "ref_name": "Instruction_Fetch",
+            "ref_subinst_path": "Top_Instruction_Fetch_0",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
+          }
+        }
+      }
+    }
+  }
+}
