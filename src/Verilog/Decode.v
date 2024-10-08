@@ -24,6 +24,9 @@ module Decode (
     RegWrite
 );
 
-
+    input [31:0] InstructionIn, NextInstructionIn;
+    output [31:0] InstructionOut, NextInstructionOut;
+    input clk;
+    output 
     
 endmodule
