@@ -69,11 +69,14 @@ module RegisterFile(
 	output reg [31:0] ReadData2;
 
 	always @(posedge Clk) begin
-		ReadData1 <= mem[ReadRegister1];
-		ReadData2 <= mem[ReadRegister2];
 		if (RegWrite) begin
 			mem[WriteRegister] <= WriteData;
 		end 
+	end
+
+	always @(negedge Clk) begin
+		ReadData1 <= mem[ReadRegister1];
+		ReadData2 <= mem[ReadRegister2];
 	end
 
 	/* Please fill in the implementation here... */
