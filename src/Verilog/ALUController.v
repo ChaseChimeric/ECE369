@@ -79,10 +79,7 @@ module ALUController (
             // BEQ
             6'b000100: opCode <= XOR;
 
-            // JR
-
-
-            // For unused instructions, just use the shift left
+            // For unused instructions, just use the shift left, J and JAL
             default: opCode <= SLL;
             
         endcase
