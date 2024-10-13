@@ -17,8 +17,7 @@ module MUXController (
     branchZeroVal
 );
     input [5:0] funct, op, branchZeroVal;
-    output reg ForceInstr, 
-               ZeroInverted, 
+    output reg ZeroInverted, 
                Inverted,
                Sum,
                NextInstr,
@@ -30,11 +29,13 @@ module MUXController (
                WBDest,
                Sign,
                sh_amt;
+    
+    output reg ForceInstr;
 
     localparam X = 0;
     always @(*) begin
         case ({funct})
-            // R-type, ADD, NOR, AND, OR, XOR, SLL, SRL, SLT, SUB, MUL
+            // R-type, ADD, NOR, AND, OR, XOR, SLL, SRL, SLT, SUB
             6'b000000: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
@@ -49,6 +50,23 @@ module MUXController (
                 WBDest <= 0;
                 Sign <= (op == 101010);
                 sh_amt <= ((op == 6'000010) | (op == 6'000000));
+            end
+
+            // MUL
+            6'b011100: begin
+                ForceInstr <= 0;
+                ZeroInverted <= X;
+                Inverted <= 0;
+                Sum <= 0;
+                NextInstr <= 0;
+                NextInstrAddress <= 0;
+                DataWriteVal <= 1;
+                inA <= 0;
+                ALUImmReg <= 0;
+                WB_RA <= 0;
+                WBDest <= 0;
+                Sign <= 0;
+                sh_amt <= 0;
             end
 
             // J
