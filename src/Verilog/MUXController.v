@@ -35,21 +35,21 @@ module MUXController (
     localparam X = 0;
     always @(*) begin
         case ({funct})
-            // R-type, ADD, NOR, AND, OR, XOR, SLL, SRL, SLT, SUB
+            // R-type, ADD, NOR, AND, OR, XOR, SLL, SRL, SLT, SUB, JR
             6'b000000: begin
-                ForceInstr <= 0;
+                ForceInstr <= (op == 6'b001000);
                 ZeroInverted <= X;
                 Inverted <= (op == 6'b100111);
                 Sum <= 0;
-                NextInstr <= 0;
+                NextInstr <= (op == 6'b001000);
                 NextInstrAddress <= 0;
                 DataWriteVal <= 1;
-                inA <= 0;
+                inA <= (op == 6'b001000);
                 ALUImmReg <= 0;
                 WB_RA <= 0;
                 WBDest <= 0;
                 Sign <= (op == 101010);
-                sh_amt <= ((op == 6'000010) | (op == 6'000000));
+                sh_amt <= ((op == 6'b000010) | (op == 6'b000000));
             end
 
             // MUL
@@ -86,23 +86,6 @@ module MUXController (
                 sh_amt <= X;
             end
 
-            // JR
-            6'b000010: begin
-                ForceInstr <= 1;
-                ZeroInverted <= X;
-                Inverted <= 0;
-                Sum <= 0;
-                NextInstr <= 1;
-                NextInstrAddress <= X;
-                DataWriteVal <= X;
-                inA <= 1;
-                ALUImmReg <= X;
-                WB_RA <= X;
-                WBDest <= X;
-                Sign <= 0;
-                sh_amt <= X;
-            end
-
             // JAL
             6'b000011: begin
                 ForceInstr <= 1;
@@ -121,7 +104,7 @@ module MUXController (
             end
             
             // Addi Instruction
-            6'b001000 begin
+            6'b001000: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Sum <= 0;
@@ -137,10 +120,10 @@ module MUXController (
             end
 
             // Slti Instruction
-            6'b001010 begin
+            6'b001010: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
-                Inverted <= 0
+                Inverted <= 0;
                 Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
@@ -154,7 +137,7 @@ module MUXController (
             end
 
             // Andi Instruction
-            6'b001100 begin
+            6'b001100: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Sum <= 0;
@@ -170,7 +153,7 @@ module MUXController (
             end
 
             // Ori Instruction
-            6'b001101 begin
+            6'b001101: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Sum <= 0;
@@ -186,7 +169,7 @@ module MUXController (
             end
 
             // XORI Instruction
-            6'b001110 begin
+            6'b001110: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Sum <= 0;
@@ -207,7 +190,7 @@ module MUXController (
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Inverted <= 0;
-                Sum <= 0
+                Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
                 DataWriteVal <= 0;
@@ -224,7 +207,7 @@ module MUXController (
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Inverted <= 0;
-                Sum <= 0
+                Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
                 DataWriteVal <= 0;
@@ -241,7 +224,7 @@ module MUXController (
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Inverted <= 0;
-                Sum <= 0
+                Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
                 DataWriteVal <= 0;
@@ -255,11 +238,11 @@ module MUXController (
 
             // Store Type
             // Store Word SW
-            6'b101011 begin
+            6'b101011: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Inverted <= 0;
-                Sum <= 0
+                Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
                 DataWriteVal <= 1;
@@ -272,11 +255,11 @@ module MUXController (
             end
 
             // Store HalfWord SH
-            6'b101001 begin
+            6'b101001: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Inverted <= 0;
-                Sum <= 0
+                Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
                 DataWriteVal <= 1;
@@ -289,11 +272,11 @@ module MUXController (
             end
 
             // Store Byte SB
-            6'b101000 begin
+            6'b101000: begin
                 ForceInstr <= 0;
                 ZeroInverted <= X;
                 Inverted <= 0;
-                Sum <= 0
+                Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
                 DataWriteVal <= 1;
@@ -345,7 +328,7 @@ module MUXController (
                 Inverted <= (branchZeroVal == 5'b00001); // 1 for BGEZ, 0 for BLTZ
                 ZeroInverted <= 1;
                 Sum <= 0;
-                NextInstr <= 0
+                NextInstr <= 0;
                 NextInstrAddress <= X;
                 DataWriteVal <= X;
                 inA <= 1;

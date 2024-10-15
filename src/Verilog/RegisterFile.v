@@ -82,6 +82,11 @@ module RegisterFile(
 		end
 	end
 
+	initial begin
+        for(count = 0;count<32;count = count + 1) begin
+            mem[count] = count*100;
+        end
+    end
 	/* Please fill in the implementation here... */
 
 endmodule
