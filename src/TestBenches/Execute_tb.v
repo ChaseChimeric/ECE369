@@ -94,7 +94,7 @@ module Execute_tb;
         // Test scenario 1: R-type instruction (ADD)
         funct = 6'b000000;  // R-type
         op = 6'b100000;  // ADD
-        Instr = 32'h00A00020; // Some example instruction
+        Instr = {funct, 5'b0, 5'b0, 5'b0, 5'b0, op}; // Some example instruction
         DataAtInstr25_21In = 32'h00000005;
         DataAtInstr20_16In = 32'h00000003;
 
@@ -117,7 +117,72 @@ module Execute_tb;
         $display("MemModeOut: %b", MemModeOut);
         $display("NextInstrOut: %h", NextInstrOut);
         $display("InstrOut: %h", InstrOut);
+        
+        #100
+        
+        // Test scenario 1: R-type instruction (AND)
+        funct = 6'b000000;  // R-type
+        op = 6'b100100;  // AND
+        Instr = {funct, 5'b0, 5'b0, 5'b0, 5'b0, op};
+        DataAtInstr25_21In = 32'hFF00FF00;
+        DataAtInstr20_16In = 32'hF0F0F0F0;
 
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("Test Case 1: R-type AND");
+        $display("ALUOut: %h", ALUOut);
+        $display("SumOut: %b", SumOut);
+        $display("ZeroOrNot: %b", ZeroOrNotOut);
+        $display("NextInstructionOut: %b", NextInstructionOut);
+        $display("NextInstrAddressOut: %h", NextInstrAddressOut);
+        $display("DataWriteValOut: %h", DataWriteValOut);
+        $display("WB_RAOut: %b", WB_RAOut);
+        $display("RegWriteOut: %b", RegWriteOut);
+        $display("MemWriteEnOut: %b", MemWriteEnOut);
+        $display("AdderAddOut: %b", AdderAddOut);
+        $display("MemReadEnOut: %b", MemReadEnOut);
+        $display("WBDestOut: %b", WBDestOut);
+        $display("MemModeOut: %b", MemModeOut);
+        $display("NextInstrOut: %h", NextInstrOut);
+        $display("InstrOut: %h", InstrOut);
+        
+        // Test scenario 2: Load Word instruction (LW)
+        funct = 6'b100011;  // LW
+        op = 6'b0;  // Not relevant for LW
+        Instr = 32'h8C220000;  // Example LW instruction
+
+        #100;  // Wait for one clock cycle
+        
+        #100
+        
+        // Test scenario 1: R-type instruction (SUB)
+        funct = 6'b000000;  // R-type
+        op = 6'b100010;  // SUB
+        Instr = {funct, 5'b0, 5'b0, 5'b0, 5'b0, op};
+        DataAtInstr25_21In = 32'h00000009;
+        DataAtInstr20_16In = 32'h00000004;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("Test Case 1: R-type SUB");
+        $display("ALUOut: %h", ALUOut);
+        $display("SumOut: %b", SumOut);
+        $display("ZeroOrNot: %b", ZeroOrNotOut);
+        $display("NextInstructionOut: %b", NextInstructionOut);
+        $display("NextInstrAddressOut: %h", NextInstrAddressOut);
+        $display("DataWriteValOut: %h", DataWriteValOut);
+        $display("WB_RAOut: %b", WB_RAOut);
+        $display("RegWriteOut: %b", RegWriteOut);
+        $display("MemWriteEnOut: %b", MemWriteEnOut);
+        $display("AdderAddOut: %b", AdderAddOut);
+        $display("MemReadEnOut: %b", MemReadEnOut);
+        $display("WBDestOut: %b", WBDestOut);
+        $display("MemModeOut: %b", MemModeOut);
+        $display("NextInstrOut: %h", NextInstrOut);
+        $display("InstrOut: %h", InstrOut);
+        
         // Test scenario 2: Load Word instruction (LW)
         funct = 6'b100011;  // LW
         op = 6'b0;  // Not relevant for LW
