@@ -77,7 +77,7 @@ module Execute (
     assign Mux3Out = (sh_amt) ? {27'd0, Instr[10:6]} : Mux2Out;
 
     ALUController aluController (
-        .op(Instr[31:25]),
+        .op(Instr[31:26]),
         .funct(Instr[5:0]),
         .opCode(ALUOpCode)
     );

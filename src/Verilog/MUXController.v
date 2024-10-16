@@ -34,22 +34,22 @@ module MUXController (
 
     localparam X = 0;
     always @(*) begin
-        case ({funct})
+        case (op)
             // R-type, ADD, NOR, AND, OR, XOR, SLL, SRL, SLT, SUB, JR
             6'b000000: begin
-                ForceInstr <= (op == 6'b001000);
+                ForceInstr <= (funct == 6'b001000);
                 ZeroInverted <= X;
-                Inverted <= (op == 6'b100111);
+                Inverted <= (funct == 6'b100111);
                 Sum <= 0;
-                NextInstr <= (op == 6'b001000);
+                NextInstr <= (funct == 6'b001000);
                 NextInstrAddress <= 0;
                 DataWriteVal <= 1;
-                inA <= (op == 6'b001000);
+                inA <= (funct == 6'b001000);
                 ALUImmReg <= 0;
                 WB_RA <= 0;
                 WBDest <= 0;
-                Sign <= (op == 101010);
-                sh_amt <= ((op == 6'b000010) | (op == 6'b000000));
+                Sign <= (funct == 6'b101010);
+                sh_amt <= ((funct == 6'b000010) | (funct == 6'b000000));
             end
 
             // MUL

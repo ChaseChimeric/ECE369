@@ -25,6 +25,7 @@ module ALUController (
                 case (funct)
                     6'b100000: opCode = ADD;    // ADD instruction, funct = 100000
                     6'b100010: opCode = SUB;    // SUB instruction, funct = 100010
+                    6'b101010: opCode = SUB;    // SLT instruction, funct = 101010
                     6'b100100: opCode = AND;    // AND instruction, funct = 100100
                     6'b100101: opCode = OR;     // OR  instruction, funct = 100101
                     6'b100111: opCode = OR;     // NOR instruction, funct = 100111
