@@ -1,35 +1,32 @@
-`timescale 1ns / 1ps
 
+module DataMemory_tb;
 
+    // Parameters
 
-module InstructionFetchUnit_tb();
-
-
-    reg Reset;
+    //Ports
+    reg [31:0] Address;
+    reg [31:0] WriteData;
     reg Clk;
-    wire [31:0] Instruction;
-    wire [31:0] Result;
-    
+    reg MemWrite;
+    reg MemRead;
+    reg [1:0] MemMode;
+    wire [31:0] ReadData;
 
-
-    InstructionFetchUnit ifu0(
-        .Reset(Reset),
+    DataMemory  DataMemory_inst (
+        .Address(Address),
+        .WriteData(WriteData),
         .Clk(Clk),
-        .Instruction(Instruction),
-        .PCResult(Result)
+        .MemWrite(MemWrite),
+        .MemRead(MemRead),
+        .MemMode(MemMode),
+        .ReadData(ReadData)
     );
 
-    initial begin
-		Clk <= 1'b0;
-		forever #10 Clk <= ~Clk;
-	end
 
     initial begin
-        Reset <= 1;#50
-        Reset <= 0;#10
-        #250;
+        
+        #10
+        $finish;
     end
-
-
 
 endmodule

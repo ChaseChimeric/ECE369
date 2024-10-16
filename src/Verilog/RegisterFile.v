@@ -81,7 +81,8 @@ module RegisterFile(
 			ReadData2 <= mem[ReadRegister2];
 		end
 	end
-
+    
+    integer count;
 	initial begin
         for(count = 0;count<32;count = count + 1) begin
             mem[count] = count*100;

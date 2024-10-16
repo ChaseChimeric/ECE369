@@ -15,6 +15,7 @@ module MemController(
     output reg RegWrite;
     output reg RegRead;
     output reg [1:0] Memmode;
+    
     localparam X = 2'b0;
     localparam WORD = 2'b0;
     localparam HALF = 2'b1;

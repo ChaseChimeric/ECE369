@@ -80,7 +80,7 @@ module ALUController (
             6'b000100: opCode <= XOR;
 
             // For unused instructions, just use the shift left, J and JAL
-            default: opCode <= SLL;
+            default: opCode <= SHL;
             
         endcase
     end

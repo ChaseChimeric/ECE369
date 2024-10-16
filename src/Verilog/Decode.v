@@ -21,7 +21,7 @@ module Decode (
     DataIn20_15,
     MemReadEn,
     MemWriteEn,
-    RegWrite,
+    RegWriteIn,
     sh_amt
 );
 
@@ -29,7 +29,7 @@ module Decode (
     output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15;
     wire [31:0] DataIn25_21Wire, DataIn20_15Wire;
 
-    input clk;
+    input clk, RegWriteIn;
     output reg [2:0] ForceInstr;
     wire [2:0] ForceInstrWire;
     output reg ZeroInverted, 
@@ -46,7 +46,7 @@ module Decode (
                AdderAdd, 
                MemReadEn, 
                MemWriteEn, 
-               RegWrite,
+               RegWriteOut,
                sh_amt;
 
     wire ForceInstrWire,
@@ -64,7 +64,7 @@ module Decode (
          AdderAddWire, 
          MemReadEnWire, 
          MemWriteEnWire, 
-         RegWriteWire,
+         RegWriteWireOutWire,
          sh_amtWire,
          RegReadWire;
     
@@ -76,7 +76,7 @@ module Decode (
         Sum <= SumWire;
         NextInstrWire <= NextInstr;
         NextInstrAddress <= NextInstrAddressWire;
-        DataWriteVal <- DataWriteVal;
+        DataWriteVal <= DataWriteVal;
         ALUImmReg <= ALUImmRegWire;
         WB_RA <= WB_RAWire;
         WBDestRdRt <= WBDestRdRtWire;
@@ -85,7 +85,7 @@ module Decode (
         sh_amt <= sh_amtWire;
         MemReadEn <= MemReadEnWire;
         MemWriteEn <= MemReadEnWire;
-        RegWrite <= RegWriteWire;
+        RegWriteOut <= RegWriteOutWire;
         ForceInstr <= ForceInstrWire;
     end
 
@@ -113,7 +113,7 @@ module Decode (
         .Funct(InstructionIn[5:0]),   // Use the function code for R-type instructions
         .MemWrite(MemWriteEnWire),    // Memory Write enable signal
         .MemRead(MemReadEnWire),      // Memory Read enable signal
-        .RegWrite(RegWriteWire),      // Register Write enable signal
+        .RegWrite(RegWriteWireOut),      // Register Write enable signal
         .RegRead(RegReadWire),        // Register Read (may reuse RegWrite)
         .Memmode(MemMode)             // Memory mode (word, half, byte)
     );
@@ -123,7 +123,7 @@ module Decode (
         .ReadRegister2(InstructionIn[20:16]),   // Rt
         .WriteRegister(WBDestRdRtWire),         // Destination register (Rd/Rt)
         .WriteData(DataWriteValWire),           // Data to be written to the register
-        .RegWrite(RegWriteWire),                // Control signal to enable writing
+        .RegWrite(RegWriteWireIn),                // Control signal to enable writing
         .Clk(clk),                              // Clock signal
         .ReadData1(DataIn25_21Wire),                // Read data from Rs
         .ReadData2(DataIn20_15Wire)                 // Read data from Rt

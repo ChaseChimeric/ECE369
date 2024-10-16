@@ -32,7 +32,7 @@ module Execute (
     output reg MemWriteEnOut,
     output reg AdderAddOut,
     output reg MemReadEnOut,
-    output reg ForceInstr,
+    output reg ForceInstrOut,
     output reg WBDestOut,
     output reg [1:0] MemModeOut,
     output reg [31:0] NextInstrOut,
@@ -68,7 +68,7 @@ module Execute (
     );
 
     wire [31:0] Mux1Out;
-    assign Mux1Out = (ALUImmReg) ? SignExtendedInstrImm : DataAtInstruction20_16In;
+    assign Mux1Out = (ALUImmReg) ? SignExtendedInstrImm : DataAtInstr20_16In;
 
     wire [31:0] Mux2Out;
     assign Mux2Out = (inA) ? 32'd0 : Mux1Out;
@@ -83,14 +83,21 @@ module Execute (
     );
 
     wire ZeroOutALU;
+    wire [31:0] ALUResult;
     ALU32Bit ALU (
         .ALUControl(ALUOpCode), 
         .A(DataAtInstr25_21In), 
-        .B(DataAtInstr20_16In), 
-        .ALUResult(ALUOut), 
+        .B(Mux3Out), 
+        .ALUResult(ALUResult), 
         .Zero(ZeroOutALU)
     );
-
-    assign ZeroOrNot = (ZeroInverted) ? (!ZeroOutALU) : (ZeroOutALU);
+    
+    wire [31:0] InvertedALUOrNot;
+    assign InvertedALUOrNot = (Inverted) ? (~ALUResult) : ALUResult;
+    
+    always @(posedge clk) begin
+        ZeroOrNot <= (ZeroInverted) ? (!ZeroOutALU) : (ZeroOutALU);
+        ALUOut <= (Sign) ? (InvertedALUOrNot >> 31) : InvertedALUOrNot;
+    end
     
 endmodule
