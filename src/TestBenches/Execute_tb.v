@@ -160,17 +160,45 @@ module Execute_tb;
         
         #100
         
-        // Test scenario 1: R-type instruction (XOR)
-        op = 6'b000000;  // R-type
-        funct = 6'b100110;  // XOR
+        // Test scenario 1: R-type instruction (MUL)
+        op = 6'b011100;  // R-type
+        funct = 6'b100110;  // MUL
         Instr = {op, 5'b0, 5'b0, 5'b0, 5'b0, funct};
-        DataAtInstr25_21In = 32'hFF00FF00;
-        DataAtInstr20_16In = 32'hF0F0F0F0;
+        DataAtInstr25_21In = 32'h00000003;
+        DataAtInstr20_16In = 32'h00000002;
 
         #100;  // Wait for one clock cycle
         
         // Observe the outputs
-        $display("R-type XOR FF00FF00 ^ F0F0F0F0\nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        $display("R-type MUL 3 * 5\nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100
+        
+        // Test scenario 1: R-type instruction (SLL)
+        op = 6'b000000;  // R-type
+        funct = 6'b000000;  // SLL
+        Instr = {op, 5'b0, 5'b0, 5'b0, 5'd2, funct};
+        DataAtInstr25_21In = 32'h00000003;
+        DataAtInstr20_16In = 32'h00000004;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("R-type SLL 3 << 2\nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100
+        
+        // Test scenario 1: R-type instruction (SRL)
+        op = 6'b000000;  // R-type
+        funct = 6'b000010;  // SRL
+        Instr = {op, 5'b0, 5'b0, 5'b0, 5'd2, funct};
+        DataAtInstr25_21In = 32'h000000016;
+        DataAtInstr20_16In = 32'h00000004;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("R-type SRL 22 >> 2\nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
         
         #100
         
@@ -227,6 +255,20 @@ module Execute_tb;
         
         // Observe the outputs
         $display("I-type XORI 14 ^ 5 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (SLTI)
+        op = 6'b001010;  // SLTI
+        funct = 6'b001110;  // IMM = 14
+        Instr = {funct, 5'b0, 5'b0, 5'b0, 5'b0, op};
+        DataAtInstr25_21In = 32'h00000005;
+        DataAtInstr20_16In = 32'hF0F0F0FF;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type SLTI 5 < 14 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
         
         #100;
         
