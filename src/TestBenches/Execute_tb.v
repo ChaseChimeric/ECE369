@@ -188,7 +188,7 @@ module Execute_tb;
         
         // Observe the outputs
         $display("R-type SLL 3 << 2\nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
-        
+        sh_amt_val = 6'd0;
         #100
         
         // Test scenario 1: R-type instruction (SRL)
@@ -202,7 +202,7 @@ module Execute_tb;
         
         // Observe the outputs
         $display("R-type SRL 22 >> 2\nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
-        
+        sh_amt_val = 6'd0;
         #100
         
         // Test scenario 1: R-type instruction (SLT)
@@ -337,7 +337,7 @@ module Execute_tb;
         
         // Test scenario 1: R-type instruction (SH)
         op = 6'b101001;  // SH
-        op = 6'b001000;  // IMM = 8
+        funct = 6'b001000;  // IMM = 8
         DataAtInstr25_21In = 32'h00000001;
         DataAtInstr20_16In = 32'hF0F0F0FF;
 
@@ -349,8 +349,8 @@ module Execute_tb;
         #100;
         
         // Test scenario 1: R-type instruction (SW)
-        funct = 6'b100001;  // SW
-        op = 6'b000110;  // IMM = 6
+        op = 6'b101011;  // SW
+        funct = 6'b000110;  // IMM = 6
         DataAtInstr25_21In = 32'h00000003;
         DataAtInstr20_16In = 32'hF0F0F0FF;
 
@@ -358,6 +358,177 @@ module Execute_tb;
         
         // Observe the outputs
         $display("I-type SW 6 + 3 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (JR)
+        op = 6'b101011;  // R
+        funct = 6'b001000;  // JR
+        DataAtInstr25_21In = 32'h00000003;
+        DataAtInstr20_16In = 32'hF0F0F0FF;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type JR 3 + 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (J)
+        op = 6'b101011;  // R
+        funct = 6'b001000;  // JR
+        DataAtInstr25_21In = 32'h00000003;
+        DataAtInstr20_16In = 32'hF0F0F0FF;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type JR X + X \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (JAL)
+        op = 6'b000011;  // JAL
+        funct = 6'b001000;  // JR
+        DataAtInstr25_21In = 32'h00000003;
+        DataAtInstr20_16In = 32'hF0F0F0FF;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type JAL X + X \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BNE)
+        op = 6'b000101;  // BNE
+        funct = 6'b001000;  // BNE
+        DataAtInstr25_21In = 32'h00000003;
+        DataAtInstr20_16In = 32'h00000003;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BNE 3 - 3 != 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BEQ)
+        op = 6'b000100;  // BEQ
+        funct = 6'b001000;  // BEQ
+        DataAtInstr25_21In = 32'h00000003;
+        DataAtInstr20_16In = 32'h00000003;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BEQ 3 == 3 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BGEZ)
+        op = 6'b000111;  // BGEZ
+        funct = 6'b001000;  // BGEZ
+        DataAtInstr25_21In = 32'h00000000;
+        DataAtInstr20_16In = 32'h00000000;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BGEZ 0 >= 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BGEZ)
+        op = 6'b000111;  // BGEZ
+        funct = 6'b001000;  // BGEZ
+        DataAtInstr25_21In = 32'h00000004;
+        DataAtInstr20_16In = 32'h00000000;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BGEZ 4 >= 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BGEZ)
+        op = 6'b000111;  // BGEZ
+        funct = 6'b001000;  // BGEZ
+        DataAtInstr25_21In = 32'hFFFFFFFF;
+        DataAtInstr20_16In = 32'h00000000;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BGEZ -1 >= 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BLEZ)
+        op = 6'b000110;  // BLEZ
+        funct = 6'b001000;  // BLEZ
+        DataAtInstr25_21In = 32'h00000000;
+        DataAtInstr20_16In = 32'h00000000;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BLEZ 0 <= 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BLEZ)
+        op = 6'b000110;  // BLEZ
+        funct = 6'b001000;  // BGEZ
+        DataAtInstr25_21In = 32'h00000004;
+        DataAtInstr20_16In = 32'h00000000;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BLEZ 4 <= 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BLEZ)
+        op = 6'b000110;  // BLEZ
+        funct = 6'b001000;  // BLEZ
+        DataAtInstr25_21In = 32'hFFFFFFFF;
+        DataAtInstr20_16In = 32'h00000000;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BLEZ -1 <= 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BGTZ)
+        op = 6'b000110;  // BGTZ
+        funct = 6'b001000;  // BGTZ
+        DataAtInstr25_21In = 32'h00000004;
+        DataAtInstr20_16In = 32'h00000000;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BGTZ 4 > 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
+        
+        // Test scenario 1: R-type instruction (BLTZ)
+        op = 6'b000001;  // BLTZ
+        funct = 6'b001000;  // BLEZ
+        DataAtInstr25_21In = 32'hFFFFFFFF;
+        DataAtInstr20_16In = 32'h00000000;
+
+        #100;  // Wait for one clock cycle
+        
+        // Observe the outputs
+        $display("I-type BLTZ -1 < 0 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructionOut: %b\nNextInstrAddressOut: %h\nDataWriteValOut: %h\nWB_RAOut: %b\nRegWriteOut: %b\nMemWriteEnOut: %b\nAdderAddOut: %b\nMemReadEnOut: %b\nWBDestOut: %b\nMemModeOut: %b\nNextInstrOut: %h\nInstrOut: %h\n", ALUOut, SumOut, ZeroOrNotOut, NextInstructionOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, RegWriteOut, MemWriteEnOut, AdderAddOut, MemReadEnOut, WBDestOut, MemModeOut, NextInstrOut, InstrOut);
+        
+        #100;
         
         #100;
         
