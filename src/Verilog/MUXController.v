@@ -322,10 +322,44 @@ module MUXController (
                 sh_amt <= 0;
             end
 
-            // BGEZ and BLTZ and BLEZ and BGTZ
+            // BGEZ and BLTZ
             6'b000001: begin
                 ForceInstr <= (branchZeroVal == 5'd0) ? 5 : 3;
                 Inverted <= (branchZeroVal == 5'b00001); // 1 for BGEZ, 0 for BLTZ
+                ZeroInverted <= branchZeroVal != 5'b00001;
+                Sum <= 0;
+                NextInstr <= 0;
+                NextInstrAddress <= X;
+                DataWriteVal <= X;
+                inA <= 1;
+                ALUImmReg <= X;
+                WB_RA <= X;
+                WBDest <= 0;
+                Sign <= 1;
+                sh_amt <= 0;
+            end
+            
+            // BLEZ
+            6'b000110: begin
+                ForceInstr <= 5;
+                Inverted <= 0; // 1 for BGEZ, 0 for BLTZ
+                ZeroInverted <= 1;
+                Sum <= 0;
+                NextInstr <= 0;
+                NextInstrAddress <= X;
+                DataWriteVal <= X;
+                inA <= 1;
+                ALUImmReg <= X;
+                WB_RA <= X;
+                WBDest <= 0;
+                Sign <= 1;
+                sh_amt <= 0;
+            end
+            
+            // BGTZ
+            6'b000111: begin
+                ForceInstr <= 3;
+                Inverted <= 0;
                 ZeroInverted <= 1;
                 Sum <= 0;
                 NextInstr <= 0;
