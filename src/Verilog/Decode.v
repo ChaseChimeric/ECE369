@@ -32,6 +32,8 @@ module Decode (
     input clk, RegWriteIn;
     output reg [2:0] ForceInstr;
     wire [2:0] ForceInstrWire;
+    output reg [1:0] Memmode;
+    wire [1:0] MemmodeWire;
     output reg ZeroInverted, 
                Inverted, 
                Sum, 
@@ -87,6 +89,7 @@ module Decode (
         MemWriteEn <= MemReadEnWire;
         RegWriteOut <= RegWriteOutWire;
         ForceInstr <= ForceInstrWire;
+        Memmode <= MemmodeWire;
     end
 
     MUXController mux_ctrl (
@@ -115,7 +118,7 @@ module Decode (
         .MemRead(MemReadEnWire),      // Memory Read enable signal
         .RegWrite(RegWriteWireOut),      // Register Write enable signal
         .RegRead(RegReadWire),        // Register Read (may reuse RegWrite)
-        .Memmode(MemMode)             // Memory mode (word, half, byte)
+        .Memmode(MemModeWire)             // Memory mode (word, half, byte)
     );
 
     RegisterFile reg_file (
