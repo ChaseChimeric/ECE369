@@ -96,7 +96,7 @@ module Execute (
     assign InvertedALUOrNot = (Inverted) ? (~ALUResult) : ALUResult;
     
     always @(posedge clk) begin
-        ZeroOrNot <= (ZeroInverted) ? (!ZeroOutALU) : (ZeroOutALU);
+        ZeroOrNot <= (ZeroInverted) ? (~ZeroOutALU) : (ZeroOutALU);
         ALUOut <= (Sign) ? (InvertedALUOrNot >> 31) : InvertedALUOrNot;
     end
     
