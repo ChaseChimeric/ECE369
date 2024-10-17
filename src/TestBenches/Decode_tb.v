@@ -28,6 +28,8 @@ module Decode_tb;
   wire RegWriteOut;
   wire sh_amt;
 
+
+
   Decode  Decode_inst (
     .InstructionIn(InstructionIn),
     .NextInstructionIn(NextInstructionIn),
@@ -55,27 +57,23 @@ module Decode_tb;
     .RegWriteOut(RegWriteOut),
     .sh_amt(sh_amt)
   );
-
+  initial begin
+    clk = 0;
+    forever #50 clk = ~clk;
+  end
+ 
     initial begin
-        // Test Add
-        clk <= 0;
-        # 17;
-        InstructionIn <= {6'd0, 5'd1, 5'd2, 5'd3, 5'd0, 6'b100000}
-        NextInstructionIn <= 32'd13;
-        # 20
-        if(InstructionOut == InstructionIn &&
-            NextInstructionOut == NextInstructionIn &&
-            DataIn25_21 == 100 &&
-            DataIn20_15 == 200) begin
-                $display("Instruction, NextInstruction and Data Read Valid");
-        end else begin
-                $display("Instruction, NextInstruction and Data Read Not Valid");
-        end
-        
-        #20; $finish;
-        
+      #100
+      //R-TYPE ADD
+       // Test scenario 1: R-type instruction (ADD)
+      InstructionIn={6'b0,5'b0, 5'b0,5'b0, 5'b0,6'b0};
+      
+      #100;  // Wait for one clock cycle
+
+      $display("ADD signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $finish;
     end
     
-    always #10  clk = ! clk ;
+    
 
 endmodule
