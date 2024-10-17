@@ -8,6 +8,7 @@ module Decode_tb;
   wire [31:0] NextInstructionOut;
   wire [31:0] DataIn25_21;
   wire [31:0] DataIn20_15;
+  reg [31:0] WriteData;
   reg clk;
   reg  RegWriteIn;
   wire [2:0] ForceInstr;
@@ -27,6 +28,7 @@ module Decode_tb;
   wire MemWriteEn;
   wire RegWriteOut;
   wire sh_amt;
+ 
 
 
 
@@ -55,7 +57,8 @@ module Decode_tb;
     .MemReadEn(MemReadEn),
     .MemWriteEn(MemWriteEn),
     .RegWriteOut(RegWriteOut),
-    .sh_amt(sh_amt)
+    .sh_amt(sh_amt),
+    .WriteData(WriteData)
   );
   initial begin
     clk = 0;
@@ -66,11 +69,14 @@ module Decode_tb;
       #100
       //R-TYPE ADD
        // Test scenario 1: R-type instruction (ADD)
-      InstructionIn={6'b0,5'b0, 5'b0,5'b0, 5'b0,6'b0};
-      
+      InstructionIn={6'b0,5'b111, 5'b1,5'b11, 5'b0,6'b100000};
+      RegWriteIn = 0;
+      WriteData = 32'd6;
       #100;  // Wait for one clock cycle
 
       $display("ADD signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      
+      #100;
       $finish;
     end
     

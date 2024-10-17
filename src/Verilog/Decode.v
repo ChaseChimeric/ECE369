@@ -7,6 +7,7 @@ module Decode (
     Inverted,
     Sum,
     NextInstructionOut,
+    NextInstr,
     NextInstrAddress,
     DataWriteVal,
     ALUImmReg,
@@ -22,17 +23,19 @@ module Decode (
     MemReadEn,
     MemWriteEn,
     RegWriteIn,
-    sh_amt
+    RegWriteOut,
+    sh_amt,
+    WriteData
 );
 
-    input [31:0] InstructionIn, NextInstructionIn;
+    input [31:0] InstructionIn, NextInstructionIn, WriteData;
     output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15;
     wire [31:0] DataIn25_21Wire, DataIn20_15Wire;
 
     input clk, RegWriteIn;
     output reg [2:0] ForceInstr;
     wire [2:0] ForceInstrWire;
-    output reg [1:0] Memmode;
+    output reg [1:0] MemMode;
     wire [1:0] MemmodeWire;
     output reg ZeroInverted, 
                Inverted, 
@@ -41,7 +44,7 @@ module Decode (
                NextInstrAddress, 
                DataWriteVal, 
                ALUImmReg, 
-               WB_RA, 
+               WB_RA,
                WBDestRdRt, 
                Sign, 
                inA, 
@@ -51,8 +54,8 @@ module Decode (
                RegWriteOut,
                sh_amt;
 
-    wire ForceInstrWire,
-         ZeroInvertedWire,
+
+    wire ZeroInvertedWire,
          InvertedWire, 
          SumWire, 
          NextInstrWire, 
@@ -66,7 +69,7 @@ module Decode (
          AdderAddWire, 
          MemReadEnWire, 
          MemWriteEnWire, 
-         RegWriteWireOutWire,
+         RegWriteOutWire,
          sh_amtWire,
          RegReadWire;
     
@@ -76,9 +79,9 @@ module Decode (
         ZeroInverted <= ZeroInvertedWire;
         Inverted <= InvertedWire;
         Sum <= SumWire;
-        NextInstrWire <= NextInstr;
+        NextInstr <= NextInstrWire;
         NextInstrAddress <= NextInstrAddressWire;
-        DataWriteVal <= DataWriteVal;
+        DataWriteVal <= DataWriteValWire;
         ALUImmReg <= ALUImmRegWire;
         WB_RA <= WB_RAWire;
         WBDestRdRt <= WBDestRdRtWire;
@@ -89,12 +92,12 @@ module Decode (
         MemWriteEn <= MemReadEnWire;
         RegWriteOut <= RegWriteOutWire;
         ForceInstr <= ForceInstrWire;
-        Memmode <= MemmodeWire;
+        MemMode <= MemmodeWire;
     end
 
     MUXController mux_ctrl (
-        .funct(InstructionIn[31:26]),
-        .op(InstructionIn[5:0]),
+        .funct(InstructionIn[5:0]),
+        .op(InstructionIn[31:26]),
         .ForceInstr(ForceInstrWire),
         .ZeroInverted(ZeroInvertedWire),
         .Inverted(InvertedWire),
@@ -116,7 +119,7 @@ module Decode (
         .Funct(InstructionIn[5:0]),   // Use the function code for R-type instructions
         .MemWrite(MemWriteEnWire),    // Memory Write enable signal
         .MemRead(MemReadEnWire),      // Memory Read enable signal
-        .RegWrite(RegWriteWireOut),      // Register Write enable signal
+        .RegWrite(RegWriteOutWire),      // Register Write enable signal
         .RegRead(RegReadWire),        // Register Read (may reuse RegWrite)
         .Memmode(MemModeWire)             // Memory mode (word, half, byte)
     );

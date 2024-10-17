@@ -30,14 +30,14 @@ module MUXController (
                Sign,
                sh_amt;
     
-    output reg ForceInstr;
+    output reg [2:0] ForceInstr;
 
     localparam X = 0;
     always @(*) begin
         case (op)
             // R-type, ADD, NOR, AND, OR, XOR, SLL, SRL, SLT, SUB, JR
             6'b000000: begin
-                ForceInstr <= (funct == 6'b001000);
+                ForceInstr <= {2'b00, (funct == 6'b001000)};
                 ZeroInverted <= X;
                 Inverted <= (funct == 6'b100111);
                 Sum <= 0;
