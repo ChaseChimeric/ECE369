@@ -93,6 +93,28 @@ module MemController(
                 RegRead <= 0;
                 Memmode <= X;
              end
+             6'b000111 : begin   //BGTZ
+               MemWrite <= 0; 
+               MemRead <= 0;
+               RegWrite <= 0;
+               RegRead <= 1;
+               Memmode <= X;
+            end
+            6'b000110 : begin   //BLEZ
+               MemWrite <= 0; 
+               MemRead <= 0;
+               RegWrite <= 0;
+               RegRead <= 1;
+               Memmode <= X;
+            end
+            6'b000001 : begin   //BLTZ/BGEZ
+               MemWrite <= 0; 
+               MemRead <= 0;
+               RegWrite <= 0;
+               RegRead <= 1;
+               Memmode <= X;
+            end
+            
          
 
 

@@ -292,6 +292,91 @@ module Decode_tb;
       $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
       #100;
 
+      InstructionIn={6'b000100,5'd26, 5'd23,5'b1, 5'b0,6'b001010};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("BEQ signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+      InstructionIn={6'b000101,5'd26, 5'd23,5'b1, 5'b0,6'b001010};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("BNE signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+      InstructionIn={6'b000001,5'd26, 5'd1,5'b1, 5'b0,6'b001010};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("BGEZ signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+      InstructionIn={6'b000001,5'd26, 5'd0,5'b1, 5'b0,6'b001010};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("BLTZ signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+      InstructionIn={6'b000110,5'd26, 5'd0,5'b1, 5'b0,6'b001010};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("BLEZ signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+      InstructionIn={6'b000111,5'd26, 5'd0,5'b1, 5'b0,6'b001010};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("BGTZ signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+      /////////TESTING NEXT INSTRUCTION + REGISTER WRITING//////////////////
+      InstructionIn={6'b0,5'b0, 5'b1,5'b11, 5'b0,6'b100000};
+      NextInstructionIn={6'b0,5'b0, 5'b1,5'b11, 5'b0,6'b100000};
+
+      RegWriteIn = 1;
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+
+      $display("ADD signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+      
+      InstructionIn={6'b0,5'b0, 5'b1,5'b11, 5'b0,6'b100000};
+      NextInstructionIn={6'b0,5'b0, 5'b1,5'b11, 5'b0,6'b100000};
+
+      RegWriteIn = 1;
+      WriteData = 32'd9;
+      #100;  // Wait for one clock cycle
+
+      $display("ADD signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+      #100;
+
+
 
 
 
