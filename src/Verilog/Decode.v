@@ -25,10 +25,12 @@ module Decode (
     RegWriteIn,
     RegWriteOut,
     sh_amt,
-    WriteData
+    WriteData,
+    RegWriteAddr
 );
 
     input [31:0] InstructionIn, NextInstructionIn, WriteData;
+    input [4:0] RegWriteAddr;
     output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15;
     wire [31:0] DataIn25_21Wire, DataIn20_15Wire;
 
@@ -74,6 +76,8 @@ module Decode (
          RegReadWire;
     
     always @(posedge clk) begin
+        DataIn25_21 <= DataIn25_21Wire;
+        DataIn20_15 <= DataIn20_15Wire;
         InstructionOut <= InstructionIn;
         NextInstructionOut <= NextInstructionIn;
         ZeroInverted <= ZeroInvertedWire;
@@ -89,7 +93,7 @@ module Decode (
         inA <= inAWire;
         sh_amt <= sh_amtWire;
         MemReadEn <= MemReadEnWire;
-        MemWriteEn <= MemReadEnWire;
+        MemWriteEn <= MemWriteEnWire;
         RegWriteOut <= RegWriteOutWire;
         ForceInstr <= ForceInstrWire;
         MemMode <= MemmodeWire;
@@ -121,15 +125,16 @@ module Decode (
         .MemRead(MemReadEnWire),      // Memory Read enable signal
         .RegWrite(RegWriteOutWire),      // Register Write enable signal
         .RegRead(RegReadWire),        // Register Read (may reuse RegWrite)
-        .Memmode(MemModeWire)             // Memory mode (word, half, byte)
+        .Memmode(MemmodeWire)             // Memory mode (word, half, byte)
     );
 
     RegisterFile reg_file (
         .ReadRegister1(InstructionIn[25:21]),   // Rs
         .ReadRegister2(InstructionIn[20:16]),   // Rt
-        .WriteRegister(WBDestRdRtWire),         // Destination register (Rd/Rt)
-        .WriteData(DataWriteValWire),           // Data to be written to the register
-        .RegWrite(RegWriteWireIn),                // Control signal to enable writing
+        .WriteRegister(RegWriteAddr),         // Destination register (Rd/Rt)
+        .WriteData(WriteData),           // Data to be written to the register
+        .RegWrite(RegWriteIn),                // Control signal to enable writing
+        .RegRead(RegReadWire),
         .Clk(clk),                              // Clock signal
         .ReadData1(DataIn25_21Wire),                // Read data from Rs
         .ReadData2(DataIn20_15Wire)                 // Read data from Rt

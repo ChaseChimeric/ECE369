@@ -129,7 +129,7 @@ $display("R-type AND FF00FF00 & F0F0F0F0\nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\
         
 // Test scenario 1: R-type instruction (NOR)
 op = 6'b000000;  // R-type
-funct = 6'b100100;  // NOR
+funct = 6'b100010;  // NOR
 DataAtInstr25_21In = 32'hFF00FF00;
 DataAtInstr20_16In = 32'hF0F0F0F0;
 

@@ -111,11 +111,11 @@ module MUXController (
                 Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
-                DataWriteVal <= 0;
+                DataWriteVal <= 1;
                 inA <= 0;
                 ALUImmReg <= 1;
                 WB_RA <= 0;
-                WBDest <= 0;
+                WBDest <= 1;
                 Sign <= 0;
                 sh_amt <= 0;
             end
@@ -144,11 +144,11 @@ module MUXController (
                 Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
-                DataWriteVal <= 0;
+                DataWriteVal <= 1;
                 inA <= 0;
                 ALUImmReg <= 1;
                 WB_RA <= 0;
-                WBDest <= 0;
+                WBDest <= 1;
                 Sign <= 0;
                 sh_amt <= 0;
             end
@@ -160,11 +160,11 @@ module MUXController (
                 Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
-                DataWriteVal <= 0;
+                DataWriteVal <= 1;
                 inA <= 0;
                 ALUImmReg <= 1;
                 WB_RA <= 0;
-                WBDest <= 0;
+                WBDest <= 1;
                 Sign <= 0;
                 sh_amt <= 0;
             end
@@ -176,11 +176,11 @@ module MUXController (
                 Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 0;
-                DataWriteVal <= 0;
+                DataWriteVal <= 1;
                 inA <= 0;
                 ALUImmReg <= 1;
                 WB_RA <= 0;
-                WBDest <= 0;
+                WBDest <= 1;
                 Sign <= 0;
                 sh_amt <= 0;
             end
