@@ -310,7 +310,7 @@ $display("I-type LH 4 + 8 \nALUOut: %h\nSumOut: %b\nZeroOrNot: %b\nNextInstructi
 #100;
         
 // Test scenario 1: R-type instruction (LB)
-op = 6'b100001;  // LB
+op = 6'b100000;  // LB
 funct = 6'b001000;  // IMM = 8
 DataAtInstr25_21In = 32'h00000001;
 DataAtInstr20_16In = 32'hF0F0F0FF;
