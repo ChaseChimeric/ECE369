@@ -72,7 +72,7 @@ module MUXController (
 
             // J
             6'b000010: begin
-                ForceInstr <= 0;
+                ForceInstr <= 1;
                 ZeroInverted <= X;
                 Inverted <= X;
                 Sum <= 0;

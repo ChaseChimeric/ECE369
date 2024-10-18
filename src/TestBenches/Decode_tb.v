@@ -242,6 +242,38 @@ module Decode_tb;
       $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
       #100;
 
+      InstructionIn={6'b101001,5'd31, 5'd30,5'b1, 5'b0,6'b000100};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("SH signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+      InstructionIn={6'b101011,5'd31, 5'd30,5'b1, 5'b0,6'b000100};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("SW signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+      InstructionIn={6'b000010,5'd31, 5'd30,5'b1, 5'b0,6'b000100};
+      RegWriteIn = 0;
+      RegWriteAddr = {5'b10};
+      WriteData = 32'd6;
+      #100;  // Wait for one clock cycle
+      
+      $display("J signal wires: ForceInstr %d \nZeroInverted %b \nInverted %b \nSum %b \nNextInstr %b \nNextInstrAdress %b \nDataWriteVal %b \nALUImmReg %b \nWB_RA %b \nWBDestRdRt %b \nSign %b \ninA %b \nAdderAdd %b \nMemReadEn %b \nMemWriteEn %b \nRegWriteOut %b \nsh_amt %b",ForceInstr,ZeroInverted,Inverted,Sum,NextInstr,NextInstrAddress,DataWriteVal,ALUImmReg,WB_RA,WBDestRdRt,Sign,inA,AdderAdd,MemReadEn,MemWriteEn,RegWriteOut,sh_amt);
+      $display("Reg Values %d and %d",DataIn25_21,DataIn20_15);
+      #100;
+
+
+
 
       $finish;
     end
