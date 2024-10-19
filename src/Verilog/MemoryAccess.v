@@ -51,7 +51,7 @@ DataMemory datamemory(
     .ReadData(MemoryRead) // add wire?
 );
 
-Mux32Bit4to1 mux4(
+Mux32Bit4To1 mux4(
     .in0(1'b0),
     .in1(1'b1),
     .in2(ZeroOrNot),
