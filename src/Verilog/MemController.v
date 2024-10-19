@@ -116,30 +116,6 @@ module MemController(
                Memmode <= X;
             end
             
-             6'b000001: begin
-                MemWrite <= 0; 
-                MemRead <= 0;
-                RegWrite <= 0;
-                RegRead <= 1;
-                Memmode <= X;
-             end
-             6'b000110: begin
-                MemWrite <= 0; 
-                MemRead <= 0;
-                RegWrite <= 0;
-                RegRead <= 1;
-                Memmode <= X;
-             end
-             
-             6'b000111: begin
-                MemWrite <= 0; 
-                MemRead <= 0;
-                RegWrite <= 0;
-                RegRead <= 1;
-                Memmode <= X;
-             end
-         
-             
             default : begin     //All R-Type , I-Type, SLT(I) and unsupported instructions
                MemWrite <= 0;
                MemRead <= 0;
