@@ -290,7 +290,7 @@ module MUXController (
             end
 
             // BEQ
-            6'b000010: begin
+            6'b000100: begin
                 ForceInstr <= 2;
                 ZeroInverted <= 0;
                 Inverted <= X;
@@ -307,7 +307,7 @@ module MUXController (
             end
 
             // BNE
-            6'b000010: begin
+            6'b000101: begin
                 ForceInstr <= 2;
                 ZeroInverted <= 1;
                 Inverted <= X;
