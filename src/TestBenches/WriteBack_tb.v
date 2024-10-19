@@ -181,6 +181,112 @@ module WriteBack_tb;
     #100;
     $display("\nLB Instr:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
     
+    op = 6'b101000;  // SB        
+    funct = 6'b000111;  // IMM = 7
+    #100;
+    $display("\nSB Instr:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+
+    op = 6'b101001;  // SH
+    funct = 6'b001000;  // IMM = 8
+    #100;
+    $display("\nSH Instr:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+
+    op = 6'b101011;  // SW
+    funct = 6'b000110;  // IMM = 6
+    #100;
+    $display("\nSW Instr:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000000;  // R
+    funct = 6'b001000;  // JR
+    #100;
+    $display("\nJR Instr:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b101011;  // J
+    funct = 6'b001000;  // not matter
+    #100;
+    $display("\nJ Instr:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000011;  // JAL
+    funct = 6'b001000;  // 
+    #100;
+    $display("\nJ Instr:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000101;  // BNE
+    funct = 6'b001000;  // BNE
+    AdderAdd = 0;
+    #100;
+    $display("\nBNE w/ AdderAdd 0:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000101;  // BNE
+    funct = 6'b001000;  // BNE
+    AdderAdd = 1;
+    #100;
+    $display("\nBNE w/ AdderAdd 1:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000100;  // BEQ
+    funct = 6'b001000;  // BEQ
+    AdderAdd = 0;
+    #100;
+    $display("\nBEQ w/ AdderAdd 0:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000100;  // BEQ
+    funct = 6'b001000;  // BEQ
+    AdderAdd = 1;
+    #100;
+    $display("\nBEQ w/ AdderAdd 1:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000001;  // BGEZ
+    branchZeroVal = 5'b00001; // BGEZ
+    funct = 6'b001000;  // imm = 8
+    AdderAdd = 0;
+    #100;
+    $display("\nBGEZ w/ AdderAdd 0:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000001;  // BGEZ
+    branchZeroVal = 5'b00001; // BGEZ
+    funct = 6'b001000;  // imm = 8
+    AdderAdd = 1;
+    #100;
+    $display("\nBGEZ w/ AdderAdd 1:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000110;  // BLEZ
+    funct = 6'b001000;  // BLEZ
+    AdderAdd = 0;
+    #100;
+    $display("\nBLEZ w/ AdderAdd 0:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000110;  // BLEZ
+    funct = 6'b001000;  // BLEZ
+    AdderAdd = 1;
+    #100;
+    $display("\nBLEZ w/ AdderAdd 1:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000111;  // BGTZ
+    funct = 6'b001000;  // BGTZ
+    AdderAdd = 0;
+    #100;
+    $display("\nBGTZ w/ AdderAdd 0:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000111;  // BGTZ
+    funct = 6'b001000;  // BGTZ
+    AdderAdd = 1;
+    #100;
+    $display("\nBGTZ w/ AdderAdd 1:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000001;  // BLTZ
+    funct = 6'b001000;  // BLEZ
+    branchZeroVal = 5'b00000;
+    AdderAdd = 0;
+    #100;
+    $display("\nBLTZ w/ AdderAdd 0:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
+    op = 6'b000001;  // BLTZ
+    funct = 6'b001000;  // BLEZ
+    branchZeroVal = 5'b00000;
+    AdderAdd = 1;
+    #100;
+    $display("\nBLTZ w/ AdderAdd 1:\nMemoryRead: %d\nALUOut: %d\nImmediateExtended: %d\nInstruction: %h\nInstrAdd: %d\nNextInstructionAddress: %d\nAdderAdd: %b\nWB_RA: %b\nNextInstrAddress: %b\nWBDest: %b\nNextInstr: %b\nSum: %b\nDataWriteVal: %b\nWriteData: %d\nInstrAddOut: %d\nImmediateExtendedOut: %d\nWriteRegister: %d\nSumOut: %b\nAdderAddOut: %b\nNextInstrOut: %b\nfunct: %h\nop: %h\nbranchZeroVal: %d\nsh_amt_val: %d\nForceInstr: %b\nZeroInverted: %b\nInverted: %b", MemoryRead, ALUOut, ImmediateExtended, Instruction, InstrAdd, NextInstructionAddress, AdderAdd, WB_RA, NextInstrAddress, WBDest, NextInstr, Sum, DataWriteVal, WriteData, InstrAddOut, ImmediateExtendedOut, WriteRegister, SumOut, AdderAddOut, NextInstrOut, funct, op, branchZeroVal, sh_amt_val, ForceInstr, ZeroInverted, Inverted);
+    
     #100;
     $finish;
   end
