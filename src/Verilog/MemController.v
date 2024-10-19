@@ -100,7 +100,7 @@ module MemController(
             default : begin     //All R-Type , I-Type, SLT(I) and unsupported instructions
                MemWrite <= 0;
                MemRead <= 0;
-               RegWrite <= (Funct!=(6'b001000)); // Jump Register
+               RegWrite <= (!(Funct == (6'b001000) && Op == 6'b000000)); // Jump Register
                RegRead <= 1;
                Memmode <= X; 
             end
