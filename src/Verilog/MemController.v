@@ -93,6 +93,7 @@ module MemController(
                 RegRead <= 0;
                 Memmode <= X;
              end
+<<<<<<< HEAD
              6'b000111 : begin   //BGTZ
                MemWrite <= 0; 
                MemRead <= 0;
@@ -115,6 +116,32 @@ module MemController(
                Memmode <= X;
             end
             
+=======
+             6'b000001: begin
+                MemWrite <= 0; 
+                MemRead <= 0;
+                RegWrite <= 0;
+                RegRead <= 1;
+                Memmode <= X;
+             end
+             6'b000110: begin
+                MemWrite <= 0; 
+                MemRead <= 0;
+                RegWrite <= 0;
+                RegRead <= 1;
+                Memmode <= X;
+             end
+             
+             6'b000111: begin
+                MemWrite <= 0; 
+                MemRead <= 0;
+                RegWrite <= 0;
+                RegRead <= 1;
+                Memmode <= X;
+             end
+             
+             
+>>>>>>> 62441eb5c8f5dd55d123f1b07456ad74be31734c
          
 
 
@@ -122,7 +149,7 @@ module MemController(
             default : begin     //All R-Type , I-Type, SLT(I) and unsupported instructions
                MemWrite <= 0;
                MemRead <= 0;
-               RegWrite <= (Funct!=(6'b001000)); // Jump Register
+               RegWrite <= (!(Funct == (6'b001000) && Op == 6'b000000)); // Jump Register
                RegRead <= 1;
                Memmode <= X; 
             end

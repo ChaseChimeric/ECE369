@@ -131,7 +131,7 @@ module Execute_tb;
                 
         // Test scenario 1: R-type instruction (NOR)
         op = 6'b000000;  // R-type
-        funct = 6'b100010;  // NOR
+        funct = 6'b100111;  // NOR
         DataAtInstr25_21In = 32'hFF00FF00;
         DataAtInstr20_16In = 32'hF0F0F0F0;
         
@@ -364,7 +364,7 @@ module Execute_tb;
         #100;
                 
         // Test scenario 1: R-type instruction (JR)
-        op = 6'b101011;  // R
+        op = 6'b000000;  // R
         funct = 6'b001000;  // JR
         DataAtInstr25_21In = 32'h00000003;
         DataAtInstr20_16In = 32'hF0F0F0FF;
