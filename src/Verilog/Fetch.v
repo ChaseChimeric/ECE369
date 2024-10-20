@@ -2,7 +2,6 @@ module Fetch (
     rst,
     clk,
     jumpAddress,
-    instrAdd,
     imm,
     adderAdd,
     nextInstr,
@@ -11,7 +10,7 @@ module Fetch (
     instrOut,
     ALUOut
 );
-    input instrAdd, adderAdd, sum, rst, clk, nextInstr;
+    input adderAdd, sum, rst, clk, nextInstr;
     input [31:0] jumpAddress, imm, ALUOut;
     output reg [31:0] instrOut;
     output reg [31:0] nextInstruction;
