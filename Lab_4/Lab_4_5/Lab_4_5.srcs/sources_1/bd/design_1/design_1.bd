@@ -7,59 +7,23 @@
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2024.1",
-      "validated": "true"
+      "tool_version": "2024.1"
     },
     "design_tree": {
       "Fetch_0": "",
       "Execute_0": "",
       "Decode_0": "",
-      "MemoryAccess_0": ""
+      "MemoryAccess_0": "",
+      "WriteBack_0": ""
     },
     "ports": {
       "clk_0": {
         "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "ASSOCIATED_RESET": {
-            "value": "rst_0",
-            "value_src": "default"
-          },
-          "CLK_DOMAIN": {
-            "value": "design_1_clk_0",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       },
       "rst_0": {
         "type": "rst",
-        "direction": "I",
-        "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "POLARITY": {
-            "value": "ACTIVE_LOW",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       }
     },
     "components": {
@@ -563,6 +527,106 @@
             "direction": "O"
           }
         }
+      },
+      "WriteBack_0": {
+        "vlnv": "xilinx.com:module_ref:WriteBack:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_WriteBack_0_0",
+        "xci_path": "ip\\design_1_WriteBack_0_0\\design_1_WriteBack_0_0.xci",
+        "inst_hier_path": "WriteBack_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "WriteBack",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "MemoryRead": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ALUOut": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ImmediateExtended": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Instruction": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "InstrAdd": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "NextInstructionAddress": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "RegWriteEnabled": {
+            "direction": "I"
+          },
+          "AdderAdd": {
+            "direction": "I"
+          },
+          "WB_RA": {
+            "direction": "I"
+          },
+          "NextInstrAddress": {
+            "direction": "I"
+          },
+          "WBDest": {
+            "direction": "I"
+          },
+          "NextInstr": {
+            "direction": "I"
+          },
+          "Sum": {
+            "direction": "I"
+          },
+          "DataWriteVal": {
+            "direction": "I"
+          },
+          "WriteData": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "InstrAddOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ImmediateExtendedOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "WriteRegister": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "SumOut": {
+            "direction": "O"
+          },
+          "AdderAddOut": {
+            "direction": "O"
+          },
+          "NextInstrOut": {
+            "direction": "O"
+          },
+          "RegWriteEnabledOut": {
+            "direction": "O"
+          }
+        }
       }
     },
     "nets": {
@@ -710,10 +774,22 @@
           "MemoryAccess_0/AdderAdd"
         ]
       },
+      "Execute_0_DataAtInstruction20_16": {
+        "ports": [
+          "Execute_0/DataAtInstruction20_16",
+          "MemoryAccess_0/rt_dat"
+        ]
+      },
       "Execute_0_DataWriteValOut": {
         "ports": [
           "Execute_0/DataWriteValOut",
           "MemoryAccess_0/DataWriteVal"
+        ]
+      },
+      "Execute_0_ForceInstrOut": {
+        "ports": [
+          "Execute_0/ForceInstrOut",
+          "MemoryAccess_0/ForceInstr"
         ]
       },
       "Execute_0_ImmediateExtended": {
@@ -798,6 +874,120 @@
         "ports": [
           "Fetch_0/nextInstr",
           "Decode_0/NextInstructionIn"
+        ]
+      },
+      "MemoryAccess_0_ALU_out": {
+        "ports": [
+          "MemoryAccess_0/ALU_out",
+          "WriteBack_0/ALUOut"
+        ]
+      },
+      "MemoryAccess_0_AdderAdd_out": {
+        "ports": [
+          "MemoryAccess_0/AdderAdd_out",
+          "WriteBack_0/AdderAdd"
+        ]
+      },
+      "MemoryAccess_0_DataWriteVal_out": {
+        "ports": [
+          "MemoryAccess_0/DataWriteVal_out",
+          "WriteBack_0/DataWriteVal"
+        ]
+      },
+      "MemoryAccess_0_FullInstruction_out": {
+        "ports": [
+          "MemoryAccess_0/FullInstruction_out",
+          "WriteBack_0/Instruction"
+        ]
+      },
+      "MemoryAccess_0_InstrAdd_out": {
+        "ports": [
+          "MemoryAccess_0/InstrAdd_out",
+          "WriteBack_0/InstrAdd"
+        ]
+      },
+      "MemoryAccess_0_MemoryRead_out": {
+        "ports": [
+          "MemoryAccess_0/MemoryRead_out",
+          "WriteBack_0/MemoryRead"
+        ]
+      },
+      "MemoryAccess_0_NextInstrAddress_out": {
+        "ports": [
+          "MemoryAccess_0/NextInstrAddress_out",
+          "WriteBack_0/NextInstructionAddress"
+        ]
+      },
+      "MemoryAccess_0_NextInstr_out": {
+        "ports": [
+          "MemoryAccess_0/NextInstr_out",
+          "WriteBack_0/NextInstr"
+        ]
+      },
+      "MemoryAccess_0_RegWrite_out": {
+        "ports": [
+          "MemoryAccess_0/RegWrite_out",
+          "WriteBack_0/RegWriteEnabled"
+        ]
+      },
+      "MemoryAccess_0_Sum_out": {
+        "ports": [
+          "MemoryAccess_0/Sum_out",
+          "WriteBack_0/Sum"
+        ]
+      },
+      "MemoryAccess_0_WBDest_out": {
+        "ports": [
+          "MemoryAccess_0/WBDest_out",
+          "WriteBack_0/WBDest"
+        ]
+      },
+      "MemoryAccess_0_immExtended_out": {
+        "ports": [
+          "MemoryAccess_0/immExtended_out",
+          "WriteBack_0/ImmediateExtended"
+        ]
+      },
+      "MemoryAccess_0_wb_ra_out": {
+        "ports": [
+          "MemoryAccess_0/wb_ra_out",
+          "WriteBack_0/WB_RA"
+        ]
+      },
+      "WriteBack_0_AdderAddOut": {
+        "ports": [
+          "WriteBack_0/AdderAddOut",
+          "Fetch_0/adderAdd"
+        ]
+      },
+      "WriteBack_0_ImmediateExtendedOut": {
+        "ports": [
+          "WriteBack_0/ImmediateExtendedOut",
+          "Fetch_0/imm"
+        ]
+      },
+      "WriteBack_0_RegWriteEnabledOut": {
+        "ports": [
+          "WriteBack_0/RegWriteEnabledOut",
+          "Decode_0/RegWriteIn"
+        ]
+      },
+      "WriteBack_0_SumOut": {
+        "ports": [
+          "WriteBack_0/SumOut",
+          "Fetch_0/sum"
+        ]
+      },
+      "WriteBack_0_WriteData": {
+        "ports": [
+          "WriteBack_0/WriteData",
+          "Decode_0/WriteData"
+        ]
+      },
+      "WriteBack_0_WriteRegister": {
+        "ports": [
+          "WriteBack_0/WriteRegister",
+          "Decode_0/RegWriteAddr"
         ]
       },
       "clk_0_1": {
