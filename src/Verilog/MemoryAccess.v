@@ -19,6 +19,7 @@ module MemoryAccess(
     input MemWriteEn,
     input AdderAdd,
     input RegWrite,
+    input NextInstrAddressFlag,
 
     output reg Sum_out,
     output reg NextInstr_out,
@@ -32,7 +33,8 @@ module MemoryAccess(
     output reg [31:0]FullInstruction_out ,
     output reg WBDest_out,
     output reg AdderAdd_out,
-    output reg RegWrite_out
+    output reg RegWrite_out,
+    output reg NextInstrAddressFlag_out
 );
 
 
@@ -50,7 +52,7 @@ DataMemory datamemory(
     .ReadData(MemoryRead) // add wire?
 );
 
-always @(*) begin
+always @(posedge Clk) begin
     case (ForceInstr) 
         3'd0: AdderAdd_out <= 0;
         3'd1: AdderAdd_out <= 1;
@@ -71,7 +73,7 @@ Mux32Bit2To1 mux2(
 
 
 
-always @(*) begin
+always @(posedge Clk) begin
     Sum_out <= Sum;
     NextInstr_out <= NextInstr;
     NextInstrAddress_out <= NextInstrAddress;
@@ -86,8 +88,7 @@ always @(*) begin
     FullInstruction_out <= FullInstruction;
     WBDest_out <= WBDest;
     RegWrite_out <= RegWrite;
-    
-
+    NextInstrAddressFlag_out <= NextInstrAddressFlag;
 end
 
 
