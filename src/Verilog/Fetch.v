@@ -24,6 +24,7 @@ module Fetch (
     wire [31:0] programCounterAddress;
     wire [31:0] instrMemAddress;
     wire [31:0] instrOutInternal;
+    wire [31:0] addressOut;
 
     PCAdder add0(
         .PCResult(PCAdderIn),
@@ -31,7 +32,7 @@ module Fetch (
     );
 
     ProgramCounter pc0(
-        .Address(PCAddResult),
+        .Address(addressOut),
         .PCResult(instrMemAddress),
         .Reset(rst),
         .Clk(clk)
