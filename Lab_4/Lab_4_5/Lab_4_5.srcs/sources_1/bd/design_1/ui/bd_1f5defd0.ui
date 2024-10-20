@@ -1,0 +1,83 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.802195",
+   "Default View_TopLeft":"0,20",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port port-id_clk_0 -pg 1 -lvl 0 -x -70 -y 200 -defaultsOSRD
+preplace port port-id_rst_0 -pg 1 -lvl 0 -x -70 -y 170 -defaultsOSRD
+preplace inst Fetch_0 -pg 1 -lvl 1 -x 170 -y 240 -defaultsOSRD
+preplace inst Execute_0 -pg 1 -lvl 3 -x 1100 -y 290 -defaultsOSRD
+preplace inst Decode_0 -pg 1 -lvl 2 -x 550 -y 280 -defaultsOSRD
+preplace inst MemoryAccess_0 -pg 1 -lvl 4 -x 1670 -y 160 -defaultsOSRD
+preplace inst WriteBack_0 -pg 1 -lvl 5 -x 2210 -y 200 -defaultsOSRD
+preplace netloc Decode_0_ALUImmReg 1 2 1 830 230n
+preplace netloc Decode_0_AdderAdd 1 2 1 870 350n
+preplace netloc Decode_0_DataIn20_15 1 2 1 740 410n
+preplace netloc Decode_0_DataIn25_21 1 2 1 750 390n
+preplace netloc Decode_0_DataWriteVal 1 2 1 830 190n
+preplace netloc Decode_0_ForceInstr 1 2 1 870 70n
+preplace netloc Decode_0_InstructionOut 1 2 1 770 330n
+preplace netloc Decode_0_Inverted 1 2 1 N 110
+preplace netloc Decode_0_MemMode 1 2 1 790 290n
+preplace netloc Decode_0_MemReadEn 1 2 1 780 330n
+preplace netloc Decode_0_MemWriteEn 1 2 1 880 370n
+preplace netloc Decode_0_NextInstr 1 2 1 810 150n
+preplace netloc Decode_0_NextInstrAddress 1 2 1 820 170n
+preplace netloc Decode_0_NextInstructionOut 1 2 1 800 150n
+preplace netloc Decode_0_RegWriteOut 1 2 1 760 410n
+preplace netloc Decode_0_Sign 1 2 1 850 230n
+preplace netloc Decode_0_Sum 1 2 1 N 130
+preplace netloc Decode_0_WBDestRdRt 1 2 1 810 270n
+preplace netloc Decode_0_WB_RA 1 2 1 840 210n
+preplace netloc Decode_0_ZeroInverted 1 2 1 N 90
+preplace netloc Decode_0_inA 1 2 1 860 250n
+preplace netloc Decode_0_sh_amt 1 2 1 890 390n
+preplace netloc Execute_0_ALUOut 1 3 1 1400 110n
+preplace netloc Execute_0_DataWriteValOut 1 3 1 1330 50n
+preplace netloc Execute_0_ImmediateExtended 1 3 1 1450 190n
+preplace netloc Execute_0_InstrOut 1 3 1 1460 230n
+preplace netloc Execute_0_MemModeOut 1 3 1 1360 90n
+preplace netloc Execute_0_MemWriteEnOut 1 3 1 1390 260n
+preplace netloc Execute_0_NextInstrOut 1 3 1 1430 210n
+preplace netloc Execute_0_NextInstructionOut 1 3 1 1320 30n
+preplace netloc Execute_0_RegWriteOut 1 3 1 1370 240n
+preplace netloc Execute_0_SumOut 1 3 1 1310 10n
+preplace netloc Execute_0_WB_RAOut 1 3 1 1340 70n
+preplace netloc Execute_0_ZeroOrNot 1 3 1 1350 130n
+preplace netloc Fetch_0_instrOut 1 1 1 N 250
+preplace netloc Fetch_0_nextInstr 1 1 1 320 230n
+preplace netloc clk_0_1 1 0 4 -10 110 330 10 880 -10 N
+preplace netloc rst_0_1 1 0 1 NJ 170
+preplace netloc Execute_0_MemReadEnOut 1 3 1 1410 270n
+preplace netloc Execute_0_WBDestOut 1 3 1 1440 250n
+preplace netloc Execute_0_AdderAddOut 1 3 1 1310 280n
+preplace netloc Execute_0_ForceInstrOut 1 3 1 1380 150n
+preplace netloc Execute_0_DataAtInstruction20_16 1 3 1 1420 170n
+preplace netloc MemoryAccess_0_Sum_out 1 4 1 1940 40n
+preplace netloc MemoryAccess_0_InstrAdd_out 1 4 1 1910 120n
+preplace netloc MemoryAccess_0_MemoryRead_out 1 4 1 1870 70n
+preplace netloc MemoryAccess_0_ALU_out 1 4 1 1880 90n
+preplace netloc MemoryAccess_0_immExtended_out 1 4 1 1890 110n
+preplace netloc MemoryAccess_0_WBDest_out 1 4 1 1870 240n
+preplace netloc MemoryAccess_0_AdderAdd_out 1 4 1 1980 210n
+preplace netloc MemoryAccess_0_RegWrite_out 1 4 1 1970 190n
+preplace netloc MemoryAccess_0_FullInstruction_out 1 4 1 1950 130n
+preplace netloc MemoryAccess_0_NextInstrAddress_out 1 4 1 1960 170n
+preplace netloc MemoryAccess_0_wb_ra_out 1 4 1 1920 100n
+preplace netloc MemoryAccess_0_DataWriteVal_out 1 4 1 1900 80n
+preplace netloc MemoryAccess_0_NextInstr_out 1 4 1 1930 60n
+preplace netloc WriteBack_0_WriteData 1 1 5 340 -80 NJ -80 NJ -80 NJ -80 2440
+preplace netloc WriteBack_0_ImmediateExtendedOut 1 0 6 20 -110 NJ -110 NJ -110 NJ -110 NJ -110 2470
+preplace netloc WriteBack_0_SumOut 1 0 6 0 -90 NJ -90 NJ -90 NJ -90 NJ -90 2450
+preplace netloc WriteBack_0_AdderAddOut 1 0 6 10 -120 NJ -120 NJ -120 NJ -120 NJ -120 2480
+preplace netloc WriteBack_0_RegWriteEnabledOut 1 1 5 350 -100 NJ -100 NJ -100 NJ -100 2460
+preplace netloc WriteBack_0_WriteRegister 1 1 5 360 -70 NJ -70 NJ -70 NJ -70 2430
+levelinfo -pg 1 -70 170 550 1100 1670 2210 2500
+pagesize -pg 1 -db -bbox -sgen -150 -250 2500 810
+"
+}
+{
+   "da_clkrst_cnt":"8"
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "design_1_WriteBack_0_0",
+    "cell_name": "WriteBack_0",
+    "component_reference": "xilinx.com:module_ref:WriteBack:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../Lab_4_5.gen/sources_1/bd/design_1/ip/design_1_WriteBack_0_0",
+    "parameters": {
+      "component_parameters": {
+        "Component_Name": [ { "value": "design_1_WriteBack_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "artix7" } ],
+        "BASE_BOARD_PART": [ { "value": "xilinx.com:ac701:part0:1.4" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7a200t" } ],
+        "NEXTGEN_VERSAL": [ { "value": "0" } ],
+        "PACKAGE": [ { "value": "fbg676" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-2" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../Lab_4_5.gen/sources_1/bd/design_1/ip/design_1_WriteBack_0_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2024.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "MemoryRead": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "ALUOut": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "ImmediateExtended": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "Instruction": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "InstrAdd": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "NextInstructionAddress": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "RegWriteEnabled": [ { "direction": "in" } ],
+        "AdderAdd": [ { "direction": "in" } ],
+        "WB_RA": [ { "direction": "in" } ],
+        "NextInstrAddress": [ { "direction": "in" } ],
+        "WBDest": [ { "direction": "in" } ],
+        "NextInstr": [ { "direction": "in" } ],
+        "Sum": [ { "direction": "in" } ],
+        "DataWriteVal": [ { "direction": "in" } ],
+        "WriteData": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
+        "InstrAddOut": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
+        "ImmediateExtendedOut": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
+        "WriteRegister": [ { "direction": "out", "size_left": "4", "size_right": "0" } ],
+        "SumOut": [ { "direction": "out" } ],
+        "AdderAddOut": [ { "direction": "out" } ],
+        "NextInstrOut": [ { "direction": "out" } ],
+        "RegWriteEnabledOut": [ { "direction": "out" } ]
+      }
+    }
+  }
+}

@@ -8,9 +8,9 @@ module MemoryAccess(
     input [1:0] MemMode ,
     input [31:0] ReadAddr , //from ALUOut
     input ZeroOrNot,
-    input [1:0] ForceInstr ,
+    input [2:0] ForceInstr ,
     input [31:0] rt_dat , // instruction 20:16 DATA AT INStrUCTION
-    input [15:0] immExtended , // instruction 15:0
+    input [31:0] immExtended , // instruction 15:0
     // alu again but to output
     input [31:0] NextInstrAddress ,
     input [31:0] FullInstruction,
@@ -26,7 +26,7 @@ module MemoryAccess(
     output reg wb_ra_out,
     output reg [31:0] InstrAdd_out ,
     output reg [31:0] MemoryRead_out , //from ALUOut
-    output reg [15:0] immExtended_out , // instruction 16:0
+    output reg [31:0] immExtended_out , // instruction 16:0
     output reg [31:0] ALU_out ,
     output reg [31:0] NextInstrAddress_out ,
     output reg [31:0]FullInstruction_out ,
@@ -36,7 +36,6 @@ module MemoryAccess(
 );
 
 
-wire AdderAdd_out_sig;
 wire MemoryRead_out_sig;
 wire InstrAdd_out_sig;
 
@@ -51,15 +50,16 @@ DataMemory datamemory(
     .ReadData(MemoryRead) // add wire?
 );
 
-Mux32Bit4To1 mux4(
-    .in0(1'b0),
-    .in1(1'b1),
-    .in2(ZeroOrNot),
-    .in3(ReadAddr),
-    .sel(ForceInstr),
-    .mux_out(AdderAdd)
-
-);
+always @(*) begin
+    case (ForceInstr) 
+        3'd0: AdderAdd_out <= 0;
+        3'd1: AdderAdd_out <= 1;
+        3'd2: AdderAdd_out <= ZeroOrNot;
+        3'd3: AdderAdd_out <= ReadAddr;
+        3'd4: AdderAdd_out <= ZeroOrNot | ReadAddr;
+        default: AdderAdd_out <= 0;
+    endcase
+end
 
 Mux32Bit2To1 mux2(
     .in0(FullInstruction),
@@ -78,9 +78,9 @@ always @(*) begin
     DataWriteVal_out <= DataWriteVal;
     wb_ra_out <= wb_ra;
     InstrAdd_out <= InstrAdd_out_sig; //new mux
-    AdderAdd_out <= AdderAdd_out_sig;
     MemoryRead_out <= MemoryRead_out_sig;
     immExtended_out <= immExtended;
+    ALU_out <= ReadAddr;
     ALU_out <= ReadAddr;
     NextInstrAddress_out <= NextInstrAddress;
     FullInstruction_out <= FullInstruction;
