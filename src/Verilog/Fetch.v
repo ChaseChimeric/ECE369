@@ -7,14 +7,14 @@ module Fetch (
     adderAdd,
     nextInstr,
     sum,
-    nextInstr,
+    nextInstruction,
     instrOut,
     ALUOut
 );
-    input instrAdd, adderAdd, sum, rst, clk;
+    input instrAdd, adderAdd, sum, rst, clk, nextInstr;
     input [31:0] jumpAddress, imm, ALUOut;
     output reg [31:0] instrOut;
-    output reg [31:0] nextInstr;
+    output reg [31:0] nextInstruction;
 
 
     wire [31:0] PCAdderIn;
@@ -50,7 +50,7 @@ module Fetch (
    
     always @(posedge clk) begin
         instrOut <= instrOutInternal;
-        nextInstr <= internalNextInstr;
+        nextInstruction <= internalNextInstr;
     end
 
 endmodule
