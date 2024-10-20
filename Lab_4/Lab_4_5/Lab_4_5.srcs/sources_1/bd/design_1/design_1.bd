@@ -1,0 +1,820 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xEDAC9A23B680BD86",
+      "device": "xc7a200tfbg676-2",
+      "gen_directory": "../../../../Lab_4_5.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2024.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "Fetch_0": "",
+      "Execute_0": "",
+      "Decode_0": "",
+      "MemoryAccess_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "Fetch_0": {
+        "vlnv": "xilinx.com:module_ref:Fetch:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_Fetch_0_0",
+        "xci_path": "ip\\design_1_Fetch_0_0\\design_1_Fetch_0_0.xci",
+        "inst_hier_path": "Fetch_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Fetch",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "jumpAddress": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instrAdd": {
+            "direction": "I"
+          },
+          "imm": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "adderAdd": {
+            "direction": "I"
+          },
+          "nextInstr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "sum": {
+            "direction": "I"
+          },
+          "instrOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ALUOut": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "Execute_0": {
+        "vlnv": "xilinx.com:module_ref:Execute:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_Execute_0_0",
+        "xci_path": "ip\\design_1_Execute_0_0\\design_1_Execute_0_0.xci",
+        "inst_hier_path": "Execute_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Execute",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "ZeroInverted": {
+            "direction": "I"
+          },
+          "Inverted": {
+            "direction": "I"
+          },
+          "Sum": {
+            "direction": "I"
+          },
+          "NextInstruction": {
+            "direction": "I"
+          },
+          "NextInstrAddress": {
+            "direction": "I"
+          },
+          "DataWriteVal": {
+            "direction": "I"
+          },
+          "WB_RA": {
+            "direction": "I"
+          },
+          "Sign": {
+            "direction": "I"
+          },
+          "inA": {
+            "direction": "I"
+          },
+          "ALUImmReg": {
+            "direction": "I"
+          },
+          "WBDest": {
+            "direction": "I"
+          },
+          "ForceInstr": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "MemReadEn": {
+            "direction": "I"
+          },
+          "AdderAdd": {
+            "direction": "I"
+          },
+          "MemWriteEn": {
+            "direction": "I"
+          },
+          "sh_amt": {
+            "direction": "I"
+          },
+          "RegWrite": {
+            "direction": "I"
+          },
+          "MemMode": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "NextInstr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Instr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DataAtInstr25_21In": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "DataAtInstr20_16In": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "SumOut": {
+            "direction": "O"
+          },
+          "ZeroOrNot": {
+            "direction": "O"
+          },
+          "NextInstructionOut": {
+            "direction": "O"
+          },
+          "NextInstrAddressOut": {
+            "direction": "O"
+          },
+          "DataWriteValOut": {
+            "direction": "O"
+          },
+          "WB_RAOut": {
+            "direction": "O"
+          },
+          "RegWriteOut": {
+            "direction": "O"
+          },
+          "MemWriteEnOut": {
+            "direction": "O"
+          },
+          "AdderAddOut": {
+            "direction": "O"
+          },
+          "MemReadEnOut": {
+            "direction": "O"
+          },
+          "ForceInstrOut": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "WBDestOut": {
+            "direction": "O"
+          },
+          "MemModeOut": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "NextInstrOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "InstrOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "DataAtInstruction20_16": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ImmediateExtended": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ALUOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "Decode_0": {
+        "vlnv": "xilinx.com:module_ref:Decode:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_Decode_0_0",
+        "xci_path": "ip\\design_1_Decode_0_0\\design_1_Decode_0_0.xci",
+        "inst_hier_path": "Decode_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Decode",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "InstructionIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "NextInstructionIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ForceInstr": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "ZeroInverted": {
+            "direction": "O"
+          },
+          "Inverted": {
+            "direction": "O"
+          },
+          "Sum": {
+            "direction": "O"
+          },
+          "NextInstructionOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "NextInstr": {
+            "direction": "O"
+          },
+          "NextInstrAddress": {
+            "direction": "O"
+          },
+          "DataWriteVal": {
+            "direction": "O"
+          },
+          "ALUImmReg": {
+            "direction": "O"
+          },
+          "WB_RA": {
+            "direction": "O"
+          },
+          "WBDestRdRt": {
+            "direction": "O"
+          },
+          "MemMode": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "Sign": {
+            "direction": "O"
+          },
+          "InstructionOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "inA": {
+            "direction": "O"
+          },
+          "AdderAdd": {
+            "direction": "O"
+          },
+          "DataIn25_21": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "DataIn20_15": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "MemReadEn": {
+            "direction": "O"
+          },
+          "MemWriteEn": {
+            "direction": "O"
+          },
+          "RegWriteIn": {
+            "direction": "I"
+          },
+          "RegWriteOut": {
+            "direction": "O"
+          },
+          "sh_amt": {
+            "direction": "O"
+          },
+          "WriteData": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "RegWriteAddr": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          }
+        }
+      },
+      "MemoryAccess_0": {
+        "vlnv": "xilinx.com:module_ref:MemoryAccess:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_MemoryAccess_0_0",
+        "xci_path": "ip\\design_1_MemoryAccess_0_0\\design_1_MemoryAccess_0_0.xci",
+        "inst_hier_path": "MemoryAccess_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MemoryAccess",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Sum": {
+            "direction": "I"
+          },
+          "NextInstr": {
+            "direction": "I"
+          },
+          "DataWriteVal": {
+            "direction": "I"
+          },
+          "wb_ra": {
+            "direction": "I"
+          },
+          "MemMode": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "ReadAddr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ZeroOrNot": {
+            "direction": "I"
+          },
+          "ForceInstr": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "rt_dat": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "immExtended": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "NextInstrAddress": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "FullInstruction": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "WBDest": {
+            "direction": "I"
+          },
+          "MemReadEn": {
+            "direction": "I"
+          },
+          "MemWriteEn": {
+            "direction": "I"
+          },
+          "AdderAdd": {
+            "direction": "I"
+          },
+          "RegWrite": {
+            "direction": "I"
+          },
+          "Sum_out": {
+            "direction": "O"
+          },
+          "NextInstr_out": {
+            "direction": "O"
+          },
+          "DataWriteVal_out": {
+            "direction": "O"
+          },
+          "wb_ra_out": {
+            "direction": "O"
+          },
+          "InstrAdd_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "MemoryRead_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "immExtended_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ALU_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "NextInstrAddress_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "FullInstruction_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "WBDest_out": {
+            "direction": "O"
+          },
+          "AdderAdd_out": {
+            "direction": "O"
+          },
+          "RegWrite_out": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Decode_0_ALUImmReg": {
+        "ports": [
+          "Decode_0/ALUImmReg",
+          "Execute_0/ALUImmReg"
+        ]
+      },
+      "Decode_0_AdderAdd": {
+        "ports": [
+          "Decode_0/AdderAdd",
+          "Execute_0/AdderAdd"
+        ]
+      },
+      "Decode_0_DataIn20_15": {
+        "ports": [
+          "Decode_0/DataIn20_15",
+          "Execute_0/DataAtInstr20_16In"
+        ]
+      },
+      "Decode_0_DataIn25_21": {
+        "ports": [
+          "Decode_0/DataIn25_21",
+          "Execute_0/DataAtInstr25_21In"
+        ]
+      },
+      "Decode_0_DataWriteVal": {
+        "ports": [
+          "Decode_0/DataWriteVal",
+          "Execute_0/DataWriteVal"
+        ]
+      },
+      "Decode_0_ForceInstr": {
+        "ports": [
+          "Decode_0/ForceInstr",
+          "Execute_0/ForceInstr"
+        ]
+      },
+      "Decode_0_InstructionOut": {
+        "ports": [
+          "Decode_0/InstructionOut",
+          "Execute_0/Instr"
+        ]
+      },
+      "Decode_0_Inverted": {
+        "ports": [
+          "Decode_0/Inverted",
+          "Execute_0/Inverted"
+        ]
+      },
+      "Decode_0_MemMode": {
+        "ports": [
+          "Decode_0/MemMode",
+          "Execute_0/MemMode"
+        ]
+      },
+      "Decode_0_MemReadEn": {
+        "ports": [
+          "Decode_0/MemReadEn",
+          "Execute_0/MemReadEn"
+        ]
+      },
+      "Decode_0_MemWriteEn": {
+        "ports": [
+          "Decode_0/MemWriteEn",
+          "Execute_0/MemWriteEn"
+        ]
+      },
+      "Decode_0_NextInstr": {
+        "ports": [
+          "Decode_0/NextInstr",
+          "Execute_0/NextInstruction"
+        ]
+      },
+      "Decode_0_NextInstrAddress": {
+        "ports": [
+          "Decode_0/NextInstrAddress",
+          "Execute_0/NextInstrAddress"
+        ]
+      },
+      "Decode_0_NextInstructionOut": {
+        "ports": [
+          "Decode_0/NextInstructionOut",
+          "Execute_0/NextInstr"
+        ]
+      },
+      "Decode_0_RegWriteOut": {
+        "ports": [
+          "Decode_0/RegWriteOut",
+          "Execute_0/RegWrite"
+        ]
+      },
+      "Decode_0_Sign": {
+        "ports": [
+          "Decode_0/Sign",
+          "Execute_0/Sign"
+        ]
+      },
+      "Decode_0_Sum": {
+        "ports": [
+          "Decode_0/Sum",
+          "Execute_0/Sum"
+        ]
+      },
+      "Decode_0_WBDestRdRt": {
+        "ports": [
+          "Decode_0/WBDestRdRt",
+          "Execute_0/WBDest"
+        ]
+      },
+      "Decode_0_WB_RA": {
+        "ports": [
+          "Decode_0/WB_RA",
+          "Execute_0/WB_RA"
+        ]
+      },
+      "Decode_0_ZeroInverted": {
+        "ports": [
+          "Decode_0/ZeroInverted",
+          "Execute_0/ZeroInverted"
+        ]
+      },
+      "Decode_0_inA": {
+        "ports": [
+          "Decode_0/inA",
+          "Execute_0/inA"
+        ]
+      },
+      "Decode_0_sh_amt": {
+        "ports": [
+          "Decode_0/sh_amt",
+          "Execute_0/sh_amt"
+        ]
+      },
+      "Execute_0_ALUOut": {
+        "ports": [
+          "Execute_0/ALUOut",
+          "MemoryAccess_0/ReadAddr"
+        ]
+      },
+      "Execute_0_AdderAddOut": {
+        "ports": [
+          "Execute_0/AdderAddOut",
+          "MemoryAccess_0/AdderAdd"
+        ]
+      },
+      "Execute_0_DataWriteValOut": {
+        "ports": [
+          "Execute_0/DataWriteValOut",
+          "MemoryAccess_0/DataWriteVal"
+        ]
+      },
+      "Execute_0_ImmediateExtended": {
+        "ports": [
+          "Execute_0/ImmediateExtended",
+          "MemoryAccess_0/immExtended"
+        ]
+      },
+      "Execute_0_InstrOut": {
+        "ports": [
+          "Execute_0/InstrOut",
+          "MemoryAccess_0/FullInstruction"
+        ]
+      },
+      "Execute_0_MemModeOut": {
+        "ports": [
+          "Execute_0/MemModeOut",
+          "MemoryAccess_0/MemMode"
+        ]
+      },
+      "Execute_0_MemReadEnOut": {
+        "ports": [
+          "Execute_0/MemReadEnOut",
+          "MemoryAccess_0/MemReadEn"
+        ]
+      },
+      "Execute_0_MemWriteEnOut": {
+        "ports": [
+          "Execute_0/MemWriteEnOut",
+          "MemoryAccess_0/MemWriteEn"
+        ]
+      },
+      "Execute_0_NextInstrOut": {
+        "ports": [
+          "Execute_0/NextInstrOut",
+          "MemoryAccess_0/NextInstrAddress"
+        ]
+      },
+      "Execute_0_NextInstructionOut": {
+        "ports": [
+          "Execute_0/NextInstructionOut",
+          "MemoryAccess_0/NextInstr"
+        ]
+      },
+      "Execute_0_RegWriteOut": {
+        "ports": [
+          "Execute_0/RegWriteOut",
+          "MemoryAccess_0/RegWrite"
+        ]
+      },
+      "Execute_0_SumOut": {
+        "ports": [
+          "Execute_0/SumOut",
+          "MemoryAccess_0/Sum"
+        ]
+      },
+      "Execute_0_WBDestOut": {
+        "ports": [
+          "Execute_0/WBDestOut",
+          "MemoryAccess_0/WBDest"
+        ]
+      },
+      "Execute_0_WB_RAOut": {
+        "ports": [
+          "Execute_0/WB_RAOut",
+          "MemoryAccess_0/wb_ra"
+        ]
+      },
+      "Execute_0_ZeroOrNot": {
+        "ports": [
+          "Execute_0/ZeroOrNot",
+          "MemoryAccess_0/ZeroOrNot"
+        ]
+      },
+      "Fetch_0_instrOut": {
+        "ports": [
+          "Fetch_0/instrOut",
+          "Decode_0/InstructionIn"
+        ]
+      },
+      "Fetch_0_nextInstr": {
+        "ports": [
+          "Fetch_0/nextInstr",
+          "Decode_0/NextInstructionIn"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "Fetch_0/clk",
+          "Decode_0/clk",
+          "Execute_0/clk",
+          "MemoryAccess_0/Clk"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "Fetch_0/rst"
+        ]
+      }
+    }
+  }
+}
