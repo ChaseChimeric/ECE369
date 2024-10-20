@@ -10,7 +10,7 @@ module MemoryAccess(
     input ZeroOrNot,
     input [1:0] ForceInstr ,
     input [31:0] rt_dat , // instruction 20:16 DATA AT INStrUCTION
-    input [15:0] immExtended , // instruction 15:0
+    input [31:0] immExtended , // instruction 15:0
     // alu again but to output
     input [31:0] NextInstrAddress ,
     input [31:0] FullInstruction,
@@ -26,7 +26,7 @@ module MemoryAccess(
     output reg wb_ra_out,
     output reg [31:0] InstrAdd_out ,
     output reg [31:0] MemoryRead_out , //from ALUOut
-    output reg [15:0] immExtended_out , // instruction 16:0
+    output reg [31:0] immExtended_out , // instruction 16:0
     output reg [31:0] ALU_out ,
     output reg [31:0] NextInstrAddress_out ,
     output reg [31:0]FullInstruction_out ,
