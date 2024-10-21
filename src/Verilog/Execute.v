@@ -43,20 +43,37 @@ module Execute (
 );
 
     always @(posedge clk) begin
-        SumOut <= Sum;
-        NextInstructionOut <= NextInstruction;
-        NextInstrAddressOut <= NextInstrAddress;
-        DataWriteValOut <= DataWriteVal;
-        WB_RAOut <= WB_RA;
-        RegWriteOut <= RegWrite;
-        MemWriteEnOut <= MemWriteEn;
-        AdderAddOut <= AdderAdd;
-        MemReadEnOut <= MemReadEn;
-        ForceInstrOut <= ForceInstr;
-        WBDestOut <= WBDest;
-        MemModeOut <= MemMode;
-        NextInstrOut <= NextInstr;
-        InstrOut <= Instr;
+        if (rst) begin
+            SumOut <= 0;
+            NextInstructionOut <= 0;
+            NextInstrAddressOut <= 0;
+            DataWriteValOut <= 0;
+            WB_RAOut <= 0;
+            RegWriteOut <= 0;
+            MemWriteEnOut <= 0;
+            AdderAddOut <= 0;
+            MemReadEnOut <= 0;
+            ForceInstrOut <= 0;
+            WBDestOut <= 0;
+            MemModeOut <= 0;
+            NextInstrOut <= 0;
+            InstrOut <= 0;
+        end else begin
+            SumOut <= Sum;
+            NextInstructionOut <= NextInstruction;
+            NextInstrAddressOut <= NextInstrAddress;
+            DataWriteValOut <= DataWriteVal;
+            WB_RAOut <= WB_RA;
+            RegWriteOut <= RegWrite;
+            MemWriteEnOut <= MemWriteEn;
+            AdderAddOut <= AdderAdd;
+            MemReadEnOut <= MemReadEn;
+            ForceInstrOut <= ForceInstr;
+            WBDestOut <= WBDest;
+            MemModeOut <= MemMode;
+            NextInstrOut <= NextInstr;
+            InstrOut <= Instr;
+        end
     end
 
     wire [31:0] SignExtendedInstrImm;
