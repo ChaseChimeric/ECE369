@@ -7,92 +7,63 @@
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2024.1"
+      "tool_version": "2024.1",
+      "validated": "true"
     },
     "design_tree": {
-      "Fetch_0": "",
       "Execute_0": "",
       "Decode_0": "",
       "MemoryAccess_0": "",
-      "WriteBack_0": ""
+      "WriteBack_0": "",
+      "Fetch_0": ""
     },
     "ports": {
       "clk_0": {
         "type": "clk",
-        "direction": "I"
-      },
-      "rst_0": {
-        "type": "rst",
-        "direction": "I"
-      }
-    },
-    "components": {
-      "Fetch_0": {
-        "vlnv": "xilinx.com:module_ref:Fetch:1.0",
-        "ip_revision": "1",
-        "xci_name": "design_1_Fetch_0_0",
-        "xci_path": "ip\\design_1_Fetch_0_0\\design_1_Fetch_0_0.xci",
-        "inst_hier_path": "Fetch_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Fetch",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "rst": {
-            "type": "rst",
-            "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst_0",
+            "value_src": "default"
           },
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_clk_0",
-                "value_src": "default_prop"
-              }
-            }
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_0",
+            "value_src": "default"
           },
-          "jumpAddress": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
           },
-          "instrAdd": {
-            "direction": "I"
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
           },
-          "imm": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
           },
-          "adderAdd": {
-            "direction": "I"
-          },
-          "nextInstr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "sum": {
-            "direction": "I"
-          },
-          "instrOut": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "ALUOut": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
       "Execute_0": {
         "vlnv": "xilinx.com:module_ref:Execute:1.0",
         "ip_revision": "1",
@@ -475,6 +446,9 @@
           "RegWrite": {
             "direction": "I"
           },
+          "NextInstrAddressFlag": {
+            "direction": "I"
+          },
           "Sum_out": {
             "direction": "O"
           },
@@ -524,6 +498,9 @@
             "direction": "O"
           },
           "RegWrite_out": {
+            "direction": "O"
+          },
+          "NextInstrAddressFlag_out": {
             "direction": "O"
           }
         }
@@ -625,6 +602,72 @@
           },
           "RegWriteEnabledOut": {
             "direction": "O"
+          }
+        }
+      },
+      "Fetch_0": {
+        "vlnv": "xilinx.com:module_ref:Fetch:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_Fetch_0_2",
+        "xci_path": "ip\\design_1_Fetch_0_2\\design_1_Fetch_0_2.xci",
+        "inst_hier_path": "Fetch_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Fetch",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "jumpAddress": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "imm": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "adderAdd": {
+            "direction": "I"
+          },
+          "nextInstr": {
+            "direction": "I"
+          },
+          "sum": {
+            "direction": "I"
+          },
+          "nextInstruction": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "instrOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ALUOut": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
           }
         }
       }
@@ -822,6 +865,12 @@
           "MemoryAccess_0/MemWriteEn"
         ]
       },
+      "Execute_0_NextInstrAddressOut": {
+        "ports": [
+          "Execute_0/NextInstrAddressOut",
+          "MemoryAccess_0/NextInstrAddressFlag"
+        ]
+      },
       "Execute_0_NextInstrOut": {
         "ports": [
           "Execute_0/NextInstrOut",
@@ -870,9 +919,9 @@
           "Decode_0/InstructionIn"
         ]
       },
-      "Fetch_0_nextInstr": {
+      "Fetch_0_nextInstruction": {
         "ports": [
-          "Fetch_0/nextInstr",
+          "Fetch_0/nextInstruction",
           "Decode_0/NextInstructionIn"
         ]
       },
@@ -910,6 +959,12 @@
         "ports": [
           "MemoryAccess_0/MemoryRead_out",
           "WriteBack_0/MemoryRead"
+        ]
+      },
+      "MemoryAccess_0_NextInstrAddressFlag_out": {
+        "ports": [
+          "MemoryAccess_0/NextInstrAddressFlag_out",
+          "WriteBack_0/NextInstrAddress"
         ]
       },
       "MemoryAccess_0_NextInstrAddress_out": {
@@ -966,6 +1021,18 @@
           "Fetch_0/imm"
         ]
       },
+      "WriteBack_0_InstrAddOut": {
+        "ports": [
+          "WriteBack_0/InstrAddOut",
+          "Fetch_0/jumpAddress"
+        ]
+      },
+      "WriteBack_0_NextInstrOut": {
+        "ports": [
+          "WriteBack_0/NextInstrOut",
+          "Fetch_0/nextInstr"
+        ]
+      },
       "WriteBack_0_RegWriteEnabledOut": {
         "ports": [
           "WriteBack_0/RegWriteEnabledOut",
@@ -981,7 +1048,8 @@
       "WriteBack_0_WriteData": {
         "ports": [
           "WriteBack_0/WriteData",
-          "Decode_0/WriteData"
+          "Decode_0/WriteData",
+          "Fetch_0/ALUOut"
         ]
       },
       "WriteBack_0_WriteRegister": {
@@ -993,9 +1061,9 @@
       "clk_0_1": {
         "ports": [
           "clk_0",
-          "Fetch_0/clk",
           "Decode_0/clk",
           "Execute_0/clk",
+          "Fetch_0/clk",
           "MemoryAccess_0/Clk"
         ]
       },
