@@ -51,5 +51,10 @@ module Fetch (
         instrOut <= instrOutInternal;
         nextInstruction <= internalNextInstr;
     end
+    
+    always @(posedge rst) begin
+        instrOut <= 32'd0;        
+        nextInstruction <= 32'd0;
+    end
 
 endmodule

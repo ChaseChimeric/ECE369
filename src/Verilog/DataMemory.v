@@ -61,7 +61,7 @@ module DataMemory # (
 
     reg [31:0] mem [MEM_DEPTH-1:0];
 
-    always @(posedge Clk) begin
+    always @(*) begin
         if(MemRead) begin
             case (MemMode)
                 // Read Word Mode
@@ -88,7 +88,7 @@ module DataMemory # (
         end            
     end
 
-    always @(negedge Clk) begin
+    always @(posedge Clk) begin
         if(MemWrite) begin
             case (MemMode)
                 // Word Write Mode
