@@ -1,5 +1,6 @@
 module Execute (
     input clk,
+    input rst,
     input ZeroInverted,
     input Inverted,
     input Sum,

@@ -1,6 +1,7 @@
 module MemoryAccess(
     input Clk,
     input Sum,
+    input rst
     input NextInstr,
     //input NextInstrAddress,
     input DataWriteVal,
@@ -53,14 +54,16 @@ DataMemory datamemory(
 );
 
 always @(posedge Clk) begin
-    case (ForceInstr) 
-        3'd0: AdderAdd_out <= 0;
-        3'd1: AdderAdd_out <= 1;
-        3'd2: AdderAdd_out <= ZeroOrNot;
-        3'd3: AdderAdd_out <= ReadAddr;
-        3'd4: AdderAdd_out <= ZeroOrNot | ReadAddr;
-        default: AdderAdd_out <= 0;
-    endcase
+    if (rst) begin
+        case (ForceInstr) 
+            3'd0: AdderAdd_out <= 0;
+            3'd1: AdderAdd_out <= 1;
+            3'd2: AdderAdd_out <= ZeroOrNot;
+            3'd3: AdderAdd_out <= ReadAddr;
+            3'd4: AdderAdd_out <= ZeroOrNot | ReadAddr;
+            default: AdderAdd_out <= 0;
+        endcase
+    end
 end
 
 Mux32Bit2To1 mux2(
@@ -74,21 +77,38 @@ Mux32Bit2To1 mux2(
 
 
 always @(posedge Clk) begin
-    Sum_out <= Sum;
-    NextInstr_out <= NextInstr;
-    NextInstrAddress_out <= NextInstrAddress;
-    DataWriteVal_out <= DataWriteVal;
-    wb_ra_out <= wb_ra;
-    InstrAdd_out <= InstrAdd_out_sig; //new mux
-    MemoryRead_out <= MemoryRead_out_sig;
-    immExtended_out <= immExtended;
-    ALU_out <= ReadAddr;
-    ALU_out <= ReadAddr;
-    NextInstrAddress_out <= NextInstrAddress;
-    FullInstruction_out <= FullInstruction;
-    WBDest_out <= WBDest;
-    RegWrite_out <= RegWrite;
-    NextInstrAddressFlag_out <= NextInstrAddressFlag;
+    if (rst) begin
+        Sum_out <= 0;
+        NextInstr_out <= 0;
+        NextInstrAddress_out <= 0;
+        DataWriteVal_out <= 0;
+        wb_ra_out <= 0;
+        InstrAdd_out <= 0; // new mux
+        MemoryRead_out <= 0;
+        immExtended_out <= 0;
+        ALU_out <= 0;
+        FullInstruction_out <= 0;
+        WBDest_out <= 0;
+        RegWrite_out <= 0;
+        NextInstrAddressFlag_out <= 0;
+    end else begin
+        Sum_out <= Sum;
+        NextInstr_out <= NextInstr;
+        NextInstrAddress_out <= NextInstrAddress;
+        DataWriteVal_out <= DataWriteVal;
+        wb_ra_out <= wb_ra;
+        InstrAdd_out <= InstrAdd_out_sig; //new mux
+        MemoryRead_out <= MemoryRead_out_sig;
+        immExtended_out <= immExtended;
+        ALU_out <= ReadAddr;
+        ALU_out <= ReadAddr;
+        NextInstrAddress_out <= NextInstrAddress;
+        FullInstruction_out <= FullInstruction;
+        WBDest_out <= WBDest;
+        RegWrite_out <= RegWrite;
+        NextInstrAddressFlag_out <= NextInstrAddressFlag;
+    end
+    
 end
 
 

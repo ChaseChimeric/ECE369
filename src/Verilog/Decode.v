@@ -1,5 +1,6 @@
 module Decode (
     clk,
+    rst,
     InstructionIn,
     NextInstructionIn,
     ForceInstr,
@@ -34,7 +35,7 @@ module Decode (
     output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15;
     wire [31:0] DataIn25_21Wire, DataIn20_15Wire;
 
-    input clk, RegWriteIn;
+    input clk, RegWriteIn, rst;
     output reg [2:0] ForceInstr;
     wire [2:0] ForceInstrWire;
     output reg [1:0] MemMode;
@@ -76,27 +77,51 @@ module Decode (
          RegReadWire;
     
     always @(posedge clk) begin
-        DataIn25_21 <= DataIn25_21Wire;
-        DataIn20_15 <= DataIn20_15Wire;
-        InstructionOut <= InstructionIn;
-        NextInstructionOut <= NextInstructionIn;
-        ZeroInverted <= ZeroInvertedWire;
-        Inverted <= InvertedWire;
-        Sum <= SumWire;
-        NextInstr <= NextInstrWire;
-        NextInstrAddress <= NextInstrAddressWire;
-        DataWriteVal <= DataWriteValWire;
-        ALUImmReg <= ALUImmRegWire;
-        WB_RA <= WB_RAWire;
-        WBDestRdRt <= WBDestRdRtWire;
-        Sign <= SignWire;
-        inA <= inAWire;
-        sh_amt <= sh_amtWire;
-        MemReadEn <= MemReadEnWire;
-        MemWriteEn <= MemWriteEnWire;
-        RegWriteOut <= RegWriteOutWire;
-        ForceInstr <= ForceInstrWire;
-        MemMode <= MemmodeWire;
+        if(rst) begin
+            DataIn25_21 <= 0;
+            DataIn20_15 <= 0;
+            InstructionOut <= 0;
+            NextInstructionOut <= 0;
+            ZeroInverted <= 0;
+            Inverted <= 0;
+            Sum <= 0;
+            NextInstr <= 0;
+            NextInstrAddress <= 0;
+            DataWriteVal <= 0;
+            ALUImmReg <= 0;
+            WB_RA <= 0;
+            WBDestRdRt <= 0;
+            Sign <= 0;
+            inA <= 0;
+            sh_amt <= 0;
+            MemReadEn <= 0;
+            MemWriteEn <= 0;
+            RegWriteOut <= 0;
+            ForceInstr <= 0;
+            MemMode <= 0;
+        end begin
+            DataIn25_21 <= DataIn25_21Wire;
+            DataIn20_15 <= DataIn20_15Wire;
+            InstructionOut <= InstructionIn;
+            NextInstructionOut <= NextInstructionIn;
+            ZeroInverted <= ZeroInvertedWire;
+            Inverted <= InvertedWire;
+            Sum <= SumWire;
+            NextInstr <= NextInstrWire;
+            NextInstrAddress <= NextInstrAddressWire;
+            DataWriteVal <= DataWriteValWire;
+            ALUImmReg <= ALUImmRegWire;
+            WB_RA <= WB_RAWire;
+            WBDestRdRt <= WBDestRdRtWire;
+            Sign <= SignWire;
+            inA <= inAWire;
+            sh_amt <= sh_amtWire;
+            MemReadEn <= MemReadEnWire;
+            MemWriteEn <= MemWriteEnWire;
+            RegWriteOut <= RegWriteOutWire;
+            ForceInstr <= ForceInstrWire;
+            MemMode <= MemmodeWire;
+        end
     end
 
     MUXController mux_ctrl (
