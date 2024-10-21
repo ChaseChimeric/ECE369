@@ -48,14 +48,8 @@ module Fetch (
     assign addressOut = (nextInstr) ? (jumpAddress) : secondAdderOutput;
    
     always @(posedge clk) begin
-        if(rst) begin
-            instrOut <= 32'd0;        
-            nextInstruction <= 32'd0;
-        end
-        else begin
-            instrOut <= instrOutInternal;
-            nextInstruction <= internalNextInstr;
-        end 
+        instrOut <= instrOutInternal;
+        nextInstruction <= internalNextInstr;
     end
 
 endmodule
