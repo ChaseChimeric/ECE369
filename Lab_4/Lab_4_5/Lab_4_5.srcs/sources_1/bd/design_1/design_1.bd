@@ -80,11 +80,19 @@
             "type": "clk",
             "direction": "I",
             "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
               "CLK_DOMAIN": {
                 "value": "design_1_clk_0",
                 "value_src": "default_prop"
               }
             }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
           },
           "ZeroInverted": {
             "direction": "I"
@@ -250,11 +258,19 @@
             "type": "clk",
             "direction": "I",
             "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
               "CLK_DOMAIN": {
                 "value": "design_1_clk_0",
                 "value_src": "default_prop"
               }
             }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
           },
           "InstructionIn": {
             "direction": "I",
@@ -375,6 +391,10 @@
             "type": "clk",
             "direction": "I",
             "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
               "CLK_DOMAIN": {
                 "value": "design_1_clk_0",
                 "value_src": "default_prop"
@@ -382,6 +402,10 @@
             }
           },
           "Sum": {
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
             "direction": "I"
           },
           "NextInstr": {
@@ -521,6 +545,10 @@
             "direction": "I",
             "left": "31",
             "right": "0"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
           },
           "ALUOut": {
             "direction": "I",
@@ -867,8 +895,7 @@
       },
       "Execute_0_NextInstrAddressOut": {
         "ports": [
-          "Execute_0/NextInstrAddressOut",
-          "MemoryAccess_0/NextInstrAddressFlag"
+          "Execute_0/NextInstrAddressOut"
         ]
       },
       "Execute_0_NextInstrOut": {
@@ -963,7 +990,6 @@
       },
       "MemoryAccess_0_NextInstrAddressFlag_out": {
         "ports": [
-          "MemoryAccess_0/NextInstrAddressFlag_out",
           "WriteBack_0/NextInstrAddress"
         ]
       },
@@ -1048,8 +1074,8 @@
       "WriteBack_0_WriteData": {
         "ports": [
           "WriteBack_0/WriteData",
-          "Decode_0/WriteData",
-          "Fetch_0/ALUOut"
+          "Fetch_0/ALUOut",
+          "Decode_0/WriteData"
         ]
       },
       "WriteBack_0_WriteRegister": {
@@ -1061,16 +1087,20 @@
       "clk_0_1": {
         "ports": [
           "clk_0",
+          "Fetch_0/clk",
           "Decode_0/clk",
           "Execute_0/clk",
-          "Fetch_0/clk",
           "MemoryAccess_0/Clk"
         ]
       },
       "rst_0_1": {
         "ports": [
           "rst_0",
-          "Fetch_0/rst"
+          "Fetch_0/rst",
+          "Decode_0/rst",
+          "Execute_0/rst",
+          "MemoryAccess_0/rst",
+          "WriteBack_0/rst"
         ]
       }
     }
