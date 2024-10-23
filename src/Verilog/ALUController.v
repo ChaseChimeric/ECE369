@@ -37,6 +37,9 @@ module ALUController (
             end 
             // MUL
             6'b011100: opCode <= MUL;
+            
+            // ORI
+            6'b001101: opCode <= OR;
 
             // ADDI
             6'b001000: opCode <= ADD;
