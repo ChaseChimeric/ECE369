@@ -216,6 +216,6 @@ module InstructionMemory # (
         
     end
     
-    assign Instruction = memory[Address][6:0];
+    assign Instruction = memory[Address[12:2]];
     
 endmodule

@@ -28,7 +28,7 @@ module WinRAR (
 
     wire [0:0]  ZeroOrNotSignalWire         [0:0]; // 0 is Execute
     wire [31:0] ImmediateExtended           [0:0]; // 0 is execute
-    wire [31:0] ALUResult                   [0:0]; // 0 is execute
+    wire [31:0] ALUResult                   [1:0]; // 0 is execute
 
     wire [31:0] InstrAdd                    [0:0];
     wire [31:0] MemoryRead                  [0:0];
@@ -45,11 +45,11 @@ module WinRAR (
         .jumpAddress(InstrAdd[1]),
         .imm(ImmediateExtended[2]),
         .adderAdd(AdderAddSignalWire[3]),
-        .nextInstr(),
-        .sum(),
+        .nextInstr(NextInstrFetchSignalWire[3]),
+        .sum(SumFetchSignalWire[3]),
         .nextInstruction(NextFull32BitInstruction[0]),
         .instrOut(Full32BitInstruction[0]),
-        .ALUOut()
+        .ALUOut(WriteData32Data[0])
     );
 
     Decode decode_instance (
