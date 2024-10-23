@@ -55,7 +55,7 @@ main:
     nop
     nop
     nop
-    mult $8, $1, $2 # shold be 25 
+    mul $8, $1, $2 # shold be 25 
     nop
     nop
     nop
