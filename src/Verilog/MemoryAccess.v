@@ -1,7 +1,7 @@
 module MemoryAccess(
     input Clk,
     input Sum,
-    input rst
+    input rst,
     input NextInstr,
     //input NextInstrAddress,
     input DataWriteVal,
@@ -101,7 +101,7 @@ always @(posedge Clk) begin
         MemoryRead_out <= MemoryRead_out_sig;
         immExtended_out <= immExtended;
         ALU_out <= ReadAddr;
-        ALU_out <= ReadAddr;
+        //ALU_out <= ReadAddr;
         NextInstrAddress_out <= NextInstrAddress;
         FullInstruction_out <= FullInstruction;
         WBDest_out <= WBDest;

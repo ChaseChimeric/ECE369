@@ -99,7 +99,7 @@ module Decode (
             RegWriteOut <= 0;
             ForceInstr <= 0;
             MemMode <= 0;
-        end begin
+        end else begin
             DataIn25_21 <= DataIn25_21Wire;
             DataIn20_15 <= DataIn20_15Wire;
             InstructionOut <= InstructionIn;

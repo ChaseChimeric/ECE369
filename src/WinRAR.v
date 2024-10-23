@@ -3,7 +3,7 @@ module WinRAR (
     input rst
 );
     // Declare wires for the other inputs and outputs
-    wire [31:0] Full32BitInstruction        [4:0];  // 0 is Fetch
+    wire [31:0] Full32BitInstruction        [3:0];  // 0 is Fetch
     wire [31:0] NextFull32BitInstruction    [3:0];  // 0 is Fetch
     wire [2:0]  ForceInstrSignalWire        [1:0];  // 
     wire [0:0]  ZeroInvertedSignalWire      [0:0];
