@@ -38,7 +38,6 @@ module WinRAR (
 
 
 
-
     // Instantiate the Fetch module
     Fetch fetch_instance (
         .rst(rst),
@@ -94,7 +93,7 @@ module WinRAR (
       .Inverted(ALUInvertedSignalWire[0]),
       .Sum(SumFetchSignalWire[0]),
       .NextInstruction(NextInstrFetchSignalWire[0]),
-      .NextInstructionAddress(NextInstrAddressSignalWire[0]),
+      .NextInstrAddress(NextInstrAddressSignalWire[0]),
       .DataWriteVal(DataWriteValWBSingalWire[0]),
       .WB_RA(WB_RASignalWire[0]),
       .Sign(ALUSignBitSignalWire[0]),
@@ -111,12 +110,12 @@ module WinRAR (
       .NextInstr(NextFull32BitInstruction[1]),
       .Instr(Full32BitInstruction[1]),
       .DataAtInstr25_21In(DataInBits25To21ofInstr[0]),
-      .DataAtInstr20_16In(DataInBits20To15ofInstr[0])
+      .DataAtInstr20_16In(DataInBits20To15ofInstr[0]),
       //outputs
       .SumOut(SumFetchSignalWire[1]),
-      .ZeroOrNotOut(ZeroOrNotSignalWire[0]),
+      .ZeroOrNot(ZeroOrNotSignalWire[0]),
       .NextInstructionOut(NextInstrFetchSignalWire[1]),
-      .NextInstructionAddressOut(NextInstrAddressSignalWire[1]),
+      .NextInstrAddressOut(NextInstrAddressSignalWire[1]),
       .DataWriteValOut(DataWriteValWBSingalWire[1]),
       .WB_RAOut(WB_RASignalWire[1]),
       .RegWriteOut(RegWriteEnableSignal[1]),
@@ -158,7 +157,7 @@ module WinRAR (
         //outputs
         .Sum_out(SumFetchSignalWire[2]),
         .NextInstr_out(NextInstrFetchSignalWire[2]),
-        .NextInstrAddressFlag_out(NextInstrAddressSignalWire[2])
+        .NextInstrAddressFlag_out(NextInstrAddressSignalWire[2]),
         .DataWriteVal_out(DataWriteValWBSingalWire[2]),
         .wb_ra_out(WB_RASignalWire[2]),
         .RegWrite_out(RegWriteEnableSignal[2]),
