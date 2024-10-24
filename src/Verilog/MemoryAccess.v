@@ -75,13 +75,14 @@ always @(posedge Clk) begin
     end
 end
 
-Mux32Bit2To1 mux2(
-    .in0(immExtended),
-    .in1(ReadAddr),
-    .sel(AdderAdd_out_sig),
-    .mux_out(InstrAdd_out_sig)
+//Mux32Bit2To1 mux2(
+//    .in0(immExtended),
+//    .in1(ReadAddr),
+//    .sel(AdderAdd_out_sig),
+//    .mux_out(InstrAdd_out_sig)
 
-);
+//);
+assign InstrAdd_out_sig = (AdderAdd_out_sig) ? ReadAddr : immExtended;
 
 
 
