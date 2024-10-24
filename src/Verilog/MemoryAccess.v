@@ -31,7 +31,7 @@ module MemoryAccess(
     output reg [31:0] immExtended_out , // instruction 16:0
     output reg [31:0] ALU_out ,
     output reg [31:0] NextInstrAddress_out ,
-    output reg [31:0]FullInstruction_out ,
+    output reg [31:0] FullInstruction_out ,
     output reg WBDest_out,
     output reg AdderAdd_out,
     output reg RegWrite_out,
@@ -40,7 +40,7 @@ module MemoryAccess(
 
 
 wire [31:0] MemoryRead_out_sig;
-wire InstrAdd_out_sig;
+wire [31:0] InstrAdd_out_sig;
 
 
 
@@ -55,26 +55,31 @@ DataMemory datamemory(
     .WriteAddress(ReadAddr)
 );
 
+reg AdderAdd_out_sig;
+always @(*) begin
+    case (ForceInstr) 
+        3'd0: AdderAdd_out_sig <= 0;
+        3'd1: AdderAdd_out_sig <= 1;
+        3'd2: AdderAdd_out_sig <= ZeroOrNot;
+        3'd3: AdderAdd_out_sig <= ReadAddr[0];
+        3'd4: AdderAdd_out_sig <= ZeroOrNot | ReadAddr[0];
+        default: AdderAdd_out_sig <= 0;
+    endcase
+end
+
 always @(posedge Clk) begin
     if (!rst) begin
-        case (ForceInstr) 
-            3'd0: AdderAdd_out <= 0;
-            3'd1: AdderAdd_out <= 1;
-            3'd2: AdderAdd_out <= ZeroOrNot;
-            3'd3: AdderAdd_out <= ReadAddr[0];
-            3'd4: AdderAdd_out <= ZeroOrNot | ReadAddr[0];
-            default: AdderAdd_out <= 0;
-        endcase
+        AdderAdd_out <= AdderAdd_out_sig;
     end else begin
         AdderAdd_out <= 0;
     end
 end
 
 Mux32Bit2To1 mux2(
-    .in0(FullInstruction),
+    .in0(immExtended),
     .in1(ReadAddr),
-    .sel(AdderAdd),
-    .mux_out(InstrAdd)
+    .sel(AdderAdd_out_sig),
+    .mux_out(InstrAdd_out_sig)
 
 );
 

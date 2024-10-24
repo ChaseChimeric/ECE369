@@ -92,7 +92,7 @@ module MUXController (
                 ForceInstr <= 1;
                 ZeroInverted <= X;
                 Inverted <= X;
-                Sum <= 1;
+                Sum <= 0;
                 NextInstr <= 0;
                 NextInstrAddress <= 1;
                 DataWriteVal <= X;

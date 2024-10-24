@@ -30,7 +30,7 @@ module WinRAR (
     wire [31:0] ImmediateExtended           [2:0]; // 0 is execute
     wire [31:0] ALUResult                   [1:0]; // 0 is execute
 
-    wire [31:0] InstrAdd                    [0:0];
+    wire [31:0] InstrAdd                    [1:0];
     wire [31:0] MemoryRead                  [0:0];
 
     wire [31:0] WriteData32Data             [0:0];
