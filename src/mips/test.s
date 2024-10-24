@@ -134,6 +134,12 @@ main:
     nop
     nop
     nop
+    sh $0, 6($1)
+    nop
+    nop
+    nop
+    nop
+    nop
     lw $17, 0($1)
     nop
     nop

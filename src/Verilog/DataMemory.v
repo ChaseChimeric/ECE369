@@ -68,7 +68,7 @@ module DataMemory # (
                 2'd0: ReadData <= mem[Address[11:2]];
 
                 // Read Half Mode
-                2'd1: ReadData <= Address[1] ? {16'd0, mem[Address[11:2]][31:16]} : {16'd0, mem[Address[11:2]][15:0]};
+                2'd1: ReadData <= (~Address[1]) ? {16'd0, mem[Address[11:2]][31:16]} : {16'd0, mem[Address[11:2]][15:0]};
 
                 // Read Byte Mode
                 2'd2: begin
@@ -87,28 +87,28 @@ module DataMemory # (
             endcase 
         end            
     end
-
     always @(*) begin
         if(MemWrite) begin
+            
             case (MemMode)
                 // Word Write Mode
-                2'd0: mem[WriteAddress] <= WriteData;
+                2'd0: mem[WriteAddress >> 2] <= WriteData;
 
                 // Write Half Mode
-                2'd1: mem[WriteAddress] <= WriteAddress[1] ? {mem[WriteAddress][31:16], WriteData[15:0]} : {WriteData[15:0], mem[WriteAddress][15:0]};
+                2'd1: mem[WriteAddress >> 2] <= WriteAddress[1] ? {mem[WriteAddress >> 2][31:16], WriteData[15:0]} : {WriteData[15:0], mem[WriteAddress >> 2][15:0]};
 
                 // Write Byte Mode
                 2'd2: begin
                     case (WriteAddress[1:0])
-                        2'd3: mem[WriteAddress] <= {WriteData[7:0], mem[WriteAddress][23:0]}; 
-                        2'd2: mem[WriteAddress] <= {mem[WriteAddress][31:24], WriteData[7:0], mem[WriteAddress][15:0]}; 
-                        2'd1: mem[WriteAddress] <= {mem[WriteAddress][31:16], WriteData[7:0], mem[WriteAddress][7:0]}; 
-                        2'd0: mem[WriteAddress] <= {mem[WriteAddress][31:8], WriteData[7:0]}; 
+                        2'd3: mem[WriteAddress >> 2] <= {WriteData[7:0], mem[WriteAddress >> 2][23:0]}; 
+                        2'd2: mem[WriteAddress >> 2] <= {mem[WriteAddress >> 2][31:24], WriteData[7:0], mem[WriteAddress >> 2][15:0]}; 
+                        2'd1: mem[WriteAddress >> 2] <= {mem[WriteAddress >> 2][31:16], WriteData[7:0], mem[WriteAddress >> 2][7:0]}; 
+                        2'd0: mem[WriteAddress >> 2] <= {mem[WriteAddress >> 2][31:8], WriteData[7:0]}; 
                     endcase
                 end
                 
                 // Default is Word Mode
-                default:  mem[WriteAddress] <= WriteData;
+                default:  mem[WriteAddress >> 2] <= WriteData;
             endcase
         end
     end

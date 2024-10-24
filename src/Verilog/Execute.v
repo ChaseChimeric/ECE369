@@ -59,6 +59,8 @@ module Execute (
             MemModeOut <= 0;
             NextInstrOut <= 0;
             InstrOut <= 0;
+            DataAtInstruction20_16 <= 0;
+            ImmediateExtended <= 0;
         end else begin
             SumOut <= Sum;
             NextInstructionOut <= NextInstruction;
@@ -74,6 +76,8 @@ module Execute (
             MemModeOut <= MemMode;
             NextInstrOut <= NextInstr;
             InstrOut <= Instr;
+            DataAtInstruction20_16 <= DataAtInstr20_16In;
+            ImmediateExtended <= SignExtendedInstrImm;
         end
     end
 

@@ -27,7 +27,7 @@ module WinRAR (
     wire [0:0]  UseShiftAmountSignalWire    [0:0];
 
     wire [0:0]  ZeroOrNotSignalWire         [0:0]; // 0 is Execute
-    wire [31:0] ImmediateExtended           [0:0]; // 0 is execute
+    wire [31:0] ImmediateExtended           [2:0]; // 0 is execute
     wire [31:0] ALUResult                   [1:0]; // 0 is execute
 
     wire [31:0] InstrAdd                    [0:0];

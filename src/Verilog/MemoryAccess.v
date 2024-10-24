@@ -39,7 +39,7 @@ module MemoryAccess(
 );
 
 
-wire MemoryRead_out_sig;
+wire [31:0] MemoryRead_out_sig;
 wire InstrAdd_out_sig;
 
 
@@ -50,21 +50,23 @@ DataMemory datamemory(
     .Clk(Clk), 
     .MemWrite(MemWriteEn), 
     .MemRead(MemReadEn), 
-    .ReadData(MemoryRead), // add wire?
+    .ReadData(MemoryRead_out_sig), // add wire?
     .MemMode(MemMode),
     .WriteAddress(ReadAddr)
 );
 
 always @(posedge Clk) begin
-    if (rst) begin
+    if (!rst) begin
         case (ForceInstr) 
             3'd0: AdderAdd_out <= 0;
             3'd1: AdderAdd_out <= 1;
             3'd2: AdderAdd_out <= ZeroOrNot;
-            3'd3: AdderAdd_out <= ReadAddr;
-            3'd4: AdderAdd_out <= ZeroOrNot | ReadAddr;
+            3'd3: AdderAdd_out <= ReadAddr[0];
+            3'd4: AdderAdd_out <= ZeroOrNot | ReadAddr[0];
             default: AdderAdd_out <= 0;
         endcase
+    end else begin
+        AdderAdd_out <= 0;
     end
 end
 
@@ -93,6 +95,7 @@ always @(posedge Clk) begin
         WBDest_out <= 0;
         RegWrite_out <= 0;
         NextInstrAddressFlag_out <= 0;
+        MemoryRead_out <= 0;
     end else begin
         Sum_out <= Sum;
         NextInstr_out <= NextInstr;
@@ -109,6 +112,7 @@ always @(posedge Clk) begin
         WBDest_out <= WBDest;
         RegWrite_out <= RegWrite;
         NextInstrAddressFlag_out <= NextInstrAddressFlag;
+        MemoryRead_out <= MemoryRead_out_sig;
     end
     
 end
