@@ -51,7 +51,8 @@ DataMemory datamemory(
     .MemWrite(MemWriteEn), 
     .MemRead(MemReadEn), 
     .ReadData(MemoryRead), // add wire?
-    .MemMode(MemMode)
+    .MemMode(MemMode),
+    .WriteAddress(ReadAddr)
 );
 
 always @(posedge Clk) begin

@@ -22,7 +22,7 @@ module WinRAR (
     wire [31:0] DataInBits25To21ofInstr     [0:0];
     wire [31:0] DataInBits20To15ofInstr     [1:0];
     wire [0:0]  MemReadEnableSignal         [1:0];
-    wire [0:0]  MemWriteEnableSignal        [0:0];
+    wire [0:0]  MemWriteEnableSignal        [1:0];
     wire [0:0]  RegWriteEnableSignal        [3:0];
     wire [0:0]  UseShiftAmountSignalWire    [0:0];
 
@@ -143,7 +143,7 @@ module WinRAR (
         .DataWriteVal(DataWriteValWBSingalWire[1]),
         .wb_ra(WB_RASignalWire[1]),
         .RegWrite(RegWriteEnableSignal[1]),
-        .MemWriteEn(MemWriteEnableSignal[0]),
+        .MemWriteEn(MemWriteEnableSignal[1]),
         .AdderAdd(AdderAddSignalWire[1]),
         .MemReadEn(MemReadEnableSignal[1]),
         .ForceInstr(ForceInstrSignalWire[1]),
