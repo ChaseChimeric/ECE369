@@ -110,6 +110,12 @@ main:
     nop
     nop
     nop
+    addi $1, $0, 0
+    nop
+    nop
+    nop
+    nop
+    nop
     sw $16, 0($1)
     nop
     nop
