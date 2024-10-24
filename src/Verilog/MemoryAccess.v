@@ -50,7 +50,8 @@ DataMemory datamemory(
     .Clk(Clk), 
     .MemWrite(MemWriteEn), 
     .MemRead(MemReadEn), 
-    .ReadData(MemoryRead) // add wire?
+    .ReadData(MemoryRead), // add wire?
+    .MemMode(MemMode)
 );
 
 always @(posedge Clk) begin

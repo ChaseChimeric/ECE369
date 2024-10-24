@@ -36,7 +36,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module DataMemory # (
-    parameter MEM_DEPTH = 1024
+    parameter MEM_DEPTH = 32
 )
 (
     Address, 
@@ -88,7 +88,7 @@ module DataMemory # (
         end            
     end
 
-    always @(posedge Clk) begin
+    always @(*) begin
         if(MemWrite) begin
             case (MemMode)
                 // Word Write Mode

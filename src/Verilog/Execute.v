@@ -99,12 +99,14 @@ module Execute (
         .funct(Instr[5:0]),
         .opCode(ALUOpCode)
     );
+    wire [31:0] ALUInA;
+    assign ALUInA = (sh_amt) ? DataAtInstr20_16In : DataAtInstr25_21In;
 
     wire ZeroOutALU;
     wire [31:0] ALUResult;
     ALU32Bit ALU (
         .ALUControl(ALUOpCode), 
-        .A(DataAtInstr25_21In), 
+        .A(ALUInA), 
         .B(Mux3Out), 
         .ALUResult(ALUResult), 
         .Zero(ZeroOutALU)
