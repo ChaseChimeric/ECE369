@@ -73,7 +73,7 @@ main:
     nop
     nop
     nop
-    nor $11, $6, $8 # shold be  4?
+    nor $11, $6, $8 # shold be  -28
     nop
     nop
     nop
