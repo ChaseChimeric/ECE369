@@ -72,11 +72,11 @@ module MUXController (
 
             // J
             6'b000010: begin
-                ForceInstr <= 1;
+                ForceInstr <= 0;
                 ZeroInverted <= X;
                 Inverted <= X;
-                Sum <= 0;
-                NextInstr <= 0;
+                Sum <= 1;
+                NextInstr <= 1;
                 NextInstrAddress <= X;
                 DataWriteVal <= X;
                 inA <= X;
@@ -89,11 +89,11 @@ module MUXController (
 
             // JAL
             6'b000011: begin
-                ForceInstr <= 1;
+                ForceInstr <= 0;
                 ZeroInverted <= X;
                 Inverted <= X;
-                Sum <= 0;
-                NextInstr <= 0;
+                Sum <= 1;
+                NextInstr <= 1;
                 NextInstrAddress <= 1;
                 DataWriteVal <= X;
                 inA <= X;

@@ -45,7 +45,7 @@ module Fetch (
     
     assign PCAdderIn = (sum) ? (instrMemAddress + (jumpAddress)) : instrMemAddress;
     assign secondAdderOutput = (adderAdd) ? (internalNextInstr + (imm << 2) - 16) : (internalNextInstr);
-    assign addressOut = (nextInstr) ? (jumpAddress) : secondAdderOutput;
+    assign addressOut = (nextInstr) ? ((sum) ? imm << 2 : jumpAddress) : secondAdderOutput;
    
     always @(posedge clk) begin
         if (rst) begin
