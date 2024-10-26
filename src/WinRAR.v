@@ -1,6 +1,8 @@
 module WinRAR (
     input clk,
-    input rst
+    input rst,
+    output reg [31:0] Full32BitInstructionOutExecute,
+    output reg [31:0] ALUResultExecute
 );
     // Declare wires for the other inputs and outputs
     wire [31:0] Full32BitInstruction        [3:0];  // 0 is Fetch
@@ -196,6 +198,11 @@ module WinRAR (
         .NextInstrOut(NextInstrFetchSignalWire[3]),
         .RegWriteEnabledOut(RegWriteEnableSignal[3])
     );
+    always @(*) begin
+        Full32BitInstructionOutExecute <= Full32BitInstruction[2];
+        ALUResultExecute <= ALUResult[0];
+    end
+    
 
 
 endmodule

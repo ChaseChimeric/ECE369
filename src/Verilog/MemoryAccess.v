@@ -63,6 +63,7 @@ always @(*) begin
         3'd2: AdderAdd_out_sig <= ZeroOrNot;
         3'd3: AdderAdd_out_sig <= ReadAddr[0];
         3'd4: AdderAdd_out_sig <= ZeroOrNot | ReadAddr[0];
+        3'd5: AdderAdd_out_sig <= ZeroOrNot & ReadAddr[0];
         default: AdderAdd_out_sig <= 0;
     endcase
 end
