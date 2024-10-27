@@ -83,7 +83,7 @@ module DataMemory # (
             endcase 
         end            
     end
-    always @(*) begin
+    always @(posedge Clk) begin
         if(MemWrite) begin
             
             case (MemMode)
