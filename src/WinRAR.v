@@ -132,6 +132,8 @@ module WinRAR (
       .ImmediateExtended(ImmediateExtended[0]),
       .ALUOut(ALUResult[0])
     );
+    
+    assign WriteData = ALUResult[0];
 
     MemoryAccess memory(
         //inputs
