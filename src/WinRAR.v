@@ -1,8 +1,8 @@
 module WinRAR (
     input clk,
     input rst,
-    output reg [31:0] Full32BitInstructionOutExecute,
-    output reg [31:0] ALUResultExecute
+    output [31:0] PC,
+    output [31:0] WriteData
 );
     // Declare wires for the other inputs and outputs
     wire [31:0] Full32BitInstruction        [3:0];  // 0 is Fetch
@@ -38,8 +38,6 @@ module WinRAR (
     wire [31:0] WriteData32Data             [0:0];
     wire [4:0]  WriteRegister               [0:0];
 
-
-
     // Instantiate the Fetch module
     Fetch fetch_instance (
         .rst(rst),
@@ -51,7 +49,8 @@ module WinRAR (
         .sum(SumFetchSignalWire[3]),
         .nextInstruction(NextFull32BitInstruction[0]),
         .instrOut(Full32BitInstruction[0]),
-        .ALUOut(WriteData32Data[0])
+        .ALUOut(WriteData32Data[0]),
+        .PCAddress(PC)
     );
 
     Decode decode_instance (
@@ -198,10 +197,6 @@ module WinRAR (
         .NextInstrOut(NextInstrFetchSignalWire[3]),
         .RegWriteEnabledOut(RegWriteEnableSignal[3])
     );
-    always @(*) begin
-        Full32BitInstructionOutExecute <= Full32BitInstruction[2];
-        ALUResultExecute <= ALUResult[0];
-    end
     
 
 

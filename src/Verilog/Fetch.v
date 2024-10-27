@@ -8,12 +8,14 @@ module Fetch (
     sum,
     nextInstruction,
     instrOut,
-    ALUOut
+    ALUOut,
+    PCAddress
 );
     input adderAdd, sum, rst, clk, nextInstr;
     input [31:0] jumpAddress, imm, ALUOut;
     output reg [31:0] instrOut;
     output reg [31:0] nextInstruction;
+    output [31:0] PCAddress;
 
 
     wire [31:0] PCAdderIn;
@@ -25,6 +27,8 @@ module Fetch (
     wire [31:0] instrOutInternal;
     wire [31:0] addressOut;
 
+    assign PCAddress = addressOut;
+    
     PCAdder add0(
         .PCResult(PCAdderIn),
         .PCAddResult(internalNextInstr)
