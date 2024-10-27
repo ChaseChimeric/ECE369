@@ -36,7 +36,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module DataMemory # (
-    parameter MEM_DEPTH = 32
+    parameter MEM_DEPTH = 1024
 )
 (
     Address, 
@@ -60,6 +60,9 @@ module DataMemory # (
     output reg [31:0] ReadData; // Contents of memory location at Address
 
     reg [31:0] mem [MEM_DEPTH-1:0];
+    initial begin
+        $readmemh("data_memory.mem", mem);
+    end
 
     always @(*) begin
         if(MemRead) begin
