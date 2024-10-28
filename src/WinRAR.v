@@ -6,7 +6,7 @@
 module WinRAR (
     input clk,
     input rst,
-    output [31:0] PC,
+    output [31:0] instrMemAddressOut,
     output [31:0] WriteData
 );
     // Declare wires for the other inputs and outputs
@@ -55,7 +55,7 @@ module WinRAR (
         .nextInstruction(NextFull32BitInstruction[0]),
         .instrOut(Full32BitInstruction[0]),
         .ALUOut(WriteData32Data[0]),
-        .PCAddress(PC)
+        .instrMemAddressOut(instrMemAddressOut)
     );
 
     Decode decode_instance (

@@ -9,13 +9,13 @@ module Fetch (
     nextInstruction,
     instrOut,
     ALUOut,
-    PCAddress
+    instrMemAddressOut
 );
     input adderAdd, sum, rst, clk, nextInstr;
     input [31:0] jumpAddress, imm, ALUOut;
     output reg [31:0] instrOut;
     output reg [31:0] nextInstruction;
-    output [31:0] PCAddress;
+    output [31:0] instrMemAddressOut;
 
 
     wire [31:0] PCAdderIn;
@@ -42,7 +42,7 @@ module Fetch (
     );
 
     InstructionMemory mem0(
-        .Address(addressOut),
+        .Address(instrMemAddress),
         .Instruction(instrOutInternal)
     );
 
@@ -50,6 +50,7 @@ module Fetch (
     assign PCAdderIn = (sum) ? (instrMemAddress + (jumpAddress)) : instrMemAddress;
     assign secondAdderOutput = (adderAdd) ? (internalNextInstr + (imm << 2) - 16) : (internalNextInstr);
     assign addressOut = (nextInstr) ? ((sum) ? imm << 2 : jumpAddress) : secondAdderOutput;
+    assign instrMemAddressOut = instrMemAddress;
    
     always @(posedge clk) begin
         if (rst) begin
@@ -58,6 +59,7 @@ module Fetch (
         end else begin
             instrOut <= instrOutInternal;
             nextInstruction <= internalNextInstr;
+            
         end
     end
 
