@@ -24,7 +24,7 @@ module WinRARTop (
     WinRAR cpu (
         .clk(clockMod),
         .rst(Reset),
-        .PC(NumberA),
+        .instrMemAddressOut(NumberA),
         .WriteData(NumberB)
     );
     
