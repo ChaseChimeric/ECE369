@@ -55,6 +55,6 @@ module InstructionMemory # (
         $readmemh("instruction_memory.mem", memory);
     end
     
-    assign Instruction = memory[Address[12:2]];
+    assign Instruction = memory[Address[14:2]];
     
 endmodule

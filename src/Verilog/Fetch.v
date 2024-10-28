@@ -42,7 +42,7 @@ module Fetch (
     );
 
     InstructionMemory mem0(
-        .Address(instrMemAddress),
+        .Address(addressOut),
         .Instruction(instrOutInternal)
     );
 

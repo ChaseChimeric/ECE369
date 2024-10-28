@@ -1,3 +1,8 @@
+//Percent Participation
+// Ahmad    33%
+// Ryan     33%
+// Ryan     33%
+
 module WinRAR (
     input clk,
     input rst,
