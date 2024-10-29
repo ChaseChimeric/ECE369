@@ -46,7 +46,6 @@ module ALU32Bit# (
 	output Zero;	    // Zero=1 if ALUResult == 0
 	
 	assign Zero = (ALUResult == 0);
-//	assign ALUResult = ALUResult_int;
 
 	always @(A, B, ALUControl) begin
 		case(ALUControl) 

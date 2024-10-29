@@ -103,6 +103,12 @@ module ALU32Bit_tb();
         #10
         $display("inA = %b, inB = %b, op = ^, out = %b", A, B, ALUResult);
         #100
+        ALUControl = 5;
+        A = 32'hFFFF0000;
+        B = 32'h0000FFFF;
+        #10
+        $display("inA = %b, inB = %b, op = ^, out = %b", A, B, ALUResult);
+        #100
         ALUControl = 6;
         A = 64;
         B = 2;
@@ -126,6 +132,8 @@ module ALU32Bit_tb();
         B = 31;
         #10
         $display("inA = %b, inB = %d, op = <<, out = %b", A, B, ALUResult);
+        #100
+        $finish;
     end
 endmodule
 

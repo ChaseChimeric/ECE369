@@ -40,11 +40,13 @@ module DataMemory # (
 )
 (
     Address, 
+    WriteAddress,
     WriteData, 
     Clk, 
     MemWrite, 
     MemRead, 
-    ReadData
+    ReadData,
+    MemMode
 ); 
 
     input [31:0] Address; 	// Input Address 
@@ -52,17 +54,51 @@ module DataMemory # (
     input Clk;
     input MemWrite; 		// Control signal for memory write 
     input MemRead; 			// Control signal for memory read 
+    input [1:0] MemMode;
+    input [31:0] WriteAddress;
 
     output reg [31:0] ReadData; // Contents of memory location at Address
 
     reg [31:0] mem [MEM_DEPTH-1:0];
+    initial begin
+        $readmemh("data_memory.mem", mem);
+    end
 
+    always @(*) begin
+        if(MemRead) begin
+            case (MemMode)
+                // Read Word Mode
+                2'd0: ReadData <= mem[Address[11:2]];
+
+                // Read Half Mode
+                2'd1: ReadData <= {16'd0, mem[Address[11:2]][15:0]};
+
+                // Read Byte Mode
+                2'd2: ReadData <= {24'd0, mem[Address[11:2]][7:0]};
+
+                // Default is Word Mode
+                default: begin
+                    ReadData <= mem[Address[11:2]];
+                end
+            endcase 
+        end            
+    end
     always @(posedge Clk) begin
-        if (MemRead) begin
-            ReadData <= mem[Address[11:2]];
-        end
-        if (MemWrite) begin
-            mem[Address] <= WriteData;
+        if(MemWrite) begin
+            
+            case (MemMode)
+                // Word Write Mode
+                2'd0: mem[WriteAddress >> 2] <= WriteData;
+
+                // Write Half Mode
+                2'd1: mem[WriteAddress >> 2] <= {mem[WriteAddress >> 2][31:16], WriteData[15:0]};
+
+                // Write Byte Mode
+                2'd2: mem[WriteAddress >> 2] <= {mem[WriteAddress >> 2][31:8], WriteData[7:0]};
+                
+                // Default is Word Mode
+                default:  mem[WriteAddress >> 2] <= WriteData;
+            endcase
         end
     end
 

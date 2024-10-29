@@ -46,17 +46,15 @@ module InstructionMemory # (
     input [31:0] Address;        // Input Address 
 
     output [31:0] Instruction;    // Instruction at memory location Address
-    reg [31:0] mem [MEM_DEPTH-1:0];
+    reg [31:0] memory [MEM_DEPTH-1:0];
     
     integer count;
     
     initial  
     begin
-        for(count = 0;count<MEM_DEPTH;count = count + 1) begin
-            mem[count] = count*3;
-        end
+        $readmemh("instruction_memory.mem", memory);
     end
     
-    assign Instruction = mem[Address >> 2][6:0];
+    assign Instruction = memory[Address[14:2]];
     
 endmodule

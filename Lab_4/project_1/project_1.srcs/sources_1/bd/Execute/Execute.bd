@@ -1,0 +1,446 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xFCF30950FCF3095",
+      "device": "xc7k70tfbv676-1",
+      "gen_directory": "../../../../project_1.gen/sources_1/bd/Execute",
+      "name": "Execute",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ALUController_0": "",
+      "ALU32Bit_0": "",
+      "util_vector_logic_0": "",
+      "util_vector_logic_1": "",
+      "Mux32Bit2To1_0": "",
+      "Mux32Bit2To1_1": "",
+      "Mux32Bit2To1_2": "",
+      "SignExtension_0": ""
+    },
+    "ports": {
+      "funct_0": {
+        "direction": "I",
+        "left": "5",
+        "right": "0"
+      },
+      "op_0": {
+        "direction": "I",
+        "left": "5",
+        "right": "0"
+      },
+      "data_at_25_21": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "data_at_20_16": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "instr_15_0": {
+        "direction": "I",
+        "left": "15",
+        "right": "0"
+      },
+      "ALU_imm_reg": {
+        "direction": "I"
+      },
+      "ALU_out": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "Zero_out": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "ZeroInverted": {
+        "direction": "I"
+      },
+      "Inverted": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "ALUController_0": {
+        "vlnv": "xilinx.com:module_ref:ALUController:1.0",
+        "xci_name": "Execute_ALUController_0_0",
+        "xci_path": "ip\\Execute_ALUController_0_0\\Execute_ALUController_0_0.xci",
+        "inst_hier_path": "ALUController_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ALUController",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "op": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "funct": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "opCode": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          }
+        }
+      },
+      "ALU32Bit_0": {
+        "vlnv": "xilinx.com:module_ref:ALU32Bit:1.0",
+        "xci_name": "Execute_ALU32Bit_0_0",
+        "xci_path": "ip\\Execute_ALU32Bit_0_0\\Execute_ALU32Bit_0_0.xci",
+        "inst_hier_path": "ALU32Bit_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ALU32Bit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ALUControl": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "A": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ALUResult": {
+            "direction": "O",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "Zero": {
+            "direction": "O",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Execute_util_vector_logic_0_0",
+        "xci_path": "ip\\Execute_util_vector_logic_0_0\\Execute_util_vector_logic_0_0.xci",
+        "inst_hier_path": "util_vector_logic_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "Execute_util_vector_logic_0_1",
+        "xci_path": "ip\\Execute_util_vector_logic_0_1\\Execute_util_vector_logic_0_1.xci",
+        "inst_hier_path": "util_vector_logic_1",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "32"
+          }
+        }
+      },
+      "Mux32Bit2To1_0": {
+        "vlnv": "xilinx.com:module_ref:Mux32Bit2To1:1.0",
+        "xci_name": "Execute_Mux32Bit2To1_0_0",
+        "xci_path": "ip\\Execute_Mux32Bit2To1_0_0\\Execute_Mux32Bit2To1_0_0.xci",
+        "inst_hier_path": "Mux32Bit2To1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Mux32Bit2To1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "mux_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "inA": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "inB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "sel": {
+            "direction": "I"
+          }
+        }
+      },
+      "Mux32Bit2To1_1": {
+        "vlnv": "xilinx.com:module_ref:Mux32Bit2To1:1.0",
+        "xci_name": "Execute_Mux32Bit2To1_1_0",
+        "xci_path": "ip\\Execute_Mux32Bit2To1_1_0\\Execute_Mux32Bit2To1_1_0.xci",
+        "inst_hier_path": "Mux32Bit2To1_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Mux32Bit2To1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "mux_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "inA": {
+            "direction": "I",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "inB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "sel": {
+            "direction": "I"
+          }
+        }
+      },
+      "Mux32Bit2To1_2": {
+        "vlnv": "xilinx.com:module_ref:Mux32Bit2To1:1.0",
+        "xci_name": "Execute_Mux32Bit2To1_1_1",
+        "xci_path": "ip\\Execute_Mux32Bit2To1_1_1\\Execute_Mux32Bit2To1_1_1.xci",
+        "inst_hier_path": "Mux32Bit2To1_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Mux32Bit2To1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "mux_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "inA": {
+            "direction": "I",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "inB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "sel": {
+            "direction": "I"
+          }
+        }
+      },
+      "SignExtension_0": {
+        "vlnv": "xilinx.com:module_ref:SignExtension:1.0",
+        "xci_name": "Execute_SignExtension_0_0",
+        "xci_path": "ip\\Execute_SignExtension_0_0\\Execute_SignExtension_0_0.xci",
+        "inst_hier_path": "SignExtension_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SignExtension",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sign_extend_in": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "sign_extend_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "funct_0_1": {
+        "ports": [
+          "funct_0",
+          "ALUController_0/funct"
+        ]
+      },
+      "op_0_1": {
+        "ports": [
+          "op_0",
+          "ALUController_0/op"
+        ]
+      },
+      "ALUController_0_opCode": {
+        "ports": [
+          "ALUController_0/opCode",
+          "ALU32Bit_0/ALUControl"
+        ]
+      },
+      "A_0_1": {
+        "ports": [
+          "data_at_25_21",
+          "ALU32Bit_0/A"
+        ]
+      },
+      "inA_0_1": {
+        "ports": [
+          "data_at_20_16",
+          "Mux32Bit2To1_0/inA"
+        ]
+      },
+      "in_0_1": {
+        "ports": [
+          "instr_15_0",
+          "SignExtension_0/sign_extend_in"
+        ]
+      },
+      "SignExtension_0_out": {
+        "ports": [
+          "SignExtension_0/sign_extend_out",
+          "Mux32Bit2To1_0/inB"
+        ]
+      },
+      "sel_0_1": {
+        "ports": [
+          "ALU_imm_reg",
+          "Mux32Bit2To1_0/sel"
+        ]
+      },
+      "Mux32Bit2To1_0_out": {
+        "ports": [
+          "Mux32Bit2To1_0/mux_out",
+          "ALU32Bit_0/B"
+        ]
+      },
+      "ALU32Bit_0_ALUResult": {
+        "ports": [
+          "ALU32Bit_0/ALUResult",
+          "util_vector_logic_1/Op1",
+          "Mux32Bit2To1_1/inA"
+        ]
+      },
+      "ALU32Bit_0_Zero": {
+        "ports": [
+          "ALU32Bit_0/Zero",
+          "util_vector_logic_0/Op1",
+          "Mux32Bit2To1_2/inA"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "Mux32Bit2To1_2/inB"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "Mux32Bit2To1_1/inB"
+        ]
+      },
+      "Mux32Bit2To1_1_out": {
+        "ports": [
+          "Mux32Bit2To1_1/mux_out",
+          "ALU_out"
+        ]
+      },
+      "Mux32Bit2To1_2_out": {
+        "ports": [
+          "Mux32Bit2To1_2/mux_out",
+          "Zero_out"
+        ]
+      },
+      "sel_0_2": {
+        "ports": [
+          "ZeroInverted",
+          "Mux32Bit2To1_2/sel"
+        ]
+      },
+      "sel_1_1": {
+        "ports": [
+          "Inverted",
+          "Mux32Bit2To1_1/sel"
+        ]
+      }
+    }
+  }
+}

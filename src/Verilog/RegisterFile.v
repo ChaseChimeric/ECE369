@@ -56,26 +56,38 @@ module RegisterFile(
 	RegWrite, 
 	Clk, 
 	ReadData1, 
-	ReadData2
+	ReadData2,
+	RegRead
 );
 	reg [31:0] mem [31:0];
 	input [4:0] ReadRegister1;
 	input [4:0] ReadRegister2;
 	input [4:0] WriteRegister;
 	input [31:0] WriteData;
-	input RegWrite;
+	input RegWrite, RegRead;
 	input Clk;
 	output reg [31:0] ReadData1;
 	output reg [31:0] ReadData2;
 
 	always @(posedge Clk) begin
-		ReadData1 <= mem[ReadRegister1];
-		ReadData2 <= mem[ReadRegister2];
 		if (RegWrite) begin
 			mem[WriteRegister] <= WriteData;
 		end 
 	end
 
+	always @(*) begin
+		if(RegRead) begin
+			ReadData1 <= mem[ReadRegister1];
+			ReadData2 <= mem[ReadRegister2];
+		end
+	end
+    
+    integer count;
+	initial begin
+        for(count = 0;count<32;count = count + 1) begin
+            mem[count] = count*100;
+        end
+    end
 	/* Please fill in the implementation here... */
 
 endmodule

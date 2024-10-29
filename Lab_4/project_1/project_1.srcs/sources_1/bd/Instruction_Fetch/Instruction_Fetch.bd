@@ -1,0 +1,308 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x2645E8350F0211B6",
+      "device": "xc7k70tfbv676-1",
+      "gen_directory": "../../../../project_1.gen/sources_1/bd/Instruction_Fetch",
+      "name": "Instruction_Fetch",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "InstructionMemory_0": "",
+      "PCAdder_0": "",
+      "ProgramCounter_0": "",
+      "AdderIn": "",
+      "NextInstr": ""
+    },
+    "ports": {
+      "AdderSel": {
+        "direction": "I"
+      },
+      "Clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "Reset",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "Instruction_Fetch_Clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "Instruction_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "NextInstrSel": {
+        "direction": "I"
+      },
+      "Reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "j_amount": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "jr_val": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "InstructionMemory_0": {
+        "vlnv": "xilinx.com:module_ref:InstructionMemory:1.0",
+        "xci_name": "Instruction_Fetch_InstructionMemory_0_0",
+        "xci_path": "ip\\Instruction_Fetch_InstructionMemory_0_0\\Instruction_Fetch_InstructionMemory_0_0.xci",
+        "inst_hier_path": "InstructionMemory_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "InstructionMemory",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Address": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Instruction": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "PCAdder_0": {
+        "vlnv": "xilinx.com:module_ref:PCAdder:1.0",
+        "xci_name": "Instruction_Fetch_PCAdder_0_0",
+        "xci_path": "ip\\Instruction_Fetch_PCAdder_0_0\\Instruction_Fetch_PCAdder_0_0.xci",
+        "inst_hier_path": "PCAdder_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PCAdder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "PCResult": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "PCAddResult": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "ProgramCounter_0": {
+        "vlnv": "xilinx.com:module_ref:ProgramCounter:1.0",
+        "xci_name": "Instruction_Fetch_ProgramCounter_0_0",
+        "xci_path": "ip\\Instruction_Fetch_ProgramCounter_0_0\\Instruction_Fetch_ProgramCounter_0_0.xci",
+        "inst_hier_path": "ProgramCounter_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ProgramCounter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Address": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "PCResult": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "Clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Instruction_Fetch_Clk",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      },
+      "AdderIn": {
+        "vlnv": "xilinx.com:module_ref:Mux32Bit2To1:1.0",
+        "xci_name": "Instruction_Fetch_AdderIn_0",
+        "xci_path": "ip\\Instruction_Fetch_AdderIn_0\\Instruction_Fetch_AdderIn_0.xci",
+        "inst_hier_path": "AdderIn",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Mux32Bit2To1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "mux_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "inA": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "inB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "sel": {
+            "direction": "I"
+          }
+        }
+      },
+      "NextInstr": {
+        "vlnv": "xilinx.com:module_ref:Mux32Bit2To1:1.0",
+        "xci_name": "Instruction_Fetch_NextInstr_0",
+        "xci_path": "ip\\Instruction_Fetch_NextInstr_0\\Instruction_Fetch_NextInstr_0.xci",
+        "inst_hier_path": "NextInstr",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Mux32Bit2To1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "mux_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "inA": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "inB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "sel": {
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Clk_0_1": {
+        "ports": [
+          "Clk",
+          "ProgramCounter_0/Clk"
+        ]
+      },
+      "InstructionMemory_0_Instruction": {
+        "ports": [
+          "InstructionMemory_0/Instruction",
+          "Instruction_0"
+        ]
+      },
+      "Mux32Bit2To1_0_out": {
+        "ports": [
+          "AdderIn/mux_out",
+          "PCAdder_0/PCResult"
+        ]
+      },
+      "Mux32Bit2To1_1_out": {
+        "ports": [
+          "NextInstr/mux_out",
+          "ProgramCounter_0/Address"
+        ]
+      },
+      "PCAdder_0_PCAddResult": {
+        "ports": [
+          "PCAdder_0/PCAddResult",
+          "NextInstr/inA"
+        ]
+      },
+      "ProgramCounter_0_PCResult": {
+        "ports": [
+          "ProgramCounter_0/PCResult",
+          "InstructionMemory_0/Address",
+          "AdderIn/inA"
+        ]
+      },
+      "Reset_0_1": {
+        "ports": [
+          "Reset",
+          "ProgramCounter_0/Reset"
+        ]
+      },
+      "inB_0_1": {
+        "ports": [
+          "jr_val",
+          "NextInstr/inB"
+        ]
+      },
+      "inB_0_2": {
+        "ports": [
+          "j_amount",
+          "AdderIn/inB"
+        ]
+      },
+      "sel_0_1": {
+        "ports": [
+          "AdderSel",
+          "AdderIn/sel"
+        ]
+      },
+      "sel_0_2": {
+        "ports": [
+          "NextInstrSel",
+          "NextInstr/sel"
+        ]
+      }
+    }
+  }
+}
