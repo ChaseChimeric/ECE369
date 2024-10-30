@@ -1,5 +1,8 @@
 `ifndef _execute
 `define _execute
+`include "SignExtension.v"
+`include "ALUController.v"
+`include "ALU32Bit.v"
 module Execute (
     input clk,
     input rst,

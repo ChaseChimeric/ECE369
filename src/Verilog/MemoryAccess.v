@@ -1,5 +1,6 @@
 `ifndef _memoryaccess
 `define _memoryaccess
+`include "DataMemory.v"
 module MemoryAccess(
     input Clk,
     input Sum,

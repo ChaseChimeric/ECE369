@@ -1,5 +1,8 @@
 `ifndef _fetch
 `define _fetch
+`include "PCAdder.v"
+`include "ProgramCounter.v"
+`include "InstructionMemory.v"
 module Fetch (
     rst,
     clk,

@@ -1,5 +1,8 @@
 `ifndef _decode
 `define _decode
+`include "MuxController.v"
+`include "MemController.v"
+`include "RegisterFile.v"
 module Decode (
     clk,
     rst,
