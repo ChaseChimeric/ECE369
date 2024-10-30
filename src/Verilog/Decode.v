@@ -1,3 +1,5 @@
+`ifndef _decode
+`define _decode
 module Decode (
     clk,
     rst,
@@ -164,6 +166,5 @@ module Decode (
         .ReadData1(DataIn25_21Wire),                // Read data from Rs
         .ReadData2(DataIn20_15Wire)                 // Read data from Rt
     );
-
-
 endmodule
+`endif

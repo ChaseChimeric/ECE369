@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef _mux21
+`define _mux21
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
@@ -26,3 +27,4 @@ module Mux32Bit2To1 #(
     assign mux_out = sel ? in0 : in1; 
 
 endmodule
+`endif

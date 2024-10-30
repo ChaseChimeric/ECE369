@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef _ifu
+`define _ifu
 
 ////////////////////////////////////////////////////////////////////////////////
 // Team Members:
@@ -71,4 +72,4 @@ module InstructionFetchUnit(
   assign Instruction = internalInstruction;
 
 endmodule
-
+`endif

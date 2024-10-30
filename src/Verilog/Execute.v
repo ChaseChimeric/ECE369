@@ -1,3 +1,5 @@
+`ifndef _execute
+`define _execute
 module Execute (
     input clk,
     input rst,
@@ -129,5 +131,5 @@ module Execute (
         end
         
     end
-    
 endmodule
+`endif

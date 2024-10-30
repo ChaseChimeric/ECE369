@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef _alu32bit
+`define _alu32bit
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
@@ -60,7 +61,5 @@ module ALU32Bit# (
 			default: ALUResult = 0;
 		endcase
 	end
-    /* Please fill in the implementation here... */
-
 endmodule
-
+`endif

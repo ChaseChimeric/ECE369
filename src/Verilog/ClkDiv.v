@@ -1,3 +1,5 @@
+`ifndef _clkdiv
+`define _clkdiv
 module ClkDiv(Clk, Rst, ClkOut);
    input Clk, Rst;
    output reg ClkOut;
@@ -26,3 +28,4 @@ module ClkDiv(Clk, Rst, ClkOut);
       end
    end
 endmodule
+`endif

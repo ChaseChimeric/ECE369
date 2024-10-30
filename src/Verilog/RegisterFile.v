@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef _registerfile
+`define _registerfile
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
@@ -91,3 +92,4 @@ module RegisterFile(
 	/* Please fill in the implementation here... */
 
 endmodule
+`endif

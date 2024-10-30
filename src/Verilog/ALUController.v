@@ -1,3 +1,6 @@
+`ifndef _alucontroller
+`define _alucontroller
+
 module ALUController (
     op,
     funct,
@@ -88,6 +91,5 @@ module ALUController (
             
         endcase
     end
-
-
 endmodule
+`endif

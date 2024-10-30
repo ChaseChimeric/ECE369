@@ -1,3 +1,5 @@
+`ifndef _fetch
+`define _fetch
 module Fetch (
     rst,
     clk,
@@ -62,5 +64,5 @@ module Fetch (
             
         end
     end
-
 endmodule
+`endif

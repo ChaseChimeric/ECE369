@@ -1,3 +1,5 @@
+`ifndef _writeback
+`define _writeback
 module WriteBack (
     input [31:0] MemoryRead,
     input rst,
@@ -48,5 +50,5 @@ module WriteBack (
         RegWriteEnabledOut <= (rst) ? 0 : RegWriteEnabled;
     end
     
-    
 endmodule
+`endif

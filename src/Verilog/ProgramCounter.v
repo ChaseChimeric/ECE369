@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef _programcounter
+`define _programcounter
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369A - Computer Architecture
 // Laboratory 1
@@ -40,4 +41,4 @@ module ProgramCounter(Address, PCResult, Reset, Clk);
      end
 
 endmodule
-
+`endif

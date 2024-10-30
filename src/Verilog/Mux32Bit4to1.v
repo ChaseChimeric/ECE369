@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef _mux41
+`define _mux41
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
@@ -37,3 +38,4 @@ module Mux32Bit4To1 #(
     end
 
 endmodule
+`endif

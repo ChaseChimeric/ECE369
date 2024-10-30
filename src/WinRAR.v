@@ -1,3 +1,5 @@
+`ifndef _winrar
+`define _winrar
 //Percent Participation
 // Ahmad    33%
 // Ryan     33%
@@ -208,3 +210,4 @@ module WinRAR (
 
 
 endmodule
+`endif

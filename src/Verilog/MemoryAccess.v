@@ -1,3 +1,5 @@
+`ifndef _memoryaccess
+`define _memoryaccess
 module MemoryAccess(
     input Clk,
     input Sum,
@@ -124,5 +126,5 @@ always @(posedge Clk) begin
     
 end
 
-
 endmodule
+`endif

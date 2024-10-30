@@ -1,4 +1,6 @@
 `timescale 1ns / 1ps
+`ifndef _signextension
+`define _signextension
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
@@ -17,3 +19,4 @@ module SignExtension(sign_extend_in, sign_extend_out);
      assign sign_extend_out = sign_extend_in[15] ? {16'hFFFF, sign_extend_in} : {16'd0, sign_extend_in};
 
 endmodule
+`endif

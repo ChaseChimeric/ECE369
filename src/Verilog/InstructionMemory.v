@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef _instructionmemory
+`define _instructionmemory
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369A - Computer Architecture
 // Laboratory  1
@@ -58,3 +59,4 @@ module InstructionMemory # (
     assign Instruction = memory[Address[14:2]];
     
 endmodule
+`endif

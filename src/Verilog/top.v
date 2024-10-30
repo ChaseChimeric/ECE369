@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef _top
+`define _top
 
 
 module top(
@@ -33,7 +34,5 @@ module top(
         .en_out(en_out)
         );
 
-
-
-
 endmodule
+`endif
