@@ -39,6 +39,7 @@ module Decode (
     input [4:0] RegWriteAddr;
     output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15;
     wire [31:0] DataIn25_21Wire, DataIn20_15Wire;
+    output [1:0] nextInstrControlWire;
 
     input clk, RegWriteIn, rst;
     output reg [2:0] ForceInstr;
@@ -128,6 +129,15 @@ module Decode (
             MemMode <= MemmodeWire;
         end
     end
+
+    BranchController branchController_inst (
+        .DataIn20_15(DataIn20_15Wire),
+        .DataIn25_21(DataIn25_21Wire),
+        .Full32BitInstruction(InstructionIn),
+        .nextInstrControl(nextInstrControlWire),
+        .jumpAddress()
+    );
+
 
     MUXController mux_ctrl (
         .funct(InstructionIn[5:0]),
