@@ -113,7 +113,7 @@ module Execute (
 
     wire ZeroOutALU;
     wire [31:0] ALUResult;
-    ALU32Bit ALU (
+    ALU32Bit ALU32BitFast (
         .ALUControl(ALUOpCode), 
         .A(ALUInA), 
         .B(Mux3Out), 
