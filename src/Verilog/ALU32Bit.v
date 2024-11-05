@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _alu32bit
-`define _alu32bit
+`ifndef alu32bit
+`define alu32bit
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 

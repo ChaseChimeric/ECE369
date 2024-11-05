@@ -1,5 +1,5 @@
-`ifndef _muxcontroller
-`define _muxcontroller
+`ifndef muxcont
+`define muxcont
 module MUXController (
     funct,
     op,

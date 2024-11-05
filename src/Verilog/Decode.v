@@ -1,5 +1,5 @@
-`ifndef _decode
-`define _decode
+`ifndef decode
+`define decode
 `include "MuxController.v"
 `include "MemController.v"
 `include "RegisterFile.v"
@@ -169,5 +169,7 @@ module Decode (
         .ReadData1(DataIn25_21Wire),                // Read data from Rs
         .ReadData2(DataIn20_15Wire)                 // Read data from Rt
     );
+
+
 endmodule
 `endif

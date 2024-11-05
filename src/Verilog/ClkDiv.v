@@ -1,5 +1,5 @@
-`ifndef _clkdiv
-`define _clkdiv
+`ifndef clkdiv
+`define clkdiv
 module ClkDiv(Clk, Rst, ClkOut);
    input Clk, Rst;
    output reg ClkOut;

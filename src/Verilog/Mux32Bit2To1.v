@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _mux21
-`define _mux21
+`ifndef m32t1
+`define m32t1
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 

@@ -1,5 +1,5 @@
-`ifndef _fetch
-`define _fetch
+`ifndef fetch
+`define fetch
 `include "PCAdder.v"
 `include "ProgramCounter.v"
 `include "InstructionMemory.v"

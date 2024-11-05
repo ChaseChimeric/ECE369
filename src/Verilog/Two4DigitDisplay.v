@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _2dd
-`define _2dd
-`include "SevenSegment.v"
+`ifndef 24dd
+`define 24dd
 //////////////////////////////////////////////////////////////////////////////////
 // The University of Arizona
 // Electrical and Computer Engineering 

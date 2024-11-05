@@ -1,9 +1,7 @@
 `timescale 1ns / 1ps
-`ifndef _top
-`define _top
-`include "ClkDiv.v"
-`include "InstructionFetchUnit.v"
-`include "Two4DigitDisplay.v"
+`ifndef top
+`define top
+
 
 module top(
     input Clk,
@@ -35,6 +33,9 @@ module top(
         .out7(out7), 
         .en_out(en_out)
         );
+
+
+
 
 endmodule
 `endif

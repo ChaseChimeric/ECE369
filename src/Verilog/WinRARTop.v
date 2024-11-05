@@ -1,8 +1,5 @@
-`ifndef _winrartop
-`define _winrartop
-`include "ClkDiv.v"
-`include "Two4DigitDisplay.v"
-`include "../WinRAR.v"
+`ifndef wrtop
+`define wrtop
 module WinRARTop (
     input Clk,
     input Reset,

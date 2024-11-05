@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _signextension
-`define _signextension
+`ifndef sign
+`define sign
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 

@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _datamemory
-`define _datamemory
+`ifndef datamem
+`define datamem
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
