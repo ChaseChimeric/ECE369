@@ -17,20 +17,32 @@ frame.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
 #######################################################
 def compile_script():
+    sim = checkSimVar.get()
+    synth = checkSynthVar.get()
     selected_test = n.get()
     filepath = fileEntry.get()
     filepath = filepath.replace('"', "")
     if ".xpr" not in filepath:
-        tk.messagebox.showinfo("","Invalid filepath")
+        tk.messagebox.showinfo("","Invalid filepath, not xpr")
         return
     if not os.path.exists(filepath):
-        tk.messagebox.showinfo("","Invalid filepath2")
+        tk.messagebox.showinfo("","Invalid filepath, dne")
         return
     if selected_test == "":
         tk.messagebox.showinfo("","Must select test to compare results")
         return
+    if not sim and not synth:
+        tk.messagebox.showinfo("","Must select at least sim or synth")
+        return
     filepath = filepath.replace('\\', '\\\\')
-    command = f'open_project {filepath}\nlaunch_simulation -mode "post-synthesis" -type "functional"\nrestart\nrun 50us > output_tmp.csv\nexit'
+    # SCRIPT
+    command = f'open_project {filepath}\n'
+    if synth:
+        command += f'synth_design\n'
+    if sim:
+        command += f'launch_simulation -mode "post-synthesis" -type "functional"\nrestart\nrun {selected_test.split('_')[-1]}ns > output_tmp.csv\n'
+    command += f'exit'
+    #ENDSCRIPT
     with open("temp_script.tcl", "w") as script_write:
         script_write.write(command)
     os.system(f"C:\\Xilinx\\Vivado\\2024.1\\bin\\vivado.bat -mode tcl -script {os.getcwd()}\\temp_script.tcl")
@@ -38,13 +50,20 @@ def compile_script():
     with open("output_tmp.csv", 'r') as inputFile2:
         input1 = inputFile1.read()
         input2 = inputFile2.read()
-        input2 = input2.replace(' ', '')
-        input2 = input2.replace('\t', '')
-        input2 = input2[0:input2.index("\n$stop")]
+        input1 = input1.replace('\n', '')
+        input2 = input2.replace('\n', '')
+        if "$stop" in input2:
+            input2 = input2[0:input2.index("$stop")]
         if input1 != input2:
-            tk.messagebox.showinfo("","test failed, running diff")
+            tk.messagebox.showinfo("results","test failed, running diff")
             os.system(f"git diff --no-index references\\{selected_test} output_tmp.csv")
+        else:
+            tk.messagebox.showinfo("results","test passed")
     inputFile1.close()
+    try:
+        os.system("del temp_script.tcl")
+    except:
+        print("#")
     print(filepath) 
    ################################################ 
 
@@ -79,6 +98,24 @@ button = tk.Button(
     command=compile_script
 )
 button.place(x=50,y=115)
+
+checkSynthVar = tk.IntVar()
+checkSynth = tk.Checkbutton(
+    master = frame,
+    text="rerun synth",
+    variable = checkSynthVar
+)
+
+checkSynth.place(x=30,y=220)
+
+checkSimVar = tk.IntVar()
+checkSim = tk.Checkbutton(
+    master = frame,
+    text="use sim",
+    variable = checkSimVar
+)
+checkSim.select()
+checkSim.place(x=120,y=220)
 
 
 
