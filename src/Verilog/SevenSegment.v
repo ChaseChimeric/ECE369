@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _7seg
-`define _7seg
+`ifndef 7seg
+`define 7seg
 module SevenSegment(numin, segout);
     input	[3:0] numin;
     output	reg [6:0] segout;    //segout[6] - seg_a, segout[5] - seg_b, segout[4] - seg_c,

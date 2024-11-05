@@ -1,5 +1,5 @@
-`ifndef _fetch
-`define _fetch
+`ifndef fetch
+`define fetch
 `include "PCAdder.v"
 `include "ProgramCounter.v"
 `include "InstructionMemory.v"
@@ -16,9 +16,8 @@ module Fetch (
     ALUOut,
     instrMemAddressOut
 );
-    input rst, clk;
-    input [1:0] nextInstrControl;
-    input [31:0] jumpAddress;
+    input adderAdd, sum, rst, clk, nextInstr;
+    input [31:0] jumpAddress, imm, ALUOut;
     output reg [31:0] instrOut;
     output reg [31:0] nextInstruction;
     output [31:0] instrMemAddressOut;
@@ -53,25 +52,9 @@ module Fetch (
     );
 
     
-    always @(*) begin
-        case (nextInstrControl)
-
-            // Regular operation
-            2'b00:  instrMemAddress <= internalNextInstr;
-
-            // Branching
-            2'b01:  instrMemAddress <= internalNextInstr + jumpAddress << 2;
-
-            // J
-            2'b10:  instrMemAddress <= jumpAddress << 2;
-
-            // JR
-            2'b11:  instrMemAddress <= jumpAddress;
-
-            default: instrMemAddress <= internalNextInstr;
-            
-        endcase
-    end
+    assign PCAdderIn = (sum) ? (instrMemAddress + (jumpAddress)) : instrMemAddress;
+    assign secondAdderOutput = (adderAdd) ? (internalNextInstr + (imm << 2) - 16) : (internalNextInstr);
+    assign addressOut = (nextInstr) ? ((sum) ? imm << 2 : jumpAddress) : secondAdderOutput;
     assign instrMemAddressOut = instrMemAddress;
    
     always @(posedge clk) begin

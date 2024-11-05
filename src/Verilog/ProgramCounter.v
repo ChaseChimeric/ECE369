@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _programcounter
-`define _programcounter
+`ifndef pc
+`define pc
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369A - Computer Architecture
 // Laboratory 1

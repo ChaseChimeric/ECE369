@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _registerfile
-`define _registerfile
+`ifndef regf
+`define regf
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 

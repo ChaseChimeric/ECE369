@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _shamtextend
-`define _shamtextend
+`ifndef shext
+`define shext
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 

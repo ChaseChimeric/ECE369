@@ -1,5 +1,5 @@
-`ifndef _memoryaccess
-`define _memoryaccess
+`ifndef memacc
+`define memacc
 `include "DataMemory.v"
 module MemoryAccess(
     input Clk,
@@ -126,6 +126,7 @@ always @(posedge Clk) begin
     end
     
 end
+
 
 endmodule
 `endif

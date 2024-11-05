@@ -1,5 +1,5 @@
-`ifndef _memcontroller
-`define _memcontroller
+`ifndef memcon
+`define memcon
 module MemController(
     Op,
     Funct,
@@ -128,5 +128,6 @@ module MemController(
 
         endcase
     end
-endmodule
+endmodule        
+
 `endif

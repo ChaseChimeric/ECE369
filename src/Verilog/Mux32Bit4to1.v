@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _mux41
-`define _mux41
+`ifndef m32t4
+`define m32t4
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 

@@ -1,8 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef _instructionmemory
-`define _instructionmemory
-//`ifndef _mempath
-//`define _mempath ""
+`ifndef im
+`define im
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369A - Computer Architecture
 // Laboratory  1

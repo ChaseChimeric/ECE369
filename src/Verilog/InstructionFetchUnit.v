@@ -1,9 +1,7 @@
 `timescale 1ns / 1ps
-`ifndef _ifu
-`define _ifu
-`include "PCAdder.v"
-`include "ProgramCounter.v"
-`include "InstructionMemory.v"
+`ifndef ifu
+`define ifu
+
 ////////////////////////////////////////////////////////////////////////////////
 // Team Members:
 // Overall percent effort of each team meber:
