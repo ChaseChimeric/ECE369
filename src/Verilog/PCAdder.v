@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef pcadd
+`define pcadd
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369A - Computer Architecture
 // Laboratory  
@@ -29,3 +30,4 @@ module PCAdder(PCResult, PCAddResult);
 
 endmodule
 
+`endif

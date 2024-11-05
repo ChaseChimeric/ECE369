@@ -1,3 +1,8 @@
+`ifndef exec
+`define exec
+`include "SignExtension.v"
+`include "ALUController.v"
+`include "ALU32Bit.v"
 module Execute (
     input clk,
     input rst,
@@ -131,3 +136,4 @@ module Execute (
     end
     
 endmodule
+`endif

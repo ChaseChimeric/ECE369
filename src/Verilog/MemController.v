@@ -1,3 +1,5 @@
+`ifndef memcon
+`define memcon
 module MemController(
     Op,
     Funct,
@@ -128,3 +130,4 @@ module MemController(
     end
 endmodule        
 
+`endif

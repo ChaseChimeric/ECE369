@@ -1,4 +1,6 @@
 `timescale 1ns / 1ps
+`ifndef shext
+`define shext
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
@@ -17,3 +19,4 @@ module ShamtExtend(shamt_in, shamt_out);
     assign sign_extend_out = {27'd0, shamt_in};
 
 endmodule
+`endif

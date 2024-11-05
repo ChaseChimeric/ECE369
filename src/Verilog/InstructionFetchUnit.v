@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef ifu
+`define ifu
 
 ////////////////////////////////////////////////////////////////////////////////
 // Team Members:
@@ -72,3 +73,4 @@ module InstructionFetchUnit(
 
 endmodule
 
+`endif

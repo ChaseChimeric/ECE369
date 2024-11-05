@@ -1,3 +1,5 @@
+`ifndef alucontrol
+`define alucontrol
 module ALUController (
     op,
     funct,
@@ -91,3 +93,4 @@ module ALUController (
 
 
 endmodule
+`endif

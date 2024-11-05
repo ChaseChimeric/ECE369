@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef top
+`define top
 
 
 module top(
@@ -37,3 +38,4 @@ module top(
 
 
 endmodule
+`endif

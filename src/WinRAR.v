@@ -1,3 +1,11 @@
+`ifndef winrar
+`define winrar
+`include "Verilog/Fetch.v"
+`include "Verilog/Decode.v"
+`include "Verilog/Execute.v"
+`include "Verilog/MemoryAccess.v"
+`include "Verilog/WriteBack.v"
+
 //Percent Participation
 // Ahmad    33%
 // Ryan     33%
@@ -204,7 +212,5 @@ module WinRAR (
         .NextInstrOut(NextInstrFetchSignalWire[3]),
         .RegWriteEnabledOut(RegWriteEnableSignal[3])
     );
-    
-
-
 endmodule
+`endif

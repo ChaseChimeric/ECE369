@@ -1,3 +1,6 @@
+`ifndef memacc
+`define memacc
+`include "DataMemory.v"
 module MemoryAccess(
     input Clk,
     input Sum,
@@ -126,3 +129,4 @@ end
 
 
 endmodule
+`endif

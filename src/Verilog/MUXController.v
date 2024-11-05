@@ -1,3 +1,5 @@
+`ifndef muxcont
+`define muxcont
 module MUXController (
     funct,
     op,
@@ -393,3 +395,4 @@ module MUXController (
     end
     
 endmodule
+`endif

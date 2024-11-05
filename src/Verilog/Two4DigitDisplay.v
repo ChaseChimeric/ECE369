@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef 24dd
+`define 24dd
 //////////////////////////////////////////////////////////////////////////////////
 // The University of Arizona
 // Electrical and Computer Engineering 
@@ -121,3 +122,4 @@ module Two4DigitDisplay(Clk, NumberA, NumberB, out7, en_out);
      
     
 endmodule
+`endif

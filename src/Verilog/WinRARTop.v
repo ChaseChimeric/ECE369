@@ -1,3 +1,5 @@
+`ifndef wrtop
+`define wrtop
 module WinRARTop (
     input Clk,
     input Reset,
@@ -29,3 +31,4 @@ module WinRARTop (
     );
     
 endmodule
+`endif

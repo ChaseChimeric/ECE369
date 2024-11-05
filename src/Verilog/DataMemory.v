@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef datamem
+`define datamem
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
@@ -103,3 +104,4 @@ module DataMemory # (
     end
 
 endmodule
+`endif

@@ -1,3 +1,5 @@
+`ifndef wb
+`define wb
 module WriteBack (
     input [31:0] MemoryRead,
     input rst,
@@ -50,3 +52,4 @@ module WriteBack (
     
     
 endmodule
+`endif

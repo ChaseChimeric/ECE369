@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-
+`ifndef alu32bit
+`define alu32bit
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
 // 
@@ -63,4 +64,4 @@ module ALU32Bit# (
     /* Please fill in the implementation here... */
 
 endmodule
-
+`endif

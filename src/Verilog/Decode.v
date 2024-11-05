@@ -1,3 +1,8 @@
+`ifndef decode
+`define decode
+`include "MuxController.v"
+`include "MemController.v"
+`include "RegisterFile.v"
 module Decode (
     clk,
     rst,
@@ -167,3 +172,4 @@ module Decode (
 
 
 endmodule
+`endif
