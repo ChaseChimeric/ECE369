@@ -14,13 +14,16 @@ module Fetch (
     nextInstruction,
     instrOut,
     ALUOut,
-    instrMemAddressOut
+    instrMemAddressOut,
+    enable,
+    enableOut
 );
-    input adderAdd, sum, rst, clk, nextInstr;
+    input adderAdd, sum, rst, clk, nextInstr, enable;
     input [31:0] jumpAddress, imm, ALUOut;
     output reg [31:0] instrOut;
     output reg [31:0] nextInstruction;
     output [31:0] instrMemAddressOut;
+    output reg enableOut;
 
 
     wire [31:0] PCAdderIn;
@@ -54,17 +57,18 @@ module Fetch (
     
     assign PCAdderIn = (sum) ? (instrMemAddress + (jumpAddress)) : instrMemAddress;
     assign secondAdderOutput = (adderAdd) ? (internalNextInstr + (imm << 2) - 16) : (internalNextInstr);
-    assign addressOut = (nextInstr) ? ((sum) ? imm << 2 : jumpAddress) : secondAdderOutput;
+    assign addressOut = (enable) ? ((nextInstr) ? ((sum) ? imm << 2 : jumpAddress) : secondAdderOutput) : instrMemAddress;
     assign instrMemAddressOut = instrMemAddress;
    
     always @(posedge clk) begin
         if (rst) begin
             instrOut <= 0;
             nextInstruction <= 0;
+            enableOut <= 1'b1;
         end else begin
-            instrOut <= instrOutInternal;
+            instrOut <= (enable) ? instrOutInternal : 32'd0;
             nextInstruction <= internalNextInstr;
-            
+            enableOut <= enable;
         end
     end
 endmodule

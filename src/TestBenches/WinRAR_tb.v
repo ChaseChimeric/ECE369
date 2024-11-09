@@ -65,7 +65,10 @@ module WinRAR_tb;
     // Initialize inputs
     rst_0 = 1'b1;  // Assert reset
     #100;  
+    $stop;
     rst_0 = 1'b0;  // Deassert reset
+    #100;
+    $stop;
     
     // Run the simulation for 200ns
     #35350;

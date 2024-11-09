@@ -54,6 +54,10 @@ module WinRAR (
     wire [31:0] WriteData32Data             [0:0];
     wire [4:0]  WriteRegister               [0:0];
 
+    reg  [0:0]  enable                      [5:0];  // 0 is fetch
+    
+    wire enableWire;
+
     // for debug
     assign WriteData = WriteData32Data[0];
     assign ALUOut = ALUResult[0];
@@ -72,8 +76,29 @@ module WinRAR (
         .nextInstruction(NextFull32BitInstruction[0]),
         .instrOut(Full32BitInstruction[0]),
         .ALUOut(WriteData32Data[0]),
-        .instrMemAddressOut(instrMemAddressOut)
+        .instrMemAddressOut(instrMemAddressOut),
+        .enable(enable[5]),
+        .enableOut(enableWire)
     );
+
+    integer i;
+    always @(posedge clk ) begin
+        if(!rst) begin
+            enable[0] <= enableWire;
+            enable[1] <= enable[0];
+            enable[2] <= enable[1];
+            enable[3] <= enable[2];
+            enable[4] <= enable[3];
+            enable[5] <= enable[4];
+        end else begin
+            enable[0] <= 0;
+            enable[1] <= 0;
+            enable[2] <= 0;
+            enable[3] <= 0;
+            enable[4] <= 0;
+            enable[5] <= 0;
+        end
+    end
 
     Decode decode_instance (
         .clk(clk),

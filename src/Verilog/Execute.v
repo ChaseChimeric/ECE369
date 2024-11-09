@@ -58,7 +58,7 @@ module Execute (
             RegWriteOut <= 0;
             MemWriteEnOut <= 0;
             AdderAddOut <= 0;
-            MemReadEnOut <= 0;
+            MemReadEnOut <= 1;
             ForceInstrOut <= 0;
             WBDestOut <= 0;
             MemModeOut <= 0;

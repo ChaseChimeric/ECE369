@@ -99,7 +99,7 @@ module Decode (
             Sign <= 0;
             inA <= 0;
             sh_amt <= 0;
-            MemReadEn <= 0;
+            MemReadEn <= 1;
             MemWriteEn <= 0;
             RegWriteOut <= 0;
             ForceInstr <= 0;
