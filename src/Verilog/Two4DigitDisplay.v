@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
-`ifndef 24dd
-`define 24dd
+`ifndef dd24
+`define dd24
 //////////////////////////////////////////////////////////////////////////////////
 // The University of Arizona
 // Electrical and Computer Engineering 
