@@ -54,7 +54,7 @@ module WinRAR (
     wire [31:0] WriteData32Data             [0:0];
     wire [4:0]  WriteRegister               [0:0];
 
-    reg  [0:0]  enable                      [5:0];  // 0 is fetch
+    reg  [0:0]  stall                       [0:0];  // 0 is fetch
     
     wire enableWire;
 
@@ -77,28 +77,16 @@ module WinRAR (
         .instrOut(Full32BitInstruction[0]),
         .ALUOut(WriteData32Data[0]),
         .instrMemAddressOut(instrMemAddressOut),
-        .enable(enable[5]),
-        .enableOut(enableWire)
+        .enable(!stall[0])
     );
 
-    integer i;
-    always @(posedge clk ) begin
-        if(!rst) begin
-            enable[0] <= enableWire;
-            enable[1] <= enable[0];
-            enable[2] <= enable[1];
-            enable[3] <= enable[2];
-            enable[4] <= enable[3];
-            enable[5] <= enable[4];
-        end else begin
-            enable[0] <= 0;
-            enable[1] <= 0;
-            enable[2] <= 0;
-            enable[3] <= 0;
-            enable[4] <= 0;
-            enable[5] <= 0;
-        end
-    end
+    HazardDetectionUnit hazardUnit (
+        .InstructionInDecode(Full32BitInstruction[0]);
+        .InstuctionInMemory(Full32BitInstruction[1]);
+        .InstuctionInExecute(Full32BitInstruction[2]);
+        .InstructionInWB(Full32BitInstruction[3]);
+        .stall(stall[0]);
+    );
 
     Decode decode_instance (
         .clk(clk),
