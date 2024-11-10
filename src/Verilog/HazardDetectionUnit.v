@@ -12,8 +12,13 @@ always @ (*) begin
     if(InstructionInMemory[31:26]== 6'b000000 || InstructionInWB[31:26]== 6'b000000 ||  InstructionInExecute[31:26] == 6'b000000 )
     begin
             if(InstructionInDecode[31:26]== 6'b000000 && //Instruction is R- Type 
-            ((InstructionInDecode[25:21]||InstructionInDecode[20:16]) == //Checks dependency  on either instruction
-            (InstructionInMemory[15:11] || InstructionInWB[15:11] || InstructionInExecute[15:11] ) ) )
+            ((InstructionInDecode[25:21] == InstructionInMemory[15:11]) ||//Dependency Check
+             (InstructionInDecode[25:21] == InstructionInWB[15:11]) ||//Dependency check
+             (InstructionInDecode[25:21] == InstructionInExecute[15:11]) ||//Dependency check
+             ((InstructionInDecode[20:16] == InstructionInMemory[15:11]) ||//Dependency Check
+             (InstructionInDecode[20:16] == InstructionInWB[15:11]) ||//Dependency check
+             (InstructionInDecode[20:16] == InstructionInExecute[15:11]))))//Dependency check
+
             begin
                 stall = 1;
             end
