@@ -15,6 +15,9 @@ always @ (*) begin
        begin
         stall = 1;
        end
+       else if(InstructionInExecute == 32'b0 && InstructionInMemory == 32'b0 && InstructionInWB == 32'b0)begin
+        stall = 0;
+       end
     else if(InstructionInMemory[31:26]== 6'b000000 || InstructionInWB[31:26]== 6'b000000 ||  InstructionInExecute[31:26] == 6'b000000 )
     begin
             if(InstructionInDecode[31:26] == 6'b000000 && //Instruction is R- Type 
