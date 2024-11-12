@@ -73,7 +73,7 @@ module ALUController (
             // SB
             6'b101000: opCode <= ADD;
 
-            // BGEZ
+            // BGEZ & BLTZ
             6'b000001: opCode <= SUB;
 
             // BLEZ

@@ -62,7 +62,7 @@ module DataMemory # (
 
     reg [31:0] mem [MEM_DEPTH-1:0];
     initial begin
-        $readmemh("data_memory.mem", mem);
+        $readmemh("public_data_memory_lab6.mem", mem);
     end
 
     always @(*) begin
