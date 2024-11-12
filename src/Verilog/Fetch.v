@@ -50,7 +50,7 @@ module Fetch (
     );
 
     InstructionMemory mem0(
-        .Address(instrMemAddress - 4 * !enable),
+        .Address(instrMemAddress - 4 * !enable + (imm << 2) * adderAdd),
         .Instruction(instrOutInternal)
     );
 
