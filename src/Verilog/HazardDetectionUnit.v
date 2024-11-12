@@ -102,9 +102,9 @@ if (InstructionInMemory[31:26] ==  6'b000001 ||
          InstructionInMemory[31:26] ==  6'b000111 ||
          InstructionInWB[31:26] ==      6'b000111 ||  
          InstructionInExecute[31:26] == 6'b000111 ||//BGTZ
-         InstructionInMemory[31:26] ==  6'b000001 ||
-         InstructionInWB[31:26] ==      6'b000001 ||  
-         InstructionInExecute[31:26] == 6'b000001 ||//BLEZ
+         InstructionInMemory[31:26] ==  6'b000110 ||
+         InstructionInWB[31:26] ==      6'b000110 ||  
+         InstructionInExecute[31:26] == 6'b000110 ||//BLEZ
          InstructionInMemory[31:26] ==  6'b000010 ||
          InstructionInWB[31:26] ==      6'b000010 ||  
          InstructionInExecute[31:26] == 6'b000010 ||//J
