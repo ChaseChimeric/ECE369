@@ -5,6 +5,7 @@
 `include "Verilog/Execute.v"
 `include "Verilog/MemoryAccess.v"
 `include "Verilog/WriteBack.v"
+`include "Verilog/HazardDetectionUnit.v"
 
 //Percent Participation
 // Ahmad    33%
