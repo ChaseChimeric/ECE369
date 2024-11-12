@@ -264,7 +264,7 @@ end
 if(InstructionInExecute == 32'b0 && InstructionInMemory == 32'b0 && InstructionInWB == 32'b0)begin
     stall = 0;
    end 
-
+end
 
 
 
