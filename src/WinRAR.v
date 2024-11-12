@@ -54,9 +54,8 @@ module WinRAR (
     wire [31:0] WriteData32Data             [0:0];
     wire [4:0]  WriteRegister               [0:0];
 
-    reg  [0:0]  stall                       [0:0];  // 0 is fetch
-    
-    wire enableWire;
+    wire  [0:0]  stall                      [0:0];  // 0 is fetch
+    wire  [31:0] stallReturn                [0:0];
 
     // for debug
     assign WriteData = WriteData32Data[0];
@@ -81,17 +80,17 @@ module WinRAR (
     );
 
     HazardDetectionUnit hazardUnit (
-        .InstructionInDecode(Full32BitInstruction[0]);
-        .InstuctionInMemory(Full32BitInstruction[1]);
-        .InstuctionInExecute(Full32BitInstruction[2]);
-        .InstructionInWB(Full32BitInstruction[3]);
-        .stall(stall[0]);
+        .InstructionInDecode(Full32BitInstruction[0]),
+        .InstructionInExecute(Full32BitInstruction[1]),
+        .InstructionInMemory(Full32BitInstruction[2]),
+        .InstructionInWB(Full32BitInstruction[3]),
+        .stall(stall[0])
     );
 
     Decode decode_instance (
         .clk(clk),
         .rst(rst),
-        .InstructionIn(Full32BitInstruction[0]),
+        .InstructionIn((!stall[0]) ? Full32BitInstruction[0] : stallReturn[0]),
         .NextInstructionIn(NextFull32BitInstruction[0]),
         .ForceInstr(ForceInstrSignalWire[0]),
         .ZeroInverted(ZeroInvertedSignalWire[0]),
@@ -117,7 +116,9 @@ module WinRAR (
         .RegWriteOut(RegWriteEnableSignal[0]),
         .sh_amt(UseShiftAmountSignalWire[0]),
         .WriteData(WriteData32Data[0]),
-        .RegWriteAddr(WriteRegister[0])
+        .RegWriteAddr(WriteRegister[0]),
+        .stall(stall[0]),
+        .stallReturn(stallReturn[0])
     );
 
 

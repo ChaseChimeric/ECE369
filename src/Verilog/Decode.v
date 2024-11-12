@@ -32,15 +32,17 @@ module Decode (
     RegWriteOut,
     sh_amt,
     WriteData,
-    RegWriteAddr
+    RegWriteAddr,
+    stall,
+    stallReturn
 );
 
     input [31:0] InstructionIn, NextInstructionIn, WriteData;
     input [4:0] RegWriteAddr;
-    output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15;
+    output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15, stallReturn;
     wire [31:0] DataIn25_21Wire, DataIn20_15Wire;
 
-    input clk, RegWriteIn, rst;
+    input clk, RegWriteIn, rst, stall;
     output reg [2:0] ForceInstr;
     wire [2:0] ForceInstrWire;
     output reg [1:0] MemMode;
@@ -82,7 +84,17 @@ module Decode (
          RegReadWire;
     
     always @(posedge clk) begin
-        if(rst) begin
+        if(stall) begin
+            stallReturn <= InstructionIn;
+        end
+        if (!stall & rst) begin
+            stallReturn <= 32'd0;
+        end
+        if (!rst) begin
+            stallReturn <= InstructionIn;
+        end
+        
+        if(rst | stall) begin
             DataIn25_21 <= 0;
             DataIn20_15 <= 0;
             InstructionOut <= 0;
@@ -127,6 +139,7 @@ module Decode (
             ForceInstr <= ForceInstrWire;
             MemMode <= MemmodeWire;
         end
+        
     end
 
     MUXController mux_ctrl (

@@ -15,15 +15,15 @@ module Fetch (
     instrOut,
     ALUOut,
     instrMemAddressOut,
-    enable,
-    enableOut
+    enable
 );
     input adderAdd, sum, rst, clk, nextInstr, enable;
     input [31:0] jumpAddress, imm, ALUOut;
     output reg [31:0] instrOut;
     output reg [31:0] nextInstruction;
     output [31:0] instrMemAddressOut;
-    output reg enableOut;
+    
+    reg enableFlag;
 
 
     wire [31:0] PCAdderIn;
@@ -50,7 +50,7 @@ module Fetch (
     );
 
     InstructionMemory mem0(
-        .Address(instrMemAddress),
+        .Address(instrMemAddress - 4 * !enable),
         .Instruction(instrOutInternal)
     );
 
@@ -64,11 +64,9 @@ module Fetch (
         if (rst) begin
             instrOut <= 0;
             nextInstruction <= 0;
-            enableOut <= 1'b1;
         end else begin
-            instrOut <= (enable) ? instrOutInternal : 32'd0;
+            instrOut <= instrOutInternal;
             nextInstruction <= internalNextInstr;
-            enableOut <= enable;
         end
     end
 endmodule

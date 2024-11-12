@@ -2,8 +2,8 @@
 `define hazarddetectionunit
 module HazardDetectionUnit (
     input[31:0] InstructionInDecode,
-    input[31:0] InstructionInMemory,
     input[31:0] InstructionInExecute,
+    input[31:0] InstructionInMemory,
     input[31:0] InstructionInWB,
     output reg stall
 );
