@@ -9,16 +9,28 @@ module HazardDetectionUnit (
 );
 //Dependency if original if there is an R-Type in the pipeline
 always @ (*) begin
+
+    stall = 0;
+
+
+
+    //THIS IS JR
     if((InstructionInMemory[31:26]== 6'b000000    && InstructionInMemory[5:0]  == 6'b001000)|| 
        (InstructionInWB[31:26]== 6'b000000        && InstructionInWB[5:0]      == 6'b001000)||  
        (InstructionInExecute[31:26] == 6'b000000  && InstructionInExecute[5:0] == 6'b001000) )
        begin
         stall = 1;
        end
-       else if(InstructionInExecute == 32'b0 && InstructionInMemory == 32'b0 && InstructionInWB == 32'b0)begin
-        stall = 0;
-       end
-    else if(InstructionInMemory[31:26]== 6'b000000 || InstructionInWB[31:26]== 6'b000000 ||  InstructionInExecute[31:26] == 6'b000000 )
+
+
+
+
+     
+
+
+
+    if (stall != 1) begin
+    if(InstructionInMemory[31:26]== 6'b000000 || InstructionInWB[31:26]== 6'b000000 ||  InstructionInExecute[31:26] == 6'b000000 )
     begin
             if(InstructionInDecode[31:26] == 6'b000000 && //Instruction is R- Type 
             (( InstructionInDecode[25:21] == InstructionInMemory [15:11]) ||//Dependency Check
@@ -63,9 +75,22 @@ always @ (*) begin
             else 
             begin
                 stall = 0;
-            end   
+            end
+        if(InstructionInExecute == 32'b0 || InstructionInMemory == 32'b0 || InstructionInWB == 32'b0)begin
+            stall = 1;
+           end   
     end
-else if (InstructionInMemory[31:26] ==  6'b000001 ||
+    end
+    //R-TYPES
+
+
+
+
+
+
+
+if (stall != 1) begin
+if (InstructionInMemory[31:26] ==  6'b000001 ||
          InstructionInWB[31:26] ==      6'b000001 ||  
          InstructionInExecute[31:26] == 6'b000001 ||//BGEZ & BLTZ
          InstructionInMemory[31:26] ==  6'b000100 ||
@@ -90,7 +115,14 @@ else if (InstructionInMemory[31:26] ==  6'b000001 ||
  begin
     stall = 1;
 end
-else if ( InstructionInMemory[31:26] ==  6'b001000 ||
+end
+//Jumps and branches that are always hazards
+
+
+
+
+if (stall != 1) begin
+if ( InstructionInMemory[31:26] ==  6'b001000 ||
           InstructionInWB[31:26] ==      6'b001000 ||  
           InstructionInExecute[31:26] == 6'b001000 ||//ADDI
           InstructionInMemory[31:26] ==  6'b001100 ||
@@ -160,7 +192,14 @@ else if ( InstructionInMemory[31:26] ==  6'b001000 ||
                 stall = 0;
             end
     end
-else if (InstructionInMemory[31:26] ==  6'b101011 ||
+end
+
+
+
+
+
+if(stall != 1) begin
+if (InstructionInMemory[31:26] ==  6'b101011 ||
          InstructionInWB[31:26] ==      6'b101011 ||  
          InstructionInExecute[31:26] == 6'b101011 ||//SW
          InstructionInMemory[31:26] ==  6'b101001 ||
@@ -216,6 +255,7 @@ else if (InstructionInMemory[31:26] ==  6'b101011 ||
             end
     
 end
+end
           
     
 
@@ -225,9 +265,7 @@ end
 
 
 //THIS ONE IS THE END
-else begin
-    stall = 0;
-end
+
 end
 
 
