@@ -38,7 +38,7 @@ module Fetch (
     assign PCAddress = addressOut;
     
     PCAdder add0(
-        .PCResult(PCAdderIn),
+        .PCResult((nextInstr) ? ((sum) ? (imm << 2) : jumpAddress) : PCAdderIn),
         .PCAddResult(internalNextInstr)
     );
 
@@ -50,7 +50,7 @@ module Fetch (
     );
 
     InstructionMemory mem0(
-        .Address((sum) ? (instrMemAddress + (jumpAddress)) : (instrMemAddress - 4 * !enable + (imm << 2) * adderAdd)),
+        .Address(nextInstr ? ((sum) ? imm << 2 : jumpAddress) : ((sum) ? (instrMemAddress + (jumpAddress)) : (instrMemAddress - 4 * !enable + (imm << 2) * adderAdd))),
         .Instruction(instrOutInternal)
     );
 
