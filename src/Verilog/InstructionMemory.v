@@ -53,7 +53,7 @@ module InstructionMemory # (
     
     initial  
     begin
-        $readmemh("test1_instr.mem", memory);
+        $readmemh("branchtest.mem", memory);
     end
     
     assign Instruction = memory[Address[14:2]];
