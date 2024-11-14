@@ -59,7 +59,9 @@ module RegisterFile(
 	rst,
 	ReadData1, 
 	ReadData2,
-	RegRead
+	RegRead,
+	XPos,
+	YPos
 );
 	reg [31:0] mem [31:0];
 	input [4:0] ReadRegister1;
@@ -71,6 +73,7 @@ module RegisterFile(
 	input rst;
 	output reg [31:0] ReadData1;
 	output reg [31:0] ReadData2;
+	output [31:0] XPos, YPos;
 
 	always @(posedge Clk) begin
 		if(rst) begin
@@ -97,6 +100,9 @@ module RegisterFile(
             mem[count] = count*100;
         end
     end
+    
+    assign XPos = mem[2];
+    assign YPos = mem[3];
 	/* Please fill in the implementation here... */
 
 endmodule

@@ -14,11 +14,8 @@
 module WinRAR (
     input clk,
     input rst,
-    output [31:0] instrMemAddressOut,
-    output [31:0] WriteData,
-    output [31:0] ALUOut,
-    output [31:0] ReadMem,
-    output [31:0] Instruction
+    output [31:0] XPos,
+    output [31:0] YPos
 );
     // Declare wires for the other inputs and outputs
     wire [31:0] Full32BitInstruction        [3:0];  // 0 is Fetch
@@ -133,7 +130,9 @@ module WinRAR (
         .RegWriteOut(RegWriteEnableSignal[0]),
         .sh_amt(UseShiftAmountSignalWire[0]),
         .WriteData(WriteData32Data[0]),
-        .RegWriteAddr(WriteRegister[0])
+        .RegWriteAddr(WriteRegister[0]),
+        .XPos(XPos),
+        .YPos(YPos)
     );
 
 

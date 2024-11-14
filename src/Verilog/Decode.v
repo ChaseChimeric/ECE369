@@ -32,14 +32,17 @@ module Decode (
     RegWriteOut,
     sh_amt,
     WriteData,
-    RegWriteAddr
+    RegWriteAddr,
+    XPos,
+    YPos
 );
 
     input [31:0] InstructionIn, NextInstructionIn, WriteData;
     input [4:0] RegWriteAddr;
     output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15;
     wire [31:0] DataIn25_21Wire, DataIn20_15Wire;
-
+    
+    output [31:0] XPos, YPos;
     input clk, RegWriteIn, rst;
     output reg [2:0] ForceInstr;
     wire [2:0] ForceInstrWire;
@@ -168,7 +171,9 @@ module Decode (
         .Clk(clk),                              // Clock signal
         .rst(rst),
         .ReadData1(DataIn25_21Wire),                // Read data from Rs
-        .ReadData2(DataIn20_15Wire)                 // Read data from Rt
+        .ReadData2(DataIn20_15Wire),                 // Read data from Rt
+        .XPos(XPos),
+        .YPos(YPos)
     );
 
 
