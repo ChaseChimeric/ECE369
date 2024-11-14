@@ -62,7 +62,7 @@ module DataMemory # (
 
     reg [31:0] mem [MEM_DEPTH-1:0];
     initial begin
-        $readmemh("datamemory.mem", mem);
+        $readmemh("vbsme64x64dataImerfect.mem", mem);
     end
 
     always @(*) begin

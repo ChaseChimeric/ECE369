@@ -54,7 +54,7 @@ module WinRAR (
     wire [31:0] WriteData32Data             [0:0];
     wire [4:0]  WriteRegister               [0:0];
 
-    reg  [0:0]  enable                      [5:0];  // 0 is fetch
+    reg  [0:0]  enable                      [7:0];  // 0 is fetch
     
     wire enableWire;
 
@@ -77,7 +77,7 @@ module WinRAR (
         .instrOut(Full32BitInstruction[0]),
         .ALUOut(WriteData32Data[0]),
         .instrMemAddressOut(instrMemAddressOut),
-        .enable(enable[5]),
+        .enable(enable[7]),
         .enableOut(enableWire)
     );
 
@@ -90,6 +90,8 @@ module WinRAR (
             enable[3] <= enable[2];
             enable[4] <= enable[3];
             enable[5] <= enable[4];
+            enable[6] <= enable[5];
+            enable[7] <= enable[6];
         end else begin
             enable[0] <= 0;
             enable[1] <= 0;
@@ -97,6 +99,8 @@ module WinRAR (
             enable[3] <= 0;
             enable[4] <= 0;
             enable[5] <= 0;
+            enable[6] <= 0;
+            enable[7] <= 0;
         end
     end
 
@@ -125,7 +129,7 @@ module WinRAR (
         .DataIn20_15(DataInBits20To15ofInstr[0]),
         .MemReadEn(MemReadEnableSignal[0]),
         .MemWriteEn(MemWriteEnableSignal[0]),
-        .RegWriteIn(RegWriteEnableSignal[3]),
+        .RegWriteIn(RegWriteEnableSignal[3] & ((enable[6] & NextInstrFetchSignalWire[3]) | (enable[7] & !NextInstrFetchSignalWire[3]))),
         .RegWriteOut(RegWriteEnableSignal[0]),
         .sh_amt(UseShiftAmountSignalWire[0]),
         .WriteData(WriteData32Data[0]),

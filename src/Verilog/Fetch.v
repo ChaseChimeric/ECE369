@@ -56,7 +56,7 @@ module Fetch (
 
     
     assign PCAdderIn = (sum) ? (instrMemAddress + (jumpAddress)) : instrMemAddress;
-    assign secondAdderOutput = (adderAdd) ? (internalNextInstr + (imm << 2) - 16) : (internalNextInstr);
+    assign secondAdderOutput = (adderAdd) ? (internalNextInstr + (imm << 2)) : (internalNextInstr);
     assign addressOut = (enable) ? ((nextInstr) ? ((sum) ? imm << 2 : jumpAddress) : secondAdderOutput) : instrMemAddress;
     assign instrMemAddressOut = instrMemAddress;
    
@@ -66,7 +66,7 @@ module Fetch (
             nextInstruction <= 0;
             enableOut <= 1'b1;
         end else begin
-            instrOut <= (enable) ? instrOutInternal : 32'd0;
+            instrOut <= instrOutInternal;
             nextInstruction <= internalNextInstr;
             enableOut <= enable;
         end
