@@ -15,5 +15,5 @@ for line in text:
     # print(outputline)
 
 
-with open("output.txt", "w") as outputfile:
+with open("data_memory.mem", "w") as outputfile:
     outputfile.write(output)
