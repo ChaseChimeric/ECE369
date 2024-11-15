@@ -37,7 +37,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module DataMemory # (
-    parameter MEM_DEPTH = 1024
+    parameter MEM_DEPTH = 6000
 )
 (
     Address, 
@@ -62,24 +62,24 @@ module DataMemory # (
 
     reg [31:0] mem [MEM_DEPTH-1:0];
     initial begin
-        $readmemh("public_data_memory_lab6.mem", mem);
+        $readmemh("vbsme2x2data.mem", mem);
     end
 
     always @(*) begin
         if(MemRead) begin
             case (MemMode)
                 // Read Word Mode
-                2'd0: ReadData <= mem[Address[11:2]];
+                2'd0: ReadData <= mem[Address[18:2]];
 
                 // Read Half Mode
-                2'd1: ReadData <= {16'd0, mem[Address[11:2]][15:0]};
+                2'd1: ReadData <= {16'd0, mem[Address[18:2]][15:0]};
 
                 // Read Byte Mode
-                2'd2: ReadData <= {24'd0, mem[Address[11:2]][7:0]};
+                2'd2: ReadData <= {24'd0, mem[Address[18:2]][7:0]};
 
                 // Default is Word Mode
                 default: begin
-                    ReadData <= mem[Address[11:2]];
+                    ReadData <= mem[Address[18:2]];
                 end
             endcase 
         end            

@@ -116,7 +116,7 @@ module WinRAR (
         .RegWriteIn(RegWriteEnableSignal[3]),
         .RegWriteOut(RegWriteEnableSignal[0]),
         .sh_amt(UseShiftAmountSignalWire[0]),
-        .WriteData(WriteData32Data[0]),
+        .WriteData(NextInstrFetchSignalWire[3] ? WriteData32Data[0] - 4 : WriteData32Data[0]),
         .RegWriteAddr(WriteRegister[0]),
         .stall(stall[0]),
         .stallReturn(stallReturn[0])

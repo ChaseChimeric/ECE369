@@ -179,6 +179,7 @@ module Decode (
         .RegWrite(RegWriteIn),                // Control signal to enable writing
         .RegRead(RegReadWire),
         .Clk(clk),                              // Clock signal
+        .rst(rst),
         .ReadData1(DataIn25_21Wire),                // Read data from Rs
         .ReadData2(DataIn20_15Wire)                 // Read data from Rt
     );

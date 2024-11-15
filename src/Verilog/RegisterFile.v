@@ -55,7 +55,8 @@ module RegisterFile(
 	WriteRegister, 
 	WriteData, 
 	RegWrite, 
-	Clk, 
+	Clk,
+	rst, 
 	ReadData1, 
 	ReadData2,
 	RegRead
@@ -66,12 +67,17 @@ module RegisterFile(
 	input [4:0] WriteRegister;
 	input [31:0] WriteData;
 	input RegWrite, RegRead;
-	input Clk;
+	input Clk, rst;
 	output reg [31:0] ReadData1;
 	output reg [31:0] ReadData2;
 
 	always @(posedge Clk) begin
-		if (RegWrite) begin
+		if(rst) begin
+		    mem[4] <= 0;
+		    mem[5] <= 16;
+		    mem[6] <= 48;
+		    mem[29] <= 20000;
+		end else if (RegWrite) begin
 			mem[WriteRegister] <= WriteData;
 		end 
 	end
