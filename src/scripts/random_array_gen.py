@@ -36,12 +36,13 @@ print()
 for line in window_arr:
     print(str(line))
 
-perfect_row = random.randint(0, frame_size[0]-(window_size[0]-1))
-perfect_col = random.randint(0, frame_size[1]-(window_size[1]-1))
+if perfect:
+    perfect_row = random.randint(0, frame_size[0]-(window_size[0]-1))
+    perfect_col = random.randint(0, frame_size[1]-(window_size[1]-1))
 
-for k in range(window_size[0]):
-    for l in range(window_size[1]):
-        frame_arr[perfect_row+k][perfect_col+l] = window_arr[k][l]
+    for k in range(window_size[0]):
+        for l in range(window_size[1]):
+            frame_arr[perfect_row+k][perfect_col+l] = window_arr[k][l]
 
 
 sad = 99999999999999999
