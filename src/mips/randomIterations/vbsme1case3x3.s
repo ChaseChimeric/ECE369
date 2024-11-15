@@ -48,6 +48,9 @@ window0: .word    4,  4,
 main: 
     addi    $sp, $sp, -4    # Make space on stack
     sw      $ra, 0($sp)     # Save return address
+    addi $a0, $0, 0
+
+    
          
     # Start test 1 
     ############################################################
