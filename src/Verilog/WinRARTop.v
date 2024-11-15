@@ -8,12 +8,6 @@ module WinRARTop (
 );
     wire [31:0] NumberA;
     wire [31:0] NumberB;
-    wire clockMod;
-
-    ClkDiv clkdiv(
-        .Clk(Clk), 
-        .Rst(0), 
-        .ClkOut(clockMod));
     
     Two4DigitDisplay uut (
         .Clk(Clk),
@@ -24,7 +18,7 @@ module WinRARTop (
     );
     
     WinRAR cpu (
-        .clk(clockMod),
+        .clk(Clk),
         .rst(Reset),
         .XPos(NumberA),
         .YPos(NumberB)
