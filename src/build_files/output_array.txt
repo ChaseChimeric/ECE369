@@ -1,0 +1,11 @@
+SAD = 0
+location (1, 0)
+
+asize0:	.word	3, 4, 2, 2
+
+frame0:	.word	85, 156, 117, 193
+.word	108, 80, 133, 34
+.word	42, 99, 111, 53
+
+window0:	.word	108, 80
+.word	42, 99

@@ -1,0 +1,151 @@
+23bdfffc	//	main:		addi	$sp, $sp, -4 ->	main:		addi	$sp, $sp, -4
+afbf0000	//			sw	$ra, 0($sp) ->			sw	$ra, 0($sp)
+20040000	//			addi	$a0, $0, 0 ->			addi	$a0, $0, 0
+20850010	//			addi	$a1, $a0, 16 ->			addi	$a1, $a0, 16
+8c880000	//			lw	$t0, 0($a0) ->			lw	$t0, 0($a0)
+8c890004	//			lw	$t1, 4($a0) ->			lw	$t1, 4($a0)
+71095802	//			mul	$t3, $t0, $t1 ->			mul	$t3, $t0, $t1
+000b5880	//			sll	$t3, $t3, 2 ->			sll	$t3, $t3, 2
+01653020	//			add	$a2, $t3, $a1 ->			add	$a2, $t3, $a1
+0c00000b	//			jal	vbsme ->			jal	vbsme
+0800000a	//	endtest:	j	endtest ->	endtest:	j	endtest
+00000000	//	vbsme:		nop ->	vbsme:		nop
+20117d00	//	init:		addi	$s1, $zero, 32000 ->	init:		addi	$s1, $zero, 32000
+20120000	//			addi	$s2, $zero, 0 ->			addi	$s2, $zero, 0
+20b30000	//			addi	$s3, $a1, 0 ->			addi	$s3, $a1, 0
+afa0fffc	//			sw	$zero, -4($sp) ->			sw	$zero, -4($sp)
+afa0fff8	//			sw	$zero, -8($sp) ->			sw	$zero, -8($sp)
+afa0fff4	//			sw	$zero, -12($sp) ->			sw	$zero, -12($sp)
+afa0fff0	//			sw	$zero, -16($sp) ->			sw	$zero, -16($sp)
+afa0ffec	//			sw	$zero, -20($sp) ->			sw	$zero, -20($sp)
+afa0ffe8	//			sw	$zero, -24($sp) ->			sw	$zero, -24($sp)
+8c88000c	//			lw	$t0, 12($a0) ->			lw	$t0, 12($a0)
+2108ffff	//			addi	$t0, $t0, -1 ->			addi	$t0, $t0, -1
+8c890004	//			lw	$t1, 4($a0) ->			lw	$t1, 4($a0)
+01285022	//			sub	$t2, $t1, $t0 ->			sub	$t2, $t1, $t0
+200c0001	//			addi	$t4, $0, 1 ->			addi	$t4, $0, 1
+154c0001	//			bne	$t2, $t4, nonZeroWidth ->			bne	$t2, $t4, nonZeroWidth
+20120001	//			addi	$s2, $0, 1 ->			addi	$s2, $0, 1
+8c880008	//	nonZeroWidth:	lw	$t0, 8($a0) ->	nonZeroWidth:	lw	$t0, 8($a0)
+2108ffff	//			addi	$t0, $t0, -1 ->			addi	$t0, $t0, -1
+8c890000	//			lw	$t1, 0($a0) ->			lw	$t1, 0($a0)
+01285822	//			sub	$t3, $t1, $t0 ->			sub	$t3, $t1, $t0
+716ab002	//			mul	$s6, $t3, $t2 ->			mul	$s6, $t3, $t2
+0800002c	//			j	forinit ->			j	forinit
+1ac00072	//	movement:	blez	$s6, return ->	movement:	blez	$s6, return
+08000024	//			j	contmove ->			j	contmove
+20080000	//	contmove:	addi	$t0, $zero, 0 ->	contmove:	addi	$t0, $zero, 0
+12480031	//			beq	$s2, $t0, right ->			beq	$s2, $t0, right
+20080001	//			addi	$t0, $zero, 1 ->			addi	$t0, $zero, 1
+1248003f	//			beq	$s2, $t0, down ->			beq	$s2, $t0, down
+20080002	//			addi	$t0, $zero, 2 ->			addi	$t0, $zero, 2
+1248004f	//			beq	$s2, $t0, left ->			beq	$s2, $t0, left
+20080003	//			addi	$t0, $zero, 3 ->			addi	$t0, $zero, 3
+1248005a	//			beq	$s2, $t0, up ->			beq	$s2, $t0, up
+20100000	//	forinit:	addi	$s0, $zero, 0 ->	forinit:	addi	$s0, $zero, 0
+20cd0000	//			addi	$t5, $a2, 0 ->			addi	$t5, $a2, 0
+20080000	//			addi	$t0, $zero, 0 ->			addi	$t0, $zero, 0
+22d6ffff	//			addi	$s6, $s6, -1 ->			addi	$s6, $s6, -1
+8faffffc	//			lw	$t7, -4($sp) ->			lw	$t7, -4($sp)
+8fb8fff8	//			lw	$t8, -8($sp) ->			lw	$t8, -8($sp)
+8c8a0008	//	for:		lw	$t2, 8($a0) ->	for:		lw	$t2, 8($a0)
+110a0017	//			beq	$t0, $t2, loopend ->			beq	$t0, $t2, loopend
+20090000	//	for2init:	addi	$t1, $zero, 0 ->	for2init:	addi	$t1, $zero, 0
+8c8a000c	//	for2:		lw	$t2, 12($a0) ->	for2:		lw	$t2, 12($a0)
+112a0012	//			beq	$t1, $t2, forend ->			beq	$t1, $t2, forend
+00095880	//	loopbody:	sll	$t3, $t1, 2 ->	loopbody:	sll	$t3, $t1, 2
+8c8c0004	//			lw	$t4, 4($a0) ->			lw	$t4, 4($a0)
+71886002	//			mul	$t4, $t4, $t0 ->			mul	$t4, $t4, $t0
+000c6080	//	end_mult:	sll	$t4, $t4, 2 ->	end_mult:	sll	$t4, $t4, 2
+016cc820	//			add	$t9, $t3, $t4 ->			add	$t9, $t3, $t4
+03335820	//			add	$t3, $t9, $s3 ->			add	$t3, $t9, $s3
+8d6b0000	//			lw	$t3, 0($t3) ->			lw	$t3, 0($t3)
+8dac0000	//			lw	$t4, 0($t5) ->			lw	$t4, 0($t5)
+016c702a	//			slt	$t6, $t3, $t4 ->			slt	$t6, $t3, $t4
+11c00003	//			beq	$t6, $zero, abs21 ->			beq	$t6, $zero, abs21
+018b5822	//	abs12:		sub	$t3, $t4, $t3 ->	abs12:		sub	$t3, $t4, $t3
+020b8020	//			add	$s0, $s0, $t3 ->			add	$s0, $s0, $t3
+08000046	//			j	cont ->			j	cont
+016c5822	//	abs21:		sub	$t3, $t3, $t4 ->	abs21:		sub	$t3, $t3, $t4
+020b8020	//			add	$s0, $s0, $t3 ->			add	$s0, $s0, $t3
+21ad0004	//	cont:		addi	$t5, $t5, 4 ->	cont:		addi	$t5, $t5, 4
+21290001	//	for2end:	addi	$t1, $t1, 1 ->	for2end:	addi	$t1, $t1, 1
+08000035	//			j	for2 ->			j	for2
+21080001	//	forend:		addi	$t0, $t0, 1 ->	forend:		addi	$t0, $t0, 1
+08000032	//			j	for ->			j	for
+10100007	//	loopend:	beq	$zero, $s0, foundzero ->	loopend:	beq	$zero, $s0, foundzero
+0211402a	//			slt	$t0, $s0, $s1 ->			slt	$t0, $s0, $s1
+15000001	//			bne	$t0, $zero, newsum ->			bne	$t0, $zero, newsum
+08000022	//			j	movement ->			j	movement
+8fa2fff8	//	newsum:		lw	$v0, -8($sp) ->	newsum:		lw	$v0, -8($sp)
+8fa3fffc	//			lw	$v1, -4($sp) ->			lw	$v1, -4($sp)
+22110000	//			addi	$s1, $s0, 0 ->			addi	$s1, $s0, 0
+08000022	//			j	movement ->			j	movement
+8fa2fff8	//	foundzero:	lw	$v0, -8($sp) ->	foundzero:	lw	$v0, -8($sp)
+8fa3fffc	//			lw	$v1, -4($sp) ->			lw	$v1, -4($sp)
+00000020	//			add	$0, $0, $0 ->			add	$0, $0, $0
+03e00008	//			jr	$ra ->			jr	$ra
+22730004	//	right:		addi	$s3, $s3, 4 ->	right:		addi	$s3, $s3, 4
+8fa8fffc	//			lw	$t0, -4($sp) ->			lw	$t0, -4($sp)
+21080001	//			addi	$t0, $t0, 1 ->			addi	$t0, $t0, 1
+afa8fffc	//			sw	$t0, -4($sp) ->			sw	$t0, -4($sp)
+8faafff0	//			lw	$t2, -16($sp) ->			lw	$t2, -16($sp)
+8c89000c	//			lw	$t1, 12($a0) ->			lw	$t1, 12($a0)
+012a4820	//			add	$t1, $t1, $t2 ->			add	$t1, $t1, $t2
+01094020	//			add	$t0, $t0, $t1 ->			add	$t0, $t0, $t1
+8c890004	//			lw	$t1, 4($a0) ->			lw	$t1, 4($a0)
+11280001	//			beq	$t1, $t0, chdirdown ->			beq	$t1, $t0, chdirdown
+0800002c	//			j	forinit ->			j	forinit
+8fa8fff4	//	chdirdown:	lw	$t0, -12($sp) ->	chdirdown:	lw	$t0, -12($sp)
+21080001	//			addi	$t0, $t0, 1 ->			addi	$t0, $t0, 1
+afa8fff4	//			sw	$t0, -12($sp) ->			sw	$t0, -12($sp)
+20120001	//			addi	$s2, $zero, 1 ->			addi	$s2, $zero, 1
+0800002c	//			j	forinit ->			j	forinit
+8c890004	//	down:		lw	$t1, 4($a0) ->	down:		lw	$t1, 4($a0)
+00095080	//			sll	$t2, $t1, 2 ->			sll	$t2, $t1, 2
+026a9820	//			add	$s3, $s3, $t2 ->			add	$s3, $s3, $t2
+8c890000	//			lw	$t1, 0($a0) ->			lw	$t1, 0($a0)
+8fa8fff8	//			lw	$t0, -8($sp) ->			lw	$t0, -8($sp)
+21080001	//			addi	$t0, $t0, 1 ->			addi	$t0, $t0, 1
+afa8fff8	//			sw	$t0, -8($sp) ->			sw	$t0, -8($sp)
+8c8a0008	//			lw	$t2, 8($a0) ->			lw	$t2, 8($a0)
+8fabffec	//			lw	$t3, -20($sp) ->			lw	$t3, -20($sp)
+014b5020	//			add	$t2, $t2, $t3 ->			add	$t2, $t2, $t3
+010a4020	//			add	$t0, $t0, $t2 ->			add	$t0, $t0, $t2
+11280001	//			beq	$t1, $t0, chdirleft ->			beq	$t1, $t0, chdirleft
+0800002c	//			j	forinit ->			j	forinit
+8fa8fff0	//	chdirleft:	lw	$t0, -16($sp) ->	chdirleft:	lw	$t0, -16($sp)
+21080001	//			addi	$t0, $t0, 1 ->			addi	$t0, $t0, 1
+afa8fff0	//			sw	$t0, -16($sp) ->			sw	$t0, -16($sp)
+20120002	//			addi	$s2, $zero, 2 ->			addi	$s2, $zero, 2
+0800002c	//			j	forinit ->			j	forinit
+2273fffc	//	left:		addi	$s3, $s3, -4 ->	left:		addi	$s3, $s3, -4
+8fa8fffc	//			lw	$t0, -4($sp) ->			lw	$t0, -4($sp)
+2108ffff	//			addi	$t0, $t0, -1 ->			addi	$t0, $t0, -1
+afa8fffc	//			sw	$t0, -4($sp) ->			sw	$t0, -4($sp)
+8fa9ffe8	//			lw	$t1, -24($sp) ->			lw	$t1, -24($sp)
+01095022	//			sub	$t2, $t0, $t1 ->			sub	$t2, $t0, $t1
+100a0001	//			beq	$zero, $t2, chdirup ->			beq	$zero, $t2, chdirup
+0800002c	//			j	forinit ->			j	forinit
+8fa8ffec	//	chdirup:	lw	$t0, -20($sp) ->	chdirup:	lw	$t0, -20($sp)
+21080001	//			addi	$t0, $t0, 1 ->			addi	$t0, $t0, 1
+afa8ffec	//			sw	$t0, -20($sp) ->			sw	$t0, -20($sp)
+20120003	//			addi	$s2, $zero, 3 ->			addi	$s2, $zero, 3
+0800002c	//			j	forinit ->			j	forinit
+8c890004	//	up:		lw	$t1, 4($a0) ->	up:		lw	$t1, 4($a0)
+00095080	//			sll	$t2, $t1, 2 ->			sll	$t2, $t1, 2
+026a9822	//			sub	$s3, $s3, $t2 ->			sub	$s3, $s3, $t2
+8fa8fff8	//			lw	$t0, -8($sp) ->			lw	$t0, -8($sp)
+2108ffff	//			addi	$t0, $t0, -1 ->			addi	$t0, $t0, -1
+afa8fff8	//			sw	$t0, -8($sp) ->			sw	$t0, -8($sp)
+8fabfff4	//			lw	$t3, -12($sp) ->			lw	$t3, -12($sp)
+010b4022	//			sub	$t0, $t0, $t3 ->			sub	$t0, $t0, $t3
+10080001	//			beq	$zero, $t0, chdirright ->			beq	$zero, $t0, chdirright
+0800002c	//			j	forinit ->			j	forinit
+8fa8ffe8	//	chdirright:	lw	$t0, -24($sp) ->	chdirright:	lw	$t0, -24($sp)
+21080001	//			addi	$t0, $t0, 1 ->			addi	$t0, $t0, 1
+afa8ffe8	//			sw	$t0, -24($sp) ->			sw	$t0, -24($sp)
+20120000	//			addi	$s2, $zero, 0 ->			addi	$s2, $zero, 0
+0800002c	//			j	forinit ->			j	forinit
+00000020	//	return:		add	$0, $0, $0 ->	return:		add	$0, $0, $0
+03e00008	//			jr	$ra ->			jr	$ra
