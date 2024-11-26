@@ -131,8 +131,8 @@ module WinRAR (
         .sh_amt(UseShiftAmountSignalWire[0]),
         .WriteData(WriteData32Data[0]),
         .RegWriteAddr(WriteRegister[0]),
-        .XPos(XPos),
-        .YPos(YPos)
+        .XPos(YPos),
+        .YPos(XPos)
     );
 
 

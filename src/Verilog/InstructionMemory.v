@@ -53,7 +53,7 @@ module InstructionMemory # (
     
     initial  
     begin
-        $readmemh("vbsme64x64instrPerfect.mem", memory);
+        $readmemh("instruction.mem", memory);
     end
     
     assign Instruction = memory[Address[14:2]];
