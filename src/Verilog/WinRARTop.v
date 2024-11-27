@@ -5,13 +5,13 @@ module WinRARTop (
     input Reset,
     output [6:0] out7,
     output [7:0] en_out,
-    output [1:0] led
+    output [3:0] led
 );
     wire [31:0] NumberA;
     wire [31:0] NumberB;
     
-    reg [14:0] clockReg;
-    reg [15:0] resetShiftReg;
+    reg [23:0] clockReg;
+    reg [16:0] resetShiftReg;
     
     
     always @(posedge Clk) begin
@@ -25,6 +25,11 @@ module WinRARTop (
         
     end
     
+    assign led[0] = NumberA < 100;
+    assign led[1] = NumberB < 100;
+    assign led[2] = resetShiftReg != 0;
+    assign led[3] = clockReg[14];
+    
     Two4DigitDisplay uut (
         .Clk(Clk),
         .NumberA(NumberA[15:0]),
@@ -34,7 +39,7 @@ module WinRARTop (
     );
     
     WinRAR cpu (
-        .clk(clockReg[14]),
+        .clk(),
         .rst(resetShiftReg != 0),
         .XPos(NumberA),
         .YPos(NumberB)

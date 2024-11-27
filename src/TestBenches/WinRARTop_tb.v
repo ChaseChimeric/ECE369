@@ -8,7 +8,7 @@ module WinRARTop_tb;
   reg rst;
   wire [6:0] out7;
   wire [7:0] en_out;
-  wire [1:0] led;
+  wire [3:0] led;
 
   WinRARTop  WinRARTop_inst (
     .Clk(clk),
