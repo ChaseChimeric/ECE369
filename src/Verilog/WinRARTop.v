@@ -39,7 +39,7 @@ module WinRARTop (
     );
     
     WinRAR cpu (
-        .clk(),
+        .clk(clockReg[14]),
         .rst(resetShiftReg != 0),
         .XPos(NumberA),
         .YPos(NumberB)
