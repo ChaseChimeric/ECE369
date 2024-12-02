@@ -65,90 +65,90 @@ module MemParse1 (
     input [31:0] MemRead63,
     input [31:0] WindowRead,
     input [31:0] StackRead,
-    input [31:0] AddrOut,
+    input [12:0] Addr,
     input clk,
-    output [31:0] TopDataOut,
-    output [31:0] BottomDataOut,
-    output [31:0] ExtraDataOut,
-    output [12:0] Addr
+    output reg [31:0] TopDataOut,
+    output reg [31:0] BottomDataOut,
+    output reg [31:0] ExtraDataOut,
+    output reg [12:0] AddrOut
 );
-
     always @(posedge clk ) begin
         case (Addr[10:6])
-            5'd0    :   TopDataOut <= MemRead0  ;
-            5'd1    :   TopDataOut <= MemRead1  ;
-            5'd2    :   TopDataOut <= MemRead2  ;
-            5'd3    :   TopDataOut <= MemRead3  ;
-            5'd4    :   TopDataOut <= MemRead4  ;
-            5'd5    :   TopDataOut <= MemRead5  ;
-            5'd6    :   TopDataOut <= MemRead6  ;
-            5'd7    :   TopDataOut <= MemRead7  ;
-            5'd8    :   TopDataOut <= MemRead8  ;
-            5'd9    :   TopDataOut <= MemRead9  ;
-            5'd10   :   TopDataOut <= MemRead10 ;
-            5'd11   :   TopDataOut <= MemRead11 ;
-            5'd12   :   TopDataOut <= MemRead12 ;
-            5'd13   :   TopDataOut <= MemRead13 ;
-            5'd14   :   TopDataOut <= MemRead14 ;
-            5'd15   :   TopDataOut <= MemRead15 ;
-            5'd16   :   TopDataOut <= MemRead16 ;
-            5'd17   :   TopDataOut <= MemRead17 ;
-            5'd18   :   TopDataOut <= MemRead18 ;
-            5'd19   :   TopDataOut <= MemRead19 ;
-            5'd20   :   TopDataOut <= MemRead20 ;
-            5'd21   :   TopDataOut <= MemRead21 ;
-            5'd22   :   TopDataOut <= MemRead22 ;
-            5'd23   :   TopDataOut <= MemRead23 ;
-            5'd24   :   TopDataOut <= MemRead24 ;
-            5'd25   :   TopDataOut <= MemRead25 ;
-            5'd26   :   TopDataOut <= MemRead26 ;
-            5'd27   :   TopDataOut <= MemRead27 ;
-            5'd28   :   TopDataOut <= MemRead28 ;
-            5'd29   :   TopDataOut <= MemRead29 ;
-            5'd30   :   TopDataOut <= MemRead30 ;
-            5'd31   :   TopDataOut <= MemRead31 ;
-            default:    TopDataOut <= 32'd0     ;
+            5'd0    :   BottomDataOut <= MemRead0  ;
+            5'd1    :   BottomDataOut <= MemRead1  ;
+            5'd2    :   BottomDataOut <= MemRead2  ;
+            5'd3    :   BottomDataOut <= MemRead3  ;
+            5'd4    :   BottomDataOut <= MemRead4  ;
+            5'd5    :   BottomDataOut <= MemRead5  ;
+            5'd6    :   BottomDataOut <= MemRead6  ;
+            5'd7    :   BottomDataOut <= MemRead7  ;
+            5'd8    :   BottomDataOut <= MemRead8  ;
+            5'd9    :   BottomDataOut <= MemRead9  ;
+            5'd10   :   BottomDataOut <= MemRead10 ;
+            5'd11   :   BottomDataOut <= MemRead11 ;
+            5'd12   :   BottomDataOut <= MemRead12 ;
+            5'd13   :   BottomDataOut <= MemRead13 ;
+            5'd14   :   BottomDataOut <= MemRead14 ;
+            5'd15   :   BottomDataOut <= MemRead15 ;
+            5'd16   :   BottomDataOut <= MemRead16 ;
+            5'd17   :   BottomDataOut <= MemRead17 ;
+            5'd18   :   BottomDataOut <= MemRead18 ;
+            5'd19   :   BottomDataOut <= MemRead19 ;
+            5'd20   :   BottomDataOut <= MemRead20 ;
+            5'd21   :   BottomDataOut <= MemRead21 ;
+            5'd22   :   BottomDataOut <= MemRead22 ;
+            5'd23   :   BottomDataOut <= MemRead23 ;
+            5'd24   :   BottomDataOut <= MemRead24 ;
+            5'd25   :   BottomDataOut <= MemRead25 ;
+            5'd26   :   BottomDataOut <= MemRead26 ;
+            5'd27   :   BottomDataOut <= MemRead27 ;
+            5'd28   :   BottomDataOut <= MemRead28 ;
+            5'd29   :   BottomDataOut <= MemRead29 ;
+            5'd30   :   BottomDataOut <= MemRead30 ;
+            5'd31   :   BottomDataOut <= MemRead31 ;
+            default:    BottomDataOut <= 32'd0     ;
         endcase
         case (Addr[11:6])
-            5'd0    :   BottomDataOut <= MemRead32 ;
-            5'd1    :   BottomDataOut <= MemRead33 ;
-            5'd2    :   BottomDataOut <= MemRead34 ;
-            5'd3    :   BottomDataOut <= MemRead35 ;
-            5'd4    :   BottomDataOut <= MemRead36 ;
-            5'd5    :   BottomDataOut <= MemRead37 ;
-            5'd6    :   BottomDataOut <= MemRead38 ;
-            5'd7    :   BottomDataOut <= MemRead39 ;
-            5'd8    :   BottomDataOut <= MemRead40 ;
-            5'd9    :   BottomDataOut <= MemRead41 ;
-            5'd10   :   BottomDataOut <= MemRead42 ;
-            5'd11   :   BottomDataOut <= MemRead43 ;
-            5'd12   :   BottomDataOut <= MemRead44 ;
-            5'd13   :   BottomDataOut <= MemRead45 ;
-            5'd14   :   BottomDataOut <= MemRead46 ;
-            5'd15   :   BottomDataOut <= MemRead47 ;
-            5'd16   :   BottomDataOut <= MemRead48 ;
-            5'd17   :   BottomDataOut <= MemRead49 ;
-            5'd18   :   BottomDataOut <= MemRead50 ;
-            5'd19   :   BottomDataOut <= MemRead51 ;
-            5'd20   :   BottomDataOut <= MemRead52 ;
-            5'd21   :   BottomDataOut <= MemRead53 ;
-            5'd22   :   BottomDataOut <= MemRead54 ;
-            5'd23   :   BottomDataOut <= MemRead55 ;
-            5'd24   :   BottomDataOut <= MemRead56 ;
-            5'd25   :   BottomDataOut <= MemRead57 ;
-            5'd26   :   BottomDataOut <= MemRead58 ;
-            5'd27   :   BottomDataOut <= MemRead59 ;
-            5'd28   :   BottomDataOut <= MemRead60 ;
-            5'd29   :   BottomDataOut <= MemRead61 ;
-            5'd30   :   BottomDataOut <= MemRead62 ;
-            5'd31   :   BottomDataOut <= MemRead63 ;
-            default:    BottomDataOut <= 32'd0     ;
+            5'd0    :   TopDataOut  <= MemRead32 ;
+            5'd1    :   TopDataOut  <= MemRead33 ;
+            5'd2    :   TopDataOut  <= MemRead34 ;
+            5'd3    :   TopDataOut  <= MemRead35 ;
+            5'd4    :   TopDataOut  <= MemRead36 ;
+            5'd5    :   TopDataOut  <= MemRead37 ;
+            5'd6    :   TopDataOut  <= MemRead38 ;
+            5'd7    :   TopDataOut  <= MemRead39 ;
+            5'd8    :   TopDataOut  <= MemRead40 ;
+            5'd9    :   TopDataOut  <= MemRead41 ;
+            5'd10   :   TopDataOut  <= MemRead42 ;
+            5'd11   :   TopDataOut  <= MemRead43 ;
+            5'd12   :   TopDataOut  <= MemRead44 ;
+            5'd13   :   TopDataOut  <= MemRead45 ;
+            5'd14   :   TopDataOut  <= MemRead46 ;
+            5'd15   :   TopDataOut  <= MemRead47 ;
+            5'd16   :   TopDataOut  <= MemRead48 ;
+            5'd17   :   TopDataOut  <= MemRead49 ;
+            5'd18   :   TopDataOut  <= MemRead50 ;
+            5'd19   :   TopDataOut  <= MemRead51 ;
+            5'd20   :   TopDataOut  <= MemRead52 ;
+            5'd21   :   TopDataOut  <= MemRead53 ;
+            5'd22   :   TopDataOut  <= MemRead54 ;
+            5'd23   :   TopDataOut  <= MemRead55 ;
+            5'd24   :   TopDataOut  <= MemRead56 ;
+            5'd25   :   TopDataOut  <= MemRead57 ;
+            5'd26   :   TopDataOut  <= MemRead58 ;
+            5'd27   :   TopDataOut  <= MemRead59 ;
+            5'd28   :   TopDataOut  <= MemRead60 ;
+            5'd29   :   TopDataOut  <= MemRead61 ;
+            5'd30   :   TopDataOut  <= MemRead62 ;
+            5'd31   :   TopDataOut  <= MemRead63 ;
+            default:    TopDataOut  <= 32'd0     ;
         endcase
         case (Addr[6]) 
             1'd0    :   ExtraDataOut <= WindowRead ;
             1'd1    :   ExtraDataOut <= StackRead  ;
             default :   ExtraDataOut <= 32'd0      ;
         endcase
+        AddrOut <= Addr;
     end
     
 endmodule

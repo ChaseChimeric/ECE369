@@ -139,16 +139,164 @@ module MemAccess (
     reg [31:0] Stack    [63:0];
 
     // For Comp
-    // initial begin
-    //     $readmemh("data_memory.mem", {CONCATENATE_ALL_VALUES_STORED_IN_ORDER_HERE});
-    // end
+    integer i;
+    reg [31:0] tempReg [4160:0];
+    initial begin
+        $readmemh("data_memory.mem", tempReg);
+        for (i = 0; i < 64; i = i + 1) begin
+            Mem0[i]    = tempReg[i + 0 * 64][7:0]  ;
+            Mem1[i]    = tempReg[i + 1 * 64][7:0]  ;
+            Mem2[i]    = tempReg[i + 2 * 64][7:0]  ;
+            Mem3[i]    = tempReg[i + 3 * 64][7:0]  ;
+            Mem4[i]    = tempReg[i + 4 * 64][7:0]  ;
+            Mem5[i]    = tempReg[i + 5 * 64][7:0]  ;
+            Mem6[i]    = tempReg[i + 6 * 64][7:0]  ;
+            Mem7[i]    = tempReg[i + 7 * 64][7:0]  ;
+            Mem8[i]    = tempReg[i + 8 * 64][7:0]  ;
+            Mem9[i]    = tempReg[i + 9 * 64][7:0]  ;
+            Mem10[i]   = tempReg[i + 10 * 64][7:0] ;
+            Mem11[i]   = tempReg[i + 11 * 64][7:0] ;
+            Mem12[i]   = tempReg[i + 12 * 64][7:0] ;
+            Mem13[i]   = tempReg[i + 13 * 64][7:0] ;
+            Mem14[i]   = tempReg[i + 14 * 64][7:0] ;
+            Mem15[i]   = tempReg[i + 15 * 64][7:0] ;
+            Mem16[i]   = tempReg[i + 16 * 64][7:0] ;
+            Mem17[i]   = tempReg[i + 17 * 64][7:0] ;
+            Mem18[i]   = tempReg[i + 18 * 64][7:0] ;
+            Mem19[i]   = tempReg[i + 19 * 64][7:0] ;
+            Mem20[i]   = tempReg[i + 20 * 64][7:0] ;
+            Mem21[i]   = tempReg[i + 21 * 64][7:0] ;
+            Mem22[i]   = tempReg[i + 22 * 64][7:0] ;
+            Mem23[i]   = tempReg[i + 23 * 64][7:0] ;
+            Mem24[i]   = tempReg[i + 24 * 64][7:0] ;
+            Mem25[i]   = tempReg[i + 25 * 64][7:0] ;
+            Mem26[i]   = tempReg[i + 26 * 64][7:0] ;
+            Mem27[i]   = tempReg[i + 27 * 64][7:0] ;
+            Mem28[i]   = tempReg[i + 28 * 64][7:0] ;
+            Mem29[i]   = tempReg[i + 29 * 64][7:0] ;
+            Mem30[i]   = tempReg[i + 30 * 64][7:0] ;
+            Mem31[i]   = tempReg[i + 31 * 64][7:0] ;
+            Mem32[i]   = tempReg[i + 32 * 64][7:0] ;
+            Mem33[i]   = tempReg[i + 33 * 64][7:0] ;
+            Mem34[i]   = tempReg[i + 34 * 64][7:0] ;
+            Mem35[i]   = tempReg[i + 35 * 64][7:0] ;
+            Mem36[i]   = tempReg[i + 36 * 64][7:0] ;
+            Mem37[i]   = tempReg[i + 37 * 64][7:0] ;
+            Mem38[i]   = tempReg[i + 38 * 64][7:0] ;
+            Mem39[i]   = tempReg[i + 39 * 64][7:0] ;
+            Mem40[i]   = tempReg[i + 40 * 64][7:0] ;
+            Mem41[i]   = tempReg[i + 41 * 64][7:0] ;
+            Mem42[i]   = tempReg[i + 42 * 64][7:0] ;
+            Mem43[i]   = tempReg[i + 43 * 64][7:0] ;
+            Mem44[i]   = tempReg[i + 44 * 64][7:0] ;
+            Mem45[i]   = tempReg[i + 45 * 64][7:0] ;
+            Mem46[i]   = tempReg[i + 46 * 64][7:0] ;
+            Mem47[i]   = tempReg[i + 47 * 64][7:0] ;
+            Mem48[i]   = tempReg[i + 48 * 64][7:0] ;
+            Mem49[i]   = tempReg[i + 49 * 64][7:0] ;
+            Mem50[i]   = tempReg[i + 50 * 64][7:0] ;
+            Mem51[i]   = tempReg[i + 51 * 64][7:0] ;
+            Mem52[i]   = tempReg[i + 52 * 64][7:0] ;
+            Mem53[i]   = tempReg[i + 53 * 64][7:0] ;
+            Mem54[i]   = tempReg[i + 54 * 64][7:0] ;
+            Mem55[i]   = tempReg[i + 55 * 64][7:0] ;
+            Mem56[i]   = tempReg[i + 56 * 64][7:0] ;
+            Mem57[i]   = tempReg[i + 57 * 64][7:0] ;
+            Mem58[i]   = tempReg[i + 58 * 64][7:0] ;
+            Mem59[i]   = tempReg[i + 59 * 64][7:0] ;
+            Mem60[i]   = tempReg[i + 60 * 64][7:0] ;
+            Mem61[i]   = tempReg[i + 61 * 64][7:0] ;
+            Mem62[i]   = tempReg[i + 62 * 64][7:0] ;
+            Mem63[i]   = tempReg[i + 63 * 64][7:0] ;
+            Window[i]  = tempReg[i + 64 * 64][7:0] ;
+        end
+    end
     
     // For Testing idk man
 
-    // integer i;
-    // initial begin
-    //
-    // end
+//     integer i1;
+//     integer i2;
+//     integer i3;
+//     integer i4;
+//     integer i5;
+//     initial begin
+//        for(i1 = 0; i1 < 64; i1 = i1 + 1) begin
+//            Mem0[i1] = i1;
+//            Mem4[i1] = i1;
+//            Mem8[i1] = i1;
+//            Mem12[i1] = i1;
+//            Mem16[i1] = i1;
+//            Mem20[i1] = i1;
+//            Mem24[i1] = i1;
+//            Mem28[i1] = i1;
+//            Mem32[i1] = i1;
+//            Mem36[i1] = i1;
+//            Mem40[i1] = i1;
+//            Mem44[i1] = i1;
+//            Mem48[i1] = i1;
+//            Mem52[i1] = i1;
+//            Mem56[i1] = i1;
+//            Mem60[i1] = i1;
+//            Window[i1] = i1 * 2 + 3;
+//        end
+//        for(i2 = 64; i2 < 128; i2 = i2 + 1) begin
+//            Mem1[i2-64] = i2;
+//            Mem5[i2-64] = i2;
+//            Mem9[i2-64] = i2;
+//            Mem13[i2-64] = i2;
+//            Mem17[i2-64] = i2;
+//            Mem21[i2-64] = i2;
+//            Mem25[i2-64] = i2;
+//            Mem29[i2-64] = i2;
+//            Mem33[i2-64] = i2;
+//            Mem37[i2-64] = i2;
+//            Mem41[i2-64] = i2;
+//            Mem45[i2-64] = i2;
+//            Mem49[i2-64] = i2;
+//            Mem53[i2-64] = i2;
+//            Mem57[i2-64] = i2;
+//            Mem61[i2-64] = i2;
+//        end
+//        for(i3 = 128; i3 < 192; i3 = i3 + 1) begin
+//            Mem2[i3-128] = i3;
+//            Mem6[i3-128] = i3;
+//            Mem10[i3-128] = i3;
+//            Mem14[i3-128] = i3;
+//            Mem18[i3-128] = i3;
+//            Mem22[i3-128] = i3;
+//            Mem26[i3-128] = i3;
+//            Mem30[i3-128] = i3;
+//            Mem34[i3-128] = i3;
+//            Mem38[i3-128] = i3;
+//            Mem42[i3-128] = i3;
+//            Mem46[i3-128] = i3;
+//            Mem50[i3-128] = i3;
+//            Mem54[i3-128] = i3;
+//            Mem58[i3-128] = i3;
+//            Mem62[i3-128] = i3;
+//        end
+//        for(i4 = 192; i4 < 255; i4 = i4 + 1) begin
+//            Mem3[i4-192] = i4;
+//            Mem7[i4-192] = i4;
+//            Mem11[i4-192] = i4;
+//            Mem15[i4-192] = i4;
+//            Mem19[i4-192] = i4;
+//            Mem23[i4-192] = i4;
+//            Mem27[i4-192] = i4;
+//            Mem31[i4-192] = i4;
+//            Mem35[i4-192] = i4;
+//            Mem39[i4-192] = i4;
+//            Mem43[i4-192] = i4;
+//            Mem47[i4-192] = i4;
+//            Mem51[i4-192] = i4;
+//            Mem55[i4-192] = i4;
+//            Mem59[i4-192] = i4;
+//            Mem63[i4-192] = i4;
+//        end
+//        for(i5 = 0; i5 < 64; i5 = i5 + 1) begin
+//            Stack[i5] = i5 * 100 + 100;
+//        end
+//     end
 
     always @(posedge clk) begin
         MemRead0    <= {24'd0, Mem0[Addr[5:0]]};

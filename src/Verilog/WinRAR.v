@@ -1,10 +1,10 @@
 `ifndef winrar
 `define winrar
-`include "Verilog/Fetch.v"
-`include "Verilog/Decode.v"
-`include "Verilog/Execute.v"
-`include "Verilog/MemoryAccess.v"
-`include "Verilog/WriteBack.v"
+`include "Fetch.v"
+`include "Decode.v"
+`include "Execute.v"
+`include "MemoryAccess.v"
+`include "WriteBack.v"
 
 //Percent Participation
 // Ahmad    33%

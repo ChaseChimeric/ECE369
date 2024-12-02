@@ -4,7 +4,7 @@ module MemParse2 (
     input [31:0] TopData,
     input [31:0] ExtraData,
     input [12:0] Addr,
-    output [31:0] MemRead
+    output reg [31:0] MemRead
 );
 
     always @(posedge clk ) begin
