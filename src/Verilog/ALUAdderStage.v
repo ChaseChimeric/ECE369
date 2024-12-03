@@ -1,3 +1,6 @@
+`ifndef _adderstage
+`define _adderstage
+`include "FullAdder2Bit.v"
 module ALUAdderStage #(
     parameter SEQUENCEVAL = 0
 )
@@ -60,3 +63,4 @@ module ALUAdderStage #(
         .rst(rst)
     );
 endmodule
+`endif

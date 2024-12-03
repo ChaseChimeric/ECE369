@@ -1,3 +1,5 @@
+`ifndef _2bitadder
+`define _2bitadder
 module FullAdder2Bit #(
     parameter SEQUENCEVAL = 0
 )
@@ -165,3 +167,4 @@ always @(posedge clk) begin
 end
 
 endmodule
+`endif

@@ -1,3 +1,6 @@
+`include "ALUSetup.v"
+`include "ALUFinalStage.v"
+`include "ALUAdderStage.v"
 module EighteenStageALU (
     input [31:0] inA,
     input [31:0] inB,

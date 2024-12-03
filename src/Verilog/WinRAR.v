@@ -17,6 +17,7 @@ module WinRAR (
     output [31:0] XPos,
     output [31:0] YPos
 );
+    localparam ENDVAL = 25;
     // Declare wires for the other inputs and outputs
     wire [31:0] Full32BitInstruction        [3:0];  // 0 is Fetch
     wire [31:0] NextFull32BitInstruction    [3:0];  // 0 is Fetch
@@ -51,7 +52,7 @@ module WinRAR (
     wire [31:0] WriteData32Data             [0:0];
     wire [4:0]  WriteRegister               [0:0];
 
-    reg  [0:0]  enable                      [7:0];  // 0 is fetch
+    reg  [0:0]  enable                      [ENDVAL:0];  // 0 is fetch
     
     wire enableWire;
 
@@ -74,7 +75,7 @@ module WinRAR (
         .instrOut(Full32BitInstruction[0]),
         .ALUOut(WriteData32Data[0]),
         .instrMemAddressOut(instrMemAddressOut),
-        .enable(enable[7]),
+        .enable(enable[ENDVAL]),
         .enableOut(enableWire)
     );
 
@@ -82,22 +83,13 @@ module WinRAR (
     always @(posedge clk ) begin
         if(!rst) begin
             enable[0] <= enableWire;
-            enable[1] <= enable[0];
-            enable[2] <= enable[1];
-            enable[3] <= enable[2];
-            enable[4] <= enable[3];
-            enable[5] <= enable[4];
-            enable[6] <= enable[5];
-            enable[7] <= enable[6];
+            for(i = 0; i < ENDVAL; i = i + 1) begin
+                enable[i + 1] <= enable[i];
+            end
         end else begin
-            enable[0] <= 0;
-            enable[1] <= 0;
-            enable[2] <= 0;
-            enable[3] <= 0;
-            enable[4] <= 0;
-            enable[5] <= 0;
-            enable[6] <= 0;
-            enable[7] <= 0;
+           for(i = 0; i <= ENDVAL; i = i + 1) begin
+                enable[i] <= 1'd0;
+            end
         end
     end
 
@@ -126,7 +118,7 @@ module WinRAR (
         .DataIn20_15(DataInBits20To15ofInstr[0]),
         .MemReadEn(MemReadEnableSignal[0]),
         .MemWriteEn(MemWriteEnableSignal[0]),
-        .RegWriteIn(RegWriteEnableSignal[3] & ((enable[6] & NextInstrFetchSignalWire[3]) | (enable[7] & !NextInstrFetchSignalWire[3]))),
+        .RegWriteIn(RegWriteEnableSignal[3] & ((enable[ENDVAL-1] & NextInstrFetchSignalWire[3]) | (enable[ENDVAL] & !NextInstrFetchSignalWire[3]))),
         .RegWriteOut(RegWriteEnableSignal[0]),
         .sh_amt(UseShiftAmountSignalWire[0]),
         .WriteData(WriteData32Data[0]),

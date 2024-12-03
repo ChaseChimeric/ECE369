@@ -44,7 +44,7 @@ module WinRAR_tb;
   // Clock generation
   initial begin
     clk_0 = 0;
-    forever #17000 clk_0 = ~clk_0;  // Clock period = 10ns (100 MHz)
+    forever #10 clk_0 = ~clk_0;  // Clock period = 10ns (100 MHz)
     
   end
 
@@ -52,10 +52,10 @@ module WinRAR_tb;
   initial begin
     // Initialize inputs
     rst_0 = 1'b1;  // Assert reset
-    #34000;  
+    #20;  
     $stop;
     rst_0 = 1'b0;  // Deassert reset
-    #34000;
+    #20;
     $stop;
     
     // Run the simulation for 200ns

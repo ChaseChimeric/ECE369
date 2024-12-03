@@ -35,6 +35,7 @@ module ALUFinalStage (
                 OR:     resInt <= ORRes;
                 default: resInt <= 0;
             endcase
+            Zero <= res == 32'd0;
         end else begin
             resInt <= 0;
             Zero <= 0;
@@ -43,7 +44,6 @@ module ALUFinalStage (
 
     always @(posedge clk ) begin
         res <= resInt;
-        Zero <= res == 32'd0;
     end
 
     

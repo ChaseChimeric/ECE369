@@ -2,7 +2,7 @@
 `define exec
 `include "SignExtension.v"
 `include "ALUController.v"
-`include "ALU32Bit.v"
+`include "18StageALU.v"
 module Execute (
     input clk,
     input rst,
@@ -59,13 +59,13 @@ module Execute (
     reg [0:0] MemWriteEnReg [0:ENDVAL];
     reg [0:0] AdderAddReg [0:ENDVAL];
     reg [0:0] MemReadEnReg [0:ENDVAL];
-    reg [0:0] ForceInstrReg [0:ENDVAL];
+    reg [2:0] ForceInstrReg [0:ENDVAL];
     reg [0:0] WBDestReg [0:ENDVAL];
-    reg [0:0] MemModeReg [0:ENDVAL];
-    reg [0:0] NextInstrReg [0:ENDVAL];
-    reg [0:0] InstrReg [0:ENDVAL];
-    reg [0:0] DataAtInstr20_16InReg [0:ENDVAL];
-    reg [0:0] SignExtendedInstrImmReg [0:ENDVAL];
+    reg [1:0] MemModeReg [0:ENDVAL];
+    reg [31:0] NextInstrReg [0:ENDVAL];
+    reg [31:0] InstrReg [0:ENDVAL];
+    reg [31:0] DataAtInstr20_16InReg [0:ENDVAL];
+    reg [31:0] SignExtendedInstrImmReg [0:ENDVAL];
     integer i;
     integer j;
     integer k;
@@ -86,7 +86,7 @@ module Execute (
     end
     always @(posedge clk) begin
         if (rst) begin
-            SumOut <= 0;
+            //SumOut <= 0;
             NextInstructionOut <= 0;
             NextInstrAddressOut <= 0;
             DataWriteValOut <= 0;
