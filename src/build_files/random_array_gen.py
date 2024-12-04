@@ -306,7 +306,7 @@ return:
 
 """)
         else:
-            outputfile.write("j multiply3\nend_mult3:\n")
+            outputfile.write("addi $t3, $0, 0\nj multiply3\nend_mult3:\n")
             outputfile.write("""sll $t3, $t3, 2
     add $a2, $t3, $a1 
     jal     vbsme           # call function
@@ -532,7 +532,3 @@ else:
         outputfile.write("window0:\t")
         for line in window_arr:
             outputfile.write(".word\t" + str(line).replace("[","").replace("]","")+"\n")
-
-
-
- 
