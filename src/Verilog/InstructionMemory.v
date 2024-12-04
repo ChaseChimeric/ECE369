@@ -38,7 +38,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module InstructionMemory # (
-    parameter MEM_DEPTH = 1024
+    parameter MEM_DEPTH = 256
 )
 (
     Address, 
@@ -56,7 +56,7 @@ module InstructionMemory # (
         $readmemh("instruction.mem", memory);
     end
     
-    assign Instruction = memory[Address[14:2]];
+    assign Instruction = memory[Address[10:2]];
     
 endmodule
 `endif

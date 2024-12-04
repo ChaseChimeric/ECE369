@@ -54,10 +54,13 @@ module Fetch (
         .Instruction(instrOutInternal)
     );
 
-    
-    assign PCAdderIn = ((sum) ? (instrMemAddress + (jumpAddress)) : instrMemAddress);
-    assign secondAdderOutput = (adderAdd) ? (internalNextInstr + (imm << 2)) : (internalNextInstr);
-    assign addressOut = (enable) ? ((nextInstr) ? ((sum) ? imm << 2 : jumpAddress) : secondAdderOutput) : instrMemAddress;
+    wire [7:0] instrMemAddressWire = instrMemAddress[10:2];
+    wire [7:0] jumpAddressWire = jumpAddress[10:2];
+    wire [7:0] internalNextInstrWire = internalNextInstr[10:2];
+    wire [7:0] immWire = imm[7:0];
+    assign PCAdderIn = ((sum) ? ({22'd0, (instrMemAddressWire + (jumpAddressWire)), 2'd0}) : instrMemAddress);
+    assign secondAdderOutput = (adderAdd) ? {22'd0, (internalNextInstrWire + (immWire)), 2'd0} : (internalNextInstr);
+    assign addressOut = (enable) ? ((nextInstr) ? ((sum) ? {22'd0, imm[10:2]}: {22'd0, jumpAddress[10:2], 2'd0}) : secondAdderOutput) : instrMemAddress;
     assign instrMemAddressOut = instrMemAddress;
    
     always @(posedge clk) begin
