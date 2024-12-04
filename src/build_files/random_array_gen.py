@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import argparse
 import random
 import os.path
@@ -111,7 +112,7 @@ main:
             outputfile.write("mul $t3, $t0, $t1\n")
             outputfile.write("""sll $t3, $t3, 2
     add $a2, $t3, $a1
-    jal     vbsme           # call function
+    j     vbsme           # call function
     endtest:
     j endtest
 #####################################################################
@@ -225,8 +226,8 @@ newsum:
 foundzero:
     lw $v0, -8($sp)         # | set minimum indexes
     lw $v1, -4($sp)         # |
-    add $0, $0, $0
-    jr $ra
+    
+    j     endtest
 #______________________________________________________
 # movement functions
 right:
@@ -301,15 +302,15 @@ up:
         addi $s2, $zero, 0  # change direction to down
         j forinit
 return:
-    add $0, $0, $0
-    jr $ra 
+    
+    j     endtest 
 
 """)
         else:
             outputfile.write("addi $t3, $0, 0\nj multiply3\nend_mult3:\n")
             outputfile.write("""sll $t3, $t3, 2
     add $a2, $t3, $a1 
-    jal     vbsme           # call function
+    j     vbsme           # call function
     endtest:
     j endtest
 #####################################################################
@@ -425,7 +426,7 @@ newsum:
 foundzero:
     lw $v0, -8($sp)         # | set minimum indexes
     lw $v1, -4($sp)         # |
-    jr $ra
+    j     endtest
 #______________________________________________________
 # movement functions
 right:
@@ -501,7 +502,7 @@ up:
 #________________________________________________________
 # extra functions (still needed)
 return:
-    jr $ra 
+    j     endtest 
 multiply:
         beq $t2, $zero, end_mult  # If $t1 == 0, return (multiplication done)
         add $s6, $s6, $t3         # Add $t0 to the result
