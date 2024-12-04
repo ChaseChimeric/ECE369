@@ -80,7 +80,7 @@ module RegisterFile(
 			mem[4] <= 0;
 			mem[5] <= 16;
 			mem[6] <= 16400;
-			mem[29] <= 22000;
+			mem[29] <= 16680;
 		end else if (RegWrite) begin
 			mem[WriteRegister] <= WriteData;
 		end 

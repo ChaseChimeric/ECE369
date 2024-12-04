@@ -142,7 +142,7 @@ module MemAccess (
     integer i;
     reg [31:0] tempReg [4160:0];
     initial begin
-        $readmemh("data_memory.mem", tempReg);
+        $readmemh("data.mem", tempReg);
         for (i = 0; i < 64; i = i + 1) begin
             Mem0[i]    = tempReg[i + 0 * 64][7:0]  ;
             Mem1[i]    = tempReg[i + 1 * 64][7:0]  ;

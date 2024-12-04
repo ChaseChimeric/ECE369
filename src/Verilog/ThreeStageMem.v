@@ -214,6 +214,8 @@ module ThreeStageMem (
         .MemRead61(MemRead61),
         .MemRead62(MemRead62),
         .MemRead63(MemRead63),
+        .WindowRead(WindowRead),
+        .StackRead(StackRead),
         .Addr(AddrWire[1]),
         .clk(clk),
         .TopDataOut(TopData),
