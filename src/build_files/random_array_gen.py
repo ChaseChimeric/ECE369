@@ -505,17 +505,17 @@ return:
 multiply:
         beq $t2, $zero, end_mult  # If $t1 == 0, return (multiplication done)
         add $s6, $s6, $t3         # Add $t0 to the result
-        sub $t2, $t2, 1           # Decrement the second number (multiplicand)
+        addi $t2, $t2, -1           # Decrement the second number (multiplicand)
         j multiply
 multiply2:
         beq $t7, $zero, end_mult2  # If $t1 == 0, return (multiplication done)
         add $t4, $t4, $t0         # Add $t0 to the result
-        sub $t7, $t7, 1           # Decrement the second number (multiplicand)
+        addi $t7, $t7, -1           # Decrement the second number (multiplicand)
         j multiply2
 multiply3:
         beq $t1, $zero, end_mult3  # If $t1 == 0, return (multiplication done)
         add $t3, $t3, $t0         # Add $t0 to the result
-        sub $t1, $t1, 1           # Decrement the second number (multiplicand)
+        addi $t1, $t1, -1           # Decrement the second number (multiplicand)
         j multiply3
 
 """)
