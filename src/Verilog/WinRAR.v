@@ -1,6 +1,6 @@
 `ifndef winrar
 `define winrar
-`include "Fetch.v"
+`include "FetchTop.v"
 `include "Decode.v"
 `include "Execute.v"
 `include "MemoryAccess.v"
@@ -63,7 +63,7 @@ module WinRAR (
     assign Instruction = Full32BitInstruction[0];
 
     // Instantiate the Fetch module
-    Fetch fetch_instance (
+    FetchTop fetch_instance (
         .rst(rst),
         .clk(clk),
         .jumpAddress(InstrAdd[1]),
@@ -219,6 +219,7 @@ module WinRAR (
     WriteBack writeback_instance (
         .MemoryRead(MemoryRead[0]),
         .rst(rst),
+        .clk(clk),
         .ALUOut(ALUResult[1]),
         .ImmediateExtended(ImmediateExtended[1]),
         .Instruction(Full32BitInstruction[3]),
