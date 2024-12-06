@@ -29,7 +29,7 @@ module WinRARTop (
     assign led[1] = NumberB < 100;
     
     Two4DigitDisplay uut (
-        .Clk(clockReg[2]),
+        .Clk(clockReg[5]),
         .NumberA(NumberA[15:0]),
         .NumberB(NumberB[15:0]),
         .out7(out7),
