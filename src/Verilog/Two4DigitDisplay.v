@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 `ifndef dd24
 `define dd24
+`include "SevenSegment.v"
 //////////////////////////////////////////////////////////////////////////////////
 // The University of Arizona
 // Electrical and Computer Engineering 

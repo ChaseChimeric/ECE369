@@ -1,3 +1,6 @@
+`ifndef _cla3
+`define _cla3
+
 module CarryLookAheadUnit3Slice (
     input carry0In,
     input carry1In,
@@ -20,3 +23,4 @@ module CarryLookAheadUnit3Slice (
     end
     
 endmodule
+`endif

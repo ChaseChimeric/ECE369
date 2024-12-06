@@ -1,3 +1,5 @@
+`ifndef _18stage
+`define _18stage
 `include "ALUSetup.v"
 `include "ALUFinalStage.v"
 `include "ALUAdderStage.v"
@@ -104,3 +106,4 @@ module EighteenStageALU (
         .Zero(Zero)
     );
 endmodule
+`endif

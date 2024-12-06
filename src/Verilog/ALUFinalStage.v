@@ -1,3 +1,6 @@
+`ifndef _finalstage
+`define _finalstage
+
 module ALUFinalStage (
     input [31:0] AdderRes,
     input [31:0] XORRes,
@@ -48,3 +51,4 @@ module ALUFinalStage (
 
     
 endmodule
+`endif

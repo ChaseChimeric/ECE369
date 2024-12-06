@@ -1,3 +1,6 @@
+`ifndef _fulladd32
+`define _fulladd32
+`include "CarryLookAheadUnit3Slice.v"
 module FullAdder32Bit (
     input [31:0] inA,
     input [31:0] inB,
@@ -261,3 +264,4 @@ module FullAdder32Bit (
 
     
 endmodule
+`endif

@@ -1,3 +1,7 @@
+`ifndef _32bitfast
+`define _32bitfast
+`include "FullAdder32Bit.v" 
+
 module ALU32BitFast# (
 	parameter SIZE = 32
 )

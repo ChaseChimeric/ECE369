@@ -1,3 +1,5 @@
+`ifndef _MemParse2
+`define _MemParse2
 module MemParse2 (
     input clk,
     input [31:0] BottomData,
@@ -17,3 +19,4 @@ module MemParse2 (
     end
     
 endmodule
+`endif

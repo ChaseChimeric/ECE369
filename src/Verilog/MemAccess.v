@@ -1,3 +1,5 @@
+`ifndef _MemAccess
+`define _MemAccess
 module MemAccess (
     input [12:0] Addr,
     input [31:0] WData,
@@ -371,3 +373,4 @@ module MemAccess (
 
     
 endmodule   
+`endif

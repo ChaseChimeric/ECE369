@@ -1,3 +1,5 @@
+`ifndef _InstructionMemoryAccess
+`define _InstructionMemoryAccess
 module InstructionMemoryAccess (
     input [12:0] Addr,
     input clk,
@@ -31,3 +33,4 @@ module InstructionMemoryAccess (
 
 
 endmodule   
+`endif
