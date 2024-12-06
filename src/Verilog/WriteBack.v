@@ -26,12 +26,15 @@ module WriteBack (
     output reg NextInstrOut,
     output reg RegWriteEnabledOut
 );
-    reg [31:0] DataWriteValMuxOut;
+    wire [31:0] DataWriteValMuxOut;
     reg [31:0] NextInstrAddressMuxOut;
+    reg [31:0] WriteDataReg;
+    assign DataWriteValMuxOut = (DataWriteVal) ? ALUOut : MemoryRead;
     always @(posedge clk) begin
-        DataWriteValMuxOut <= (DataWriteVal) ? ALUOut : MemoryRead;
         NextInstrAddressMuxOut <= (NextInstrAddress) ? NextInstructionAddress : DataWriteValMuxOut;
-        WriteData <= (rst) ? 0 : NextInstrAddressMuxOut;
+
+        WriteDataReg <= (rst) ? 0 : NextInstrAddressMuxOut;
+        WriteData <= WriteDataReg;
     end
 
     reg [4:0] WBDest_rt_rd;
