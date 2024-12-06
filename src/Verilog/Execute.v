@@ -48,7 +48,7 @@ module Execute (
     output reg [31:0] ALUOut
 );
     //Pass Through Values
-    localparam ENDVAL = 18;
+    localparam ENDVAL = 20;
     
     reg [0:0] SumReg [0:ENDVAL];
     reg [0:0] NextInstructionReg [0:ENDVAL];
@@ -217,13 +217,20 @@ module Execute (
     wire [31:0] InvertedALUOrNot;
     assign InvertedALUOrNot = (Inverted) ? (~ALUResult) : ALUResult;
     
+    reg [31:0] ALUOutReg;
+    reg ZeroOrNotReg;
     always @(posedge clk) begin
         if(rst) begin
             ZeroOrNot <= 0;
+            ALUOutReg <= 0;
             ALUOut <= 0;
+            ZeroOrNotReg <= 0;
         end else begin
-            ZeroOrNot <= (ZeroInverted) ? (~ZeroOutALU) : (ZeroOutALU);
-            ALUOut <= (Sign) ? (InvertedALUOrNot >> 31) : InvertedALUOrNot;
+            ZeroOrNotReg <= (ZeroInverted) ? (~ZeroOutALU) : (ZeroOutALU);
+            ZeroOrNot <= ZeroOrNotReg;
+            ALUOutReg <= (Sign) ? (InvertedALUOrNot >> 31) : InvertedALUOrNot;
+            ALUOut <= ALUOutReg;
+            
         end
         
     end

@@ -22,7 +22,7 @@ module ALUFinalStage (
     localparam OR = 7;
     
     reg [31:0] resInt;
-    always @(*) begin
+    always @(posedge clk) begin
         if(!rst) begin
             case (opCode)
                 ADD:    resInt <= AdderRes;

@@ -20,12 +20,24 @@ module EighteenStageALU (
     wire [31:0] inBInt      [0:15]; 
     wire [3:0] opCodeInt   [0:16];
     wire [0:0]  carrySignals[0:15];
+    
+    
+    // Reg inputs to avoid critical path
+    reg [31:0] inAReg;
+    reg [31:0] inBReg;
+    reg [2:0]  opCodeReg;
+    
+    always @(posedge clk) begin
+        inAReg     <= inA;  
+        inBReg     <= inB;  
+        opCodeReg  <= opCode; 
+    end
 
     // 1. Instantiate ALUSetup
     ALUSetup setup (
-        .inA(inA),
-        .inB(inB),
-        .opCode(opCode),
+        .inA(inAReg),
+        .inB(inBReg),
+        .opCode(opCodeReg),
         .clk(clk),
         .rst(rst),
         .inAOut(inAInt[0]),

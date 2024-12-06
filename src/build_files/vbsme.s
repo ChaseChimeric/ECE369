@@ -1,39 +1,29 @@
 # SAD = 0
-# location (2, 8)
+# location (2, 1)
 
 ########################################################################################################################
 ### data
 ########################################################################################################################
 .data
-asize0:	.word	20, 20, 6, 6
+asize0:	.word	10, 10, 6, 6
 
-frame0:	.word	40, 159, 110, 145, 27, 9, 88, 137, 60, 23, 90, 166, 107, 56, 55, 192, 32, 46, 96, 113
-.word	36, 151, 126, 66, 145, 145, 129, 150, 35, 145, 190, 101, 184, 162, 29, 49, 111, 153, 173, 150
-.word	82, 97, 61, 104, 194, 39, 68, 129, 72, 55, 84, 2, 117, 27, 86, 81, 162, 60, 11, 181
-.word	9, 26, 16, 7, 81, 47, 89, 16, 127, 45, 157, 137, 84, 150, 98, 58, 22, 115, 108, 158
-.word	17, 106, 100, 16, 62, 66, 50, 14, 74, 57, 170, 179, 92, 165, 153, 126, 150, 99, 29, 70
-.word	109, 186, 106, 124, 196, 112, 3, 100, 122, 3, 18, 110, 67, 97, 10, 147, 57, 24, 91, 88
-.word	144, 162, 115, 22, 119, 190, 182, 62, 78, 38, 172, 86, 119, 51, 45, 29, 179, 69, 179, 138
-.word	19, 55, 0, 49, 168, 60, 3, 159, 138, 162, 97, 65, 73, 160, 92, 151, 0, 146, 158, 46
-.word	41, 100, 159, 87, 178, 182, 81, 15, 67, 183, 37, 179, 26, 49, 150, 184, 19, 83, 115, 35
-.word	16, 54, 137, 9, 169, 95, 195, 89, 25, 127, 159, 42, 150, 146, 94, 99, 183, 101, 174, 109
-.word	82, 49, 127, 2, 78, 37, 189, 123, 117, 82, 109, 190, 196, 137, 91, 76, 53, 108, 34, 178
-.word	177, 192, 66, 67, 92, 18, 60, 118, 26, 179, 167, 42, 62, 193, 28, 52, 3, 115, 107, 45
-.word	196, 128, 173, 182, 83, 7, 72, 61, 7, 74, 9, 81, 22, 88, 167, 29, 86, 109, 85, 11
-.word	126, 62, 95, 166, 25, 160, 112, 187, 87, 0, 119, 91, 150, 158, 157, 155, 116, 7, 145, 128
-.word	184, 3, 89, 73, 178, 195, 180, 152, 133, 41, 57, 93, 119, 166, 38, 27, 115, 16, 8, 74
-.word	105, 140, 39, 136, 127, 36, 151, 11, 173, 12, 3, 181, 4, 19, 137, 183, 4, 135, 197, 78
-.word	143, 88, 90, 83, 173, 9, 43, 55, 89, 51, 172, 82, 194, 99, 49, 133, 53, 36, 43, 65
-.word	151, 10, 110, 163, 171, 10, 43, 105, 177, 176, 25, 25, 138, 106, 25, 73, 156, 35, 129, 88
-.word	12, 170, 153, 71, 107, 80, 2, 101, 31, 145, 199, 149, 78, 56, 170, 106, 189, 142, 187, 125
-.word	114, 19, 43, 28, 57, 26, 62, 72, 103, 11, 174, 90, 73, 74, 197, 33, 155, 96, 144, 199
+frame0:	.word	98, 76, 80, 91, 168, 190, 30, 171, 43, 98
+.word	117, 191, 124, 109, 1, 118, 175, 162, 136, 163
+.word	48, 158, 83, 161, 198, 111, 50, 57, 42, 176
+.word	140, 135, 172, 98, 193, 64, 179, 190, 4, 89
+.word	76, 110, 105, 193, 127, 44, 189, 5, 149, 195
+.word	28, 81, 162, 119, 48, 111, 57, 51, 164, 20
+.word	43, 94, 182, 128, 89, 189, 131, 104, 0, 105
+.word	185, 42, 120, 11, 192, 16, 146, 93, 64, 163
+.word	43, 62, 172, 114, 141, 111, 192, 31, 125, 147
+.word	188, 141, 86, 168, 67, 50, 155, 119, 45, 119
 
-window0:	.word	72, 55, 84, 2, 117, 27
-.word	127, 45, 157, 137, 84, 150
-.word	74, 57, 170, 179, 92, 165
-.word	122, 3, 18, 110, 67, 97
-.word	78, 38, 172, 86, 119, 51
-.word	138, 162, 97, 65, 73, 160
+window0:	.word	158, 83, 161, 198, 111, 50
+.word	135, 172, 98, 193, 64, 179
+.word	110, 105, 193, 127, 44, 189
+.word	81, 162, 119, 48, 111, 57
+.word	94, 182, 128, 89, 189, 131
+.word	42, 120, 11, 192, 16, 146
 ########################################################################################################################
 ### main
 ########################################################################################################################
@@ -46,9 +36,11 @@ addi $a0, $0, 0
 addi $a1, $a0, 16
 lw $t0, 0($a0)
 lw $t1, 4($a0)
-mul $t3, $t0, $t1
+addi $t3, $0, 0
+j multiply3
+end_mult3:
 sll $t3, $t3, 2
-    add $a2, $t3, $a1
+    add $a2, $t3, $a1 
     jal     vbsme           # call function
     endtest:
     j endtest
@@ -84,17 +76,19 @@ vbsme:
         bne $t2, $t4, nonZeroWidth
         addi $s2, $0, 1         # set direction to down
         nonZeroWidth:
-        lw $t0, 8($a0)          # load window height
+        lw $t0, 8($a0)         # load window height
         addi $t0, $t0, -1
         lw $t1, 0($a0)          # load frame height
         sub $t3, $t1, $t0
-        mul $s6, $t3, $t2       # s6 is now dec counter
+        addi $s6, $0, 0
+        j multiply
+        end_mult:
     j forinit
 #________________________________________________
 # handles branch logic for frame traversal/offset functions
     movement:
-        blez $s6, return # check if at final
-        j contmove  # continue
+        blez $s6, return # check if at final position
+        j contmove  # continue if not
     contmove:
         addi $t0, $zero, 0      # | check right
         beq $s2, $t0, right     # |
@@ -104,16 +98,14 @@ vbsme:
         beq $s2, $t0, left      # |
         addi $t0, $zero, 3      # | check up 
         beq $s2, $t0, up        # |
- 
 #__________________________________________________
 # for loop, calculates sad for frame/window
     forinit:
         addi $s0, $zero, 0          #zero sum for this frame
         addi $t5, $a2, 0            # load new iterator over window
         addi $t0, $zero, 0          # j = 0
-        # dec return counter
-        addi $s6, $s6, -1
-        lw $t7, -4($sp)  
+        addi $s6, $s6, -1           # dec return counter
+        lw $t7, -4($sp)  ############################################################### can remove for comp
         lw $t8, -8($sp)  
     for:
         lw $t2, 8($a0)              # load window height
@@ -126,8 +118,10 @@ vbsme:
                 loopbody:
                     sll $t3, $t1, 2         # offset of i 
                     lw $t4, 4($a0)          # get frame width
-                    mul $t4, $t4, $t0       # mult by y index
-                    end_mult:
+                    lw $t7, 4($a0)          # get frame width
+                    addi $t4, $0, 0
+                    j multiply2
+                    end_mult2:
                     sll $t4, $t4, 2         # mult by 4 for offset
                     add $t9, $t3, $t4       # add offsets together, should now have total indexing offset
                     add $t3, $t9, $s3       # final address in array 
@@ -163,7 +157,6 @@ newsum:
 foundzero:
     lw $v0, -8($sp)         # | set minimum indexes
     lw $v1, -4($sp)         # |
-    add $0, $0, $0
     jr $ra
 #______________________________________________________
 # movement functions
@@ -227,7 +220,6 @@ up:
     lw $t0, -8($sp)         # load current y val
     addi $t0, $t0, -1       # dec index y
     sw $t0, -8($sp)         # writeback
-    #lw $t2, 8($a0)          # load window height
     lw $t3, -12($sp)        # load top offset
     sub $t0, $t0, $t3
     beq $zero, $t0, chdirright # check if index is at edge
@@ -238,7 +230,23 @@ up:
         sw $t0, -24($sp)    # writeback
         addi $s2, $zero, 0  # change direction to down
         j forinit
+#________________________________________________________
+# extra functions (still needed)
 return:
-    add $0, $0, $0
     jr $ra 
+multiply:
+        beq $t2, $zero, end_mult  # If $t1 == 0, return (multiplication done)
+        add $s6, $s6, $t3         # Add $t0 to the result
+        addi $t2, $t2, -1           # Decrement the second number (multiplicand)
+        j multiply
+multiply2:
+        beq $t7, $zero, end_mult2  # If $t1 == 0, return (multiplication done)
+        add $t4, $t4, $t0         # Add $t0 to the result
+        addi $t7, $t7, -1           # Decrement the second number (multiplicand)
+        j multiply2
+multiply3:
+        beq $t1, $zero, end_mult3  # If $t1 == 0, return (multiplication done)
+        add $t3, $t3, $t0         # Add $t0 to the result
+        addi $t1, $t1, -1           # Decrement the second number (multiplicand)
+        j multiply3
 

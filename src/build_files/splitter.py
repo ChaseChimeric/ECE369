@@ -16,13 +16,13 @@ def split_file(input_file):
             while len(lines) < lines_per_file:
                 lines.append(padding_line)
 
-            output_file = f"../Verilog/Mem{file_counter}.mem"
+            output_file = f"../Verilog/InstrMem{file_counter}.mem"
             with open(output_file, 'w') as outfile:
                 outfile.write('\n'.join(lines) + '\n')
             
-            print(f"Mem{file_counter}.mem")
+            print(f"InstrMem{file_counter}.mem")
             file_counter += 1
 
 # Usage
 # Replace 'yourfile.txt' with the name of your input file.
-split_file('output.txt')
+split_file(input())
