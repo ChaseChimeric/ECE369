@@ -1,4 +1,7 @@
-
+`ifndef fetchtop
+`define fetchtop
+`include "Fetch.v"
+`include "InstrMemStage.v"
 module FetchTop (
   //Ports
   input  adderAdd,
@@ -65,3 +68,4 @@ module FetchTop (
 //always #5  clk = ! clk ;
 
 endmodule
+`endif

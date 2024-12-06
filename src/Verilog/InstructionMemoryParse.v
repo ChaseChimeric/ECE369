@@ -1,3 +1,5 @@
+`ifndef _InstructionMemoryParse
+`define _InstructionMemoryParse
 module InstructionMemoryParse (
     input rst,
     input clk,
@@ -21,3 +23,4 @@ always @(posedge clk ) begin
 end
     
 endmodule
+`endif

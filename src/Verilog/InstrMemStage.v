@@ -1,3 +1,7 @@
+`ifndef _instrmemstage
+`define _instrmemstage
+`include "InstructionMemoryAccess.v"
+`include "InstructionMemoryParse.v"
 module InstrMemAccess (
     input [31:0] nextInstruction,
     input [31:0] instrMemAddress,
@@ -71,3 +75,4 @@ end
 
 
 endmodule
+`endif

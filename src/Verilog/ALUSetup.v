@@ -1,3 +1,6 @@
+`ifndef _alusetup
+`define _alusetup
+
 module ALUSetup (
     input [31:0] inA,
     input [31:0] inB,
@@ -172,3 +175,4 @@ always @(posedge clk) begin
 end
     
 endmodule
+`endif

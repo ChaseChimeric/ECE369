@@ -1,3 +1,8 @@
+`ifndef _ThreeStageMem
+`define _ThreeStageMem
+`include "MemAccess.v"
+`include "MemParse1.v"
+`include "MemParse2.v"
 module ThreeStageMem (
     input [12:0] Addr,
     input clk,
@@ -234,3 +239,4 @@ module ThreeStageMem (
 
     
 endmodule
+`endif

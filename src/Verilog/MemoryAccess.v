@@ -1,6 +1,7 @@
 `ifndef memacc
 `define memacc
 `include "DataMemory.v"
+`include "ThreeStageMem.v"
 module MemoryAccess(
     input Clk,
     input Sum,

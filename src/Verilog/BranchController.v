@@ -1,3 +1,6 @@
+`ifndef _branchcont
+`define _branchcont
+
 module BranchController (
     input [31:0] DataIn20_15,
     input [31:0] DataIn25_21,
@@ -72,3 +75,4 @@ module BranchController (
 
     
 endmodule
+`endif

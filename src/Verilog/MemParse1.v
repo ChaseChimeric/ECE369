@@ -1,3 +1,5 @@
+`ifndef _MemParse1
+`define _MemParse1
 module MemParse1 (
     input [31:0] MemRead0,
     input [31:0] MemRead1,
@@ -152,3 +154,4 @@ module MemParse1 (
     end
     
 endmodule
+`endif

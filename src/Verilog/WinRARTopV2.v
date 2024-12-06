@@ -1,6 +1,8 @@
-`ifndef wrtop
-`define wrtop
-module WinRARTop (
+`include "ClkDiv.v"
+`include "Two4DigitDisplay.v"
+`include "WinRAR.v"
+
+module WinRARTop(
     input Clk,
     input Reset,
     output [6:0] out7,
@@ -29,6 +31,5 @@ module WinRARTop (
         .XPos(NumberA),
         .YPos(NumberB)
     );
-    
+
 endmodule
-`endif
