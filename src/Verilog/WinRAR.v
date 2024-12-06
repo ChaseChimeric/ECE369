@@ -61,6 +61,11 @@ module WinRAR (
             rstRegs[rstRegVal] <= rst;
         end
     end
+    initial begin
+        for (rstRegVal = 0; rstRegVal <= 6; rstRegVal = rstRegVal + 1) begin
+            rstRegs[rstRegVal] <= 1'b1;
+        end
+    end
     
     wire enableWire;
 
