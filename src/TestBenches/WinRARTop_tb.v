@@ -23,7 +23,7 @@ always #5  clk = ! clk ;
     initial begin
         clk <= 0;
         rst <= 1;
-        #100000000;
+        #1000000;
         rst <= 0;
     end
 

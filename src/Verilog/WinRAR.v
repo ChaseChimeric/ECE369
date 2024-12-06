@@ -53,6 +53,14 @@ module WinRAR (
     wire [4:0]  WriteRegister               [0:0];
 
     reg  [0:0]  enable                      [ENDVAL:0];  // 0 is fetch
+
+    reg [0:0] rstRegs [6:0];
+    integer rstRegVal;
+    always @(posedge clk ) begin
+        for (rstRegVal = 0; rstRegVal <= 6; rstRegVal = rstRegVal + 1) begin
+            rstRegs[rstRegVal] <= rst;
+        end
+    end
     
     wire enableWire;
 
@@ -64,7 +72,7 @@ module WinRAR (
 
     // Instantiate the Fetch module
     FetchTop fetch_instance (
-        .rst(rst),
+        .rst(rstRegs[0]),
         .clk(clk),
         .jumpAddress(InstrAdd[1]),
         .imm(ImmediateExtended[2]),
@@ -81,7 +89,7 @@ module WinRAR (
 
     integer i;
     always @(posedge clk ) begin
-        if(!rst) begin
+        if(!rstRegs[1]) begin
             enable[0] <= enableWire;
             for(i = 0; i < ENDVAL; i = i + 1) begin
                 enable[i + 1] <= enable[i];
@@ -95,7 +103,7 @@ module WinRAR (
 
     Decode decode_instance (
         .clk(clk),
-        .rst(rst),
+        .rst(rstRegs[2]),
         .InstructionIn(Full32BitInstruction[0]),
         .NextInstructionIn(NextFull32BitInstruction[0]),
         .ForceInstr(ForceInstrSignalWire[0]),
@@ -130,7 +138,7 @@ module WinRAR (
 
     Execute execute(
       // inputs
-      .rst(rst),
+      .rst(rstRegs[3]),
       .clk(clk),
       .ZeroInverted(ZeroInvertedSignalWire[0]),
       .Inverted(ALUInvertedSignalWire[0]),
@@ -180,7 +188,7 @@ module WinRAR (
     MemoryAccess memory(
         //inputs
         .Clk(clk),
-        .rst(rst),
+        .rst(rstRegs[4]),
         .Sum(SumFetchSignalWire[1]),
         .ZeroOrNot(ZeroOrNotSignalWire[0]),
         .NextInstr(NextInstrFetchSignalWire[1]),
@@ -218,7 +226,7 @@ module WinRAR (
 
     WriteBack writeback_instance (
         .MemoryRead(MemoryRead[0]),
-        .rst(rst),
+        .rst(rstRegs[5]),
         .clk(clk),
         .ALUOut(ALUResult[1]),
         .ImmediateExtended(ImmediateExtended[1]),
