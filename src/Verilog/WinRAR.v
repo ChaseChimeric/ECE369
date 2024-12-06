@@ -17,7 +17,7 @@ module WinRAR (
     output [31:0] XPos,
     output [31:0] YPos
 );
-    localparam ENDVAL = 31;
+    localparam ENDVAL = 34;
     // Declare wires for the other inputs and outputs
     wire [31:0] Full32BitInstruction        [3:0];  // 0 is Fetch
     wire [31:0] NextFull32BitInstruction    [3:0];  // 0 is Fetch

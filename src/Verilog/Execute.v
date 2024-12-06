@@ -48,7 +48,7 @@ module Execute (
     output reg [31:0] ALUOut
 );
     //Pass Through Values
-    localparam ENDVAL = 21;
+    localparam ENDVAL = 22;
     
     reg [0:0] SumReg [0:ENDVAL];
     reg [0:0] NextInstructionReg [0:ENDVAL];
