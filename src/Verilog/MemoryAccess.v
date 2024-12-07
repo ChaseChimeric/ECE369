@@ -60,18 +60,16 @@ reg [0:0] NextInstrAddressFlag_out_reg [0:ENDVAL];
 wire [31:0] MemoryRead_out_sig;
 wire [31:0] InstrAdd_out_sig;
 
-reg MemWriteEnReg;
-always @(posedge Clk ) begin
-    if (rst) begin
-        MemWriteEnReg <= 0;
-    end else begin
-        MemWriteEnReg <= MemWriteEn;
-    end
-end
 
+reg [31:0] rt_datreg;
+reg MemWriteEnReg;
+always @(posedge Clk) begin
+    rt_datreg <= rt_dat;
+    MemWriteEnReg <= MemWriteEn;
+end
 ThreeStageMem datamemory(
     .Addr(ReadAddr[14:2]), 
-    .WData(rt_dat), 
+    .WData(rt_datreg), 
     .clk(Clk), 
     .MemWrite(MemWriteEnReg), 
     .MemRead(MemoryRead_out_sig)
