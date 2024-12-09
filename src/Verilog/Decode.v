@@ -32,14 +32,17 @@ module Decode (
     RegWriteOut,
     sh_amt,
     WriteData,
-    RegWriteAddr
+    RegWriteAddr,
+    XPos,
+    YPos
 );
 
     input [31:0] InstructionIn, NextInstructionIn, WriteData;
     input [4:0] RegWriteAddr;
     output reg [31:0] InstructionOut, NextInstructionOut, DataIn25_21, DataIn20_15;
     wire [31:0] DataIn25_21Wire, DataIn20_15Wire;
-
+    
+    output [31:0] XPos, YPos;
     input clk, RegWriteIn, rst;
     output reg [2:0] ForceInstr;
     wire [2:0] ForceInstrWire;
@@ -99,7 +102,7 @@ module Decode (
             Sign <= 0;
             inA <= 0;
             sh_amt <= 0;
-            MemReadEn <= 0;
+            MemReadEn <= 1;
             MemWriteEn <= 0;
             RegWriteOut <= 0;
             ForceInstr <= 0;
@@ -166,8 +169,11 @@ module Decode (
         .RegWrite(RegWriteIn),                // Control signal to enable writing
         .RegRead(RegReadWire),
         .Clk(clk),                              // Clock signal
+        .rst(rst),
         .ReadData1(DataIn25_21Wire),                // Read data from Rs
-        .ReadData2(DataIn20_15Wire)                 // Read data from Rt
+        .ReadData2(DataIn20_15Wire),                 // Read data from Rt
+        .XPos(XPos),
+        .YPos(YPos)
     );
 
 

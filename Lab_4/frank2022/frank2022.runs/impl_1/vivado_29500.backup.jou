@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Dec  7 13:55:14 2024
+# Process ID: 29500
+# Current directory: C:/Users/ryfon/Documents/Code/comp/ECE369/Lab_4/frank2022/frank2022.runs/impl_1
+# Command line: vivado.exe -log WinRARTop.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source WinRARTop.tcl -notrace
+# Log file: C:/Users/ryfon/Documents/Code/comp/ECE369/Lab_4/frank2022/frank2022.runs/impl_1/WinRARTop.vdi
+# Journal file: C:/Users/ryfon/Documents/Code/comp/ECE369/Lab_4/frank2022/frank2022.runs/impl_1\vivado.jou
+# Running On: zeroDay, OS: Windows, CPU Frequency: 3400 MHz, CPU Physical cores: 16, Host memory: 68639 MB
+#-----------------------------------------------------------
+source WinRARTop.tcl -notrace

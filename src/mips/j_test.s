@@ -13,20 +13,11 @@
 
 main:
     jal jalpoint
-    nop
-    nop
-    nop
-    nop
-    nop
     j main
-    nop
-    nop
-    nop
-    nop
-    nop
     
 jalpoint:
     jr $ra
+    nop
     nop
     nop
     nop

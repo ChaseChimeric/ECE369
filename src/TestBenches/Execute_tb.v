@@ -1,3 +1,6 @@
+`include "../Verilog/MUXController.v"
+`include "../Verilog/MemController.v"
+`include "../Verilog/Execute.v"
 module Execute_tb;
     reg clk;
     reg [5:0] funct, op; // Removed branchZeroVal as it is unused
@@ -7,7 +10,7 @@ module Execute_tb;
     reg AdderAdd;
     wire [1:0] MemMode;
     reg [31:0] NextInstr_tb, Instr, DataAtInstr25_21In, DataAtInstr20_16In; // Renamed NextInstr to NextInstr_tb
-    
+    reg rst;
     // MUXController outputs
     wire ZeroInvertedOut, InvertedOut, SumOut, NextInstrOut, NextInstrAddressOut, DataWriteValOut, WB_RAOut, inAOut, ALUImmRegOut, WBDestOut, SignOut, ForceInstrOut;
     wire [31:0] ALUOut;
@@ -80,7 +83,8 @@ module Execute_tb;
         .MemModeOut(MemModeOut),
         .NextInstrOut(NextInstrOut),
         .InstrOut(InstrOut),
-        .ALUOut(ALUOut)
+        .ALUOut(ALUOut),
+        .rst(rst)
     );
     
     // Clock generation
@@ -99,8 +103,10 @@ module Execute_tb;
     end
     
     initial begin
-        #100
-                
+        rst <= 1;
+        #300
+        rst <= 0;
+        $stop;
         // Test scenario 1: R-type instruction (ADD)
         sh_amt_val = 6'b0; // Not used in ADD
         op = 6'b000000;  // R-type

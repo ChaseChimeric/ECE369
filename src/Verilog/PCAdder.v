@@ -26,7 +26,7 @@ module PCAdder(PCResult, PCAddResult);
 
     output [31:0] PCAddResult;
 
-    assign PCAddResult = PCResult + 32'd4;
+    assign PCAddResult = {22'd0, PCResult[9:2] + 32'd1, 2'd0};
 
 endmodule
 

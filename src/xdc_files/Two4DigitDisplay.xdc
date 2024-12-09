@@ -1,7 +1,7 @@
 ##Set clock frequency to 100 MHz. Helps guide the placement and routing algorithm
 ##to synthesize design that satisfies this constraint, and gives better power estimations
 ## 100 MHz frequency, 10 ns period,, duty cycle 50%, no phase shift
-create_clock -period 10 [get_ports Clk]
+create_clock -period 3.400 [get_ports Clk]
 
 ##This part is to assign a pin number to 100MHz clock signal
 set_property PACKAGE_PIN E3 [get_ports Clk]
@@ -84,3 +84,9 @@ set_property PACKAGE_PIN N17 [get_ports {Reset}]
 #set_property PACKAGE_PIN L16 [get_ports {NumberA[1]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {NumberA[0]}]
 #set_property PACKAGE_PIN J15 [get_ports {NumberA[0]}]
+
+
+#set_property -dict { PACKAGE_PIN V11    IOSTANDARD LVCMOS33 } [get_ports { led[0] }]; #IO_L24N_T3_35 Sch=led[4]
+#set_property -dict { PACKAGE_PIN V12    IOSTANDARD LVCMOS33 } [get_ports { led[1] }]; #IO_25_35 Sch=led[5]
+#set_property -dict { PACKAGE_PIN T9    IOSTANDARD LVCMOS33 } [get_ports { led[2] }]; #IO_L24P_T3_A01_D17_14 Sch=led[6]
+#set_property -dict { PACKAGE_PIN T10   IOSTANDARD LVCMOS33 } [get_ports { led[3] }]; #IO_L24N_T3_A00_D16_14 Sch=led[7]

@@ -1,0 +1,15 @@
++====================+===================+====================================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                                |
++====================+===================+====================================================================+
+| Clk                | Clk               | cpu/fetch_instance/Fetch_inst/pc0/PCResult_reg[9]/D                |
+| Clk                | Clk               | cpu/memory/datamemory/Parse1Unit/BottomDataOut_reg[7]/D            |
+| Clk                | Clk               | cpu/fetch_instance/Fetch_inst/pc0/PCResult_reg[5]/D                |
+| Clk                | Clk               | cpu/fetch_instance/InstrMemAccess_inst/memParse/instrOut_reg[8]/D  |
+| Clk                | Clk               | cpu/fetch_instance/Fetch_inst/internalNextInstr_reg_reg[7]/D       |
+| Clk                | Clk               | cpu/fetch_instance/InstrMemAccess_inst/memParse/instrOut_reg[7]/D  |
+| Clk                | Clk               | cpu/fetch_instance/InstrMemAccess_inst/memParse/instrOut_reg[15]/D |
+| Clk                | Clk               | cpu/fetch_instance/InstrMemAccess_inst/memParse/instrOut_reg[5]/D  |
+| Clk                | Clk               | cpu/fetch_instance/Fetch_inst/pc0/PCResult_reg[8]/D                |
+| Clk                | Clk               | cpu/fetch_instance/InstrMemAccess_inst/memParse/instrOut_reg[0]/D  |
+| Clk                | Clk               | cpu/fetch_instance/InstrMemAccess_inst/memParse/instrOut_reg[28]/D |
++--------------------+-------------------+--------------------------------------------------------------------+

@@ -3,6 +3,7 @@
 module WriteBack (
     input [31:0] MemoryRead,
     input rst,
+    input clk,
     input [31:0] ALUOut,
     input [31:0] ImmediateExtended,
     input [31:0] Instruction,
@@ -25,23 +26,26 @@ module WriteBack (
     output reg NextInstrOut,
     output reg RegWriteEnabledOut
 );
-    reg [31:0] DataWriteValMuxOut;
+    wire [31:0] DataWriteValMuxOut;
     reg [31:0] NextInstrAddressMuxOut;
-    always @(*) begin
-        DataWriteValMuxOut <= (DataWriteVal) ? ALUOut : MemoryRead;
+    reg [31:0] WriteDataReg;
+    assign DataWriteValMuxOut = (DataWriteVal) ? ALUOut : MemoryRead;
+    always @(posedge clk) begin
         NextInstrAddressMuxOut <= (NextInstrAddress) ? NextInstructionAddress : DataWriteValMuxOut;
-        WriteData <= (rst) ? 0 : NextInstrAddressMuxOut;
+
+        WriteDataReg <= (rst) ? 0 : NextInstrAddressMuxOut;
+        WriteData <= WriteDataReg;
     end
 
     reg [4:0] WBDest_rt_rd;
     reg [4:0] WBDest_ra_rt_rd;
-    always @(*) begin
+    always @(posedge clk) begin
         WBDest_rt_rd <= (WBDest) ? Instruction[20:16] : Instruction[15:11];
         WBDest_ra_rt_rd <= (WB_RA) ? (5'b11111) :  WBDest_rt_rd;
         WriteRegister <= (rst) ? 0 : WBDest_ra_rt_rd;
     end
 
-    always @(*) begin
+    always @(posedge clk) begin
         ImmediateExtendedOut <= (rst) ? 0 : ImmediateExtended;
         SumOut <= (rst) ? 0 : Sum;
         AdderAddOut <= (rst) ? 0 : AdderAdd;

@@ -1,0 +1,34 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../src/Verilog/18StageALU.v" \
+"../../../../../../src/Verilog/ALUAdderStage.v" \
+"../../../../../../src/Verilog/ALUController.v" \
+"../../../../../../src/Verilog/ALUFinalStage.v" \
+"../../../../../../src/Verilog/ALUSetup.v" \
+"../../../../../../src/Verilog/Decode.v" \
+"../../../../../../src/Verilog/Execute.v" \
+"../../../../../../src/Verilog/Fetch.v" \
+"../../../../../../src/Verilog/FetchTop.v" \
+"../../../../../../src/Verilog/FullAdder2Bit.v" \
+"../../../../../../src/Verilog/InstrMemStage.v" \
+"../../../../../../src/Verilog/InstructionMemoryAccess.v" \
+"../../../../../../src/Verilog/InstructionMemoryParse.v" \
+"../../../../../../src/Verilog/MUXController.v" \
+"../../../../../../src/Verilog/MemAccess.v" \
+"../../../../../../src/Verilog/MemController.v" \
+"../../../../../../src/Verilog/MemParse1.v" \
+"../../../../../../src/Verilog/MemParse2.v" \
+"../../../../../../src/Verilog/PCAdder.v" \
+"../../../../../../src/Verilog/ProgramCounter.v" \
+"../../../../../../src/Verilog/RegisterFile.v" \
+"../../../../../../src/Verilog/SignExtension.v" \
+"../../../../../../src/Verilog/ThreeStageMem.v" \
+"../../../../../../src/Verilog/WinRAR.v" \
+"../../../../../../src/Verilog/WriteBack.v" \
+"../../../../../../src/TestBenches/WinRAR_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

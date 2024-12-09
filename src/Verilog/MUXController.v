@@ -328,7 +328,7 @@ module MUXController (
             // BGEZ and BLTZ
             6'b000001: begin
                 ForceInstr <= 3;
-                Inverted <= (branchZeroVal == 5'b00001); // 1 for BGEZ, 0 for BLTZ
+                Inverted <= (branchZeroVal == 5'b00001 | branchZeroVal == 5'b00000); // 1 for BGEZ, 0 for BLTZ
                 ZeroInverted <= 0;
                 Sum <= 0;
                 NextInstr <= 0;

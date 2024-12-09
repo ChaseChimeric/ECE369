@@ -1,6 +1,9 @@
 `timescale 1ns / 1ps
 `ifndef ifu
 `define ifu
+`include "InstructionMemory.v"
+`include "PCAdder.v"
+`include "ProgramCounter.v"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Team Members:
@@ -72,5 +75,4 @@ module InstructionFetchUnit(
   assign Instruction = internalInstruction;
 
 endmodule
-
 `endif

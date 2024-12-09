@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+$stop called at time : 20 ns : File "C:/Users/ryfon/Documents/Code/comp/ECE369/src/TestBenches/WinRAR_tb.v" Line 56
+$stop called at time : 40 ns : File "C:/Users/ryfon/Documents/Code/comp/ECE369/src/TestBenches/WinRAR_tb.v" Line 59
+$stop called at time : 35390 ns : File "C:/Users/ryfon/Documents/Code/comp/ECE369/src/TestBenches/WinRAR_tb.v" Line 65
+INFO: xsimkernel Simulation Memory Usage: 17588 KB (Peak: 17588 KB), Simulation CPU Usage: 8549531 ms

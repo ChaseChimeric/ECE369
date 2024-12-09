@@ -61,7 +61,5 @@ module ALU32Bit# (
 			default: ALUResult = 0;
 		endcase
 	end
-    /* Please fill in the implementation here... */
-
 endmodule
 `endif

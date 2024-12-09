@@ -1,0 +1,30 @@
+`timescale 1ns / 1ps
+module WinRARTop_tb;
+
+  // Parameters
+
+  //Ports
+  reg clk;
+  reg rst;
+  wire [6:0] out7;
+  wire [7:0] en_out;
+  wire [3:0] led;
+
+  WinRARTop  WinRARTop_inst (
+    .Clk(clk),
+    .Reset(rst),
+    .out7(out7),
+    .en_out(en_out),
+    .led(led)
+  );
+
+always #2  clk = ! clk ;
+
+    initial begin
+        clk <= 0;
+        rst <= 1;
+        #1000;
+        rst <= 0;
+    end
+
+endmodule

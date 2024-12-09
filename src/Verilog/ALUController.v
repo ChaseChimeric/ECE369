@@ -1,5 +1,6 @@
-`ifndef alucontrol
-`define alucontrol
+`ifndef _alucontroller
+`define _alucontroller
+
 module ALUController (
     op,
     funct,
@@ -9,15 +10,14 @@ module ALUController (
     input [5:0] funct;
     output reg [2:0] opCode;
 
-    localparam ADD = 3'd0;
-    localparam SUB = 3'd1;
-    localparam MUL = 3'd2;
-    localparam OR  = 3'd3;
-    localparam AND = 3'd4;
-    localparam XOR = 3'd5;
-    localparam SHR = 3'd6;
-    localparam SHL = 3'd7;
-    localparam X = 0;
+    localparam ADD = 0;
+    localparam SUB = 1;
+    localparam SHL = 2;
+    localparam SHR = 3;
+    localparam SLT = 4;
+    localparam XOR = 5;
+    localparam AND = 6;
+    localparam OR = 7;
 
     always @(*) begin
 
@@ -30,15 +30,12 @@ module ALUController (
                     6'b101010: opCode = SUB;    // SLT instruction, funct = 101010
                     6'b100100: opCode = AND;    // AND instruction, funct = 100100
                     6'b100101: opCode = OR;     // OR  instruction, funct = 100101
-                    6'b100111: opCode = OR;     // NOR instruction, funct = 100111
                     6'b100110: opCode = XOR;    // XOR instruction, funct = 100110
                     6'b000000: opCode = SHL;    // SLL instruction, funct = 000000
                     6'b000010: opCode = SHR;    // SRL instruction, funct = 000010 
                     default:   opCode = XOR;    // Fatal Error, just do an AND if R type not supported, also used by JR
                 endcase
             end 
-            // MUL
-            6'b011100: opCode <= MUL;
             
             // ORI
             6'b001101: opCode <= OR;
@@ -58,22 +55,10 @@ module ALUController (
             // LW
             6'b100011: opCode <= ADD;
 
-            // LH
-            6'b100001: opCode <= ADD;
-
-            // LB
-            6'b100000: opCode <= ADD;
-
             // SW
             6'b101011: opCode <= ADD;
-
-            // SH
-            6'b101001: opCode <= ADD;
-
-            // SB
-            6'b101000: opCode <= ADD;
-
-            // BGEZ
+            
+              // BGEZ
             6'b000001: opCode <= SUB;
 
             // BLEZ
@@ -90,7 +75,5 @@ module ALUController (
             
         endcase
     end
-
-
 endmodule
 `endif

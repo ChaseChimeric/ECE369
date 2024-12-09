@@ -1,0 +1,128 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/Lab_4/frank2022/frank2022.sim/sim_1/impl/func/xsim/WinRAR_tb_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUAdderStage
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized0
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized1
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized10
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized11
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized12
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized13
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized14
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized2
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized3
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized4
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized5
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized6
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized7
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized8
+INFO: [VRFC 10-311] analyzing module ALUAdderStage__parameterized9
+INFO: [VRFC 10-311] analyzing module ALUFinalStage
+INFO: [VRFC 10-311] analyzing module ALUSetup
+INFO: [VRFC 10-311] analyzing module Decode
+INFO: [VRFC 10-311] analyzing module EighteenStageALU
+INFO: [VRFC 10-311] analyzing module Execute
+INFO: [VRFC 10-311] analyzing module Fetch
+INFO: [VRFC 10-311] analyzing module FetchTop
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized0
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized1
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized10
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized11
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized12
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized13
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized14
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized2
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized3
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized4
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized5
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized6
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized7
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized8
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit__parameterized9
+INFO: [VRFC 10-311] analyzing module InstrMemAccess
+INFO: [VRFC 10-311] analyzing module InstructionMemoryAccess
+INFO: [VRFC 10-311] analyzing module InstructionMemoryParse
+INFO: [VRFC 10-311] analyzing module MUXController
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-311] analyzing module MemParse1
+INFO: [VRFC 10-311] analyzing module MemParse2
+INFO: [VRFC 10-311] analyzing module MemoryAccess
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-311] analyzing module ThreeStageMem
+INFO: [VRFC 10-311] analyzing module Two4DigitDisplay
+INFO: [VRFC 10-311] analyzing module WinRAR
+INFO: [VRFC 10-311] analyzing module WinRARTop
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUSetup
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ALUSetup' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:4]
+INFO: [VRFC 10-311] analyzing module ALUFinalStage
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ALUFinalStage' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUFinalStage.v:4]
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'FullAdder2Bit' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [VRFC 10-311] analyzing module ALUAdderStage
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ALUAdderStage' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+INFO: [VRFC 10-311] analyzing module EighteenStageALU
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'EighteenStageALU' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUFinalStage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUXController
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'MUXController' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MuxController.v:3]
+INFO: [VRFC 10-311] analyzing module MemController
+INFO: [VRFC 10-311] analyzing module RegisterFile
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'RegisterFile' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/RegisterFile.v:52]
+INFO: [VRFC 10-311] analyzing module Decode
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Decode' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Decode.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Execute.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtension
+INFO: [VRFC 10-311] analyzing module ALUController
+INFO: [VRFC 10-311] analyzing module Execute
+WARNING: [VRFC 10-3380] identifier 'SignExtendedInstrImm' is used before its declaration [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Execute.v:173]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Execute' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Execute.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ProgramCounter' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ProgramCounter.v:28]
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-311] analyzing module Fetch
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Fetch' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemoryAccess
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'InstructionMemoryAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v:3]
+INFO: [VRFC 10-311] analyzing module InstructionMemoryParse
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'InstructionMemoryParse' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryParse.v:3]
+INFO: [VRFC 10-311] analyzing module InstrMemAccess
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'InstrMemAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstrMemStage.v:5]
+INFO: [VRFC 10-311] analyzing module FetchTop
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'FetchTop' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v:5]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstrMemStage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryParse.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MUXController.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'MemAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemParse1
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'MemParse1' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse1.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemParse2
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'MemParse2' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse2.v:3]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ThreeStageMem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ThreeStageMem
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ThreeStageMem' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ThreeStageMem.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-311] analyzing module MemoryAccess
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'MemoryAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemoryAccess.v:5]
+INFO: [VRFC 10-311] analyzing module WriteBack
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'WriteBack' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WriteBack.v:3]
+INFO: [VRFC 10-311] analyzing module WinRAR
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'WinRAR' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:14]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WriteBack.v" into library xil_defaultlib

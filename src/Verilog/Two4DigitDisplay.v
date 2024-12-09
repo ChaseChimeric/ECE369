@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
-`ifndef 24dd
-`define 24dd
+`ifndef dd24
+`define dd24
+`include "SevenSegment.v"
 //////////////////////////////////////////////////////////////////////////////////
 // The University of Arizona
 // Electrical and Computer Engineering 
@@ -53,7 +54,7 @@ module Two4DigitDisplay(Clk, NumberA, NumberB, out7, en_out);
     //-- divider counter for ~95.3Hz refresh rate (with 100MHz main clock)
     reg  [19:0] cnt = 19'd0;
     always @(posedge Clk) begin
-        cnt <= cnt + 1;
+        cnt <= cnt + 8;
     end
     
     //-- Structural design of digits
@@ -118,8 +119,6 @@ module Two4DigitDisplay(Clk, NumberA, NumberB, out7, en_out);
             default: begin en_out <= 8'b11111111; in4 <= 4'b1111; end 
         endcase
      end
-     
-     
     
 endmodule
 `endif

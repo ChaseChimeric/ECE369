@@ -1,0 +1,978 @@
+
+*** Running vivado
+    with args -log WinRARTop.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source WinRARTop.tcl
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source WinRARTop.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/ryfon/Documents/Code/comp/ECE369/Lab_4/frank2022/frank2022.srcs/utils_1/imports/synth_1/WinRARTop.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/ryfon/Documents/Code/comp/ECE369/Lab_4/frank2022/frank2022.srcs/utils_1/imports/synth_1/WinRARTop.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top WinRARTop -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9176
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-6901] identifier 'SignExtendedInstrImm' is used before its declaration [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Execute.v:173]
+INFO: [Synth 8-11241] undeclared symbol 'PCAddress', assumed default net type 'wire' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v:60]
+INFO: [Synth 8-11241] undeclared symbol 'nextInstructionOut', assumed default net type 'wire' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v:63]
+INFO: [Synth 8-11241] undeclared symbol 'WriteData', assumed default net type 'wire' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:73]
+INFO: [Synth 8-11241] undeclared symbol 'ALUOut', assumed default net type 'wire' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:74]
+INFO: [Synth 8-11241] undeclared symbol 'ReadMem', assumed default net type 'wire' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:75]
+INFO: [Synth 8-11241] undeclared symbol 'Instruction', assumed default net type 'wire' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:76]
+INFO: [Synth 8-11241] undeclared symbol 'instrMemAddressOut', assumed default net type 'wire' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:90]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1206.754 ; gain = 409.660
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'WinRARTop' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRARTop.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Two4DigitDisplay' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:18]
+INFO: [Synth 8-6157] synthesizing module 'SevenSegment' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/SevenSegment.v:4]
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/SevenSegment.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'SevenSegment' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/SevenSegment.v:4]
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:110]
+WARNING: [Synth 8-567] referenced signal 'firstdigitA' should be on the sensitivity list [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:109]
+WARNING: [Synth 8-567] referenced signal 'seconddigitA' should be on the sensitivity list [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:109]
+WARNING: [Synth 8-567] referenced signal 'thirddigitA' should be on the sensitivity list [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:109]
+WARNING: [Synth 8-567] referenced signal 'forthdigitA' should be on the sensitivity list [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:109]
+WARNING: [Synth 8-567] referenced signal 'firstdigitB' should be on the sensitivity list [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:109]
+WARNING: [Synth 8-567] referenced signal 'seconddigitB' should be on the sensitivity list [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:109]
+WARNING: [Synth 8-567] referenced signal 'thirddigitB' should be on the sensitivity list [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:109]
+WARNING: [Synth 8-567] referenced signal 'forthdigitB' should be on the sensitivity list [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:109]
+INFO: [Synth 8-6155] done synthesizing module 'Two4DigitDisplay' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Two4DigitDisplay.v:18]
+INFO: [Synth 8-6157] synthesizing module 'WinRAR' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:14]
+INFO: [Synth 8-6157] synthesizing module 'FetchTop' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Fetch' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v:6]
+INFO: [Synth 8-6157] synthesizing module 'PCAdder' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/PCAdder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PCAdder' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/PCAdder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ProgramCounter.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ProgramCounter.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'Fetch' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v:6]
+INFO: [Synth 8-6157] synthesizing module 'InstrMemAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstrMemStage.v:5]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemoryAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v:3]
+INFO: [Synth 8-3876] $readmem data file 'InstrMem0.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v:20]
+INFO: [Synth 8-3876] $readmem data file 'InstrMem1.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v:21]
+INFO: [Synth 8-3876] $readmem data file 'InstrMem2.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v:22]
+INFO: [Synth 8-3876] $readmem data file 'InstrMem3.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemoryAccess' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v:3]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemoryParse' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryParse.v:3]
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryParse.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemoryParse' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryParse.v:3]
+WARNING: [Synth 8-689] width (32) of port connection 'Address' does not match port width (13) of module 'InstructionMemoryParse' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstrMemStage.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'InstrMemAccess' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstrMemStage.v:5]
+WARNING: [Synth 8-689] width (1) of port connection 'nextInstructionOut' does not match port width (32) of module 'InstrMemAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'FetchTop' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v:5]
+WARNING: [Synth 8-689] width (1) of port connection 'instrMemAddressOut' does not match port width (32) of module 'FetchTop' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:90]
+INFO: [Synth 8-6157] synthesizing module 'Decode' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Decode.v:6]
+INFO: [Synth 8-6157] synthesizing module 'MUXController' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MUXController.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MUXController' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MUXController.v:3]
+INFO: [Synth 8-6157] synthesizing module 'MemController' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemController.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MemController' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemController.v:3]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/RegisterFile.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/RegisterFile.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'Decode' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Decode.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Execute' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Execute.v:6]
+INFO: [Synth 8-6157] synthesizing module 'SignExtension' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/SignExtension.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'SignExtension' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/SignExtension.v:10]
+INFO: [Synth 8-6157] synthesizing module 'ALUController' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUController.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ALUController' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUController.v:4]
+INFO: [Synth 8-6157] synthesizing module 'EighteenStageALU' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 0 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized0' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized0' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized0' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized0' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized0' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized0' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized1' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized1' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 2 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized1' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized1' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized1' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized1' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized2' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized2' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 3 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized2' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized2' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized2' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized2' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized3' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized3' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized3' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized3' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized3' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized3' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized4' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized4' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 5 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized4' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized4' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized4' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized4' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized5' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized5' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 6 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized5' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized5' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized5' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized5' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized6' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized6' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 7 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized6' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized6' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized6' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized6' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized7' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized7' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 8 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized7' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized7' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized7' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized7' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized8' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 9 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized8' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 9 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized8' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized8' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized8' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized8' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized9' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized9' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 10 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized9' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized9' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized9' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized9' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized10' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 11 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized10' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 11 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized10' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized10' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized10' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized10' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized11' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 12 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized11' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 12 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized11' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized11' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized11' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized11' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized12' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 13 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized12' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 13 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized12' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized12' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized12' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized12' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized13' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 14 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized13' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 14 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized13' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized13' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized13' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized13' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUAdderStage__parameterized14' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+	Parameter SEQUENCEVAL bound to: 15 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FullAdder2Bit__parameterized14' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+	Parameter SEQUENCEVAL bound to: 15 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'FullAdder2Bit__parameterized14' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALUAdderStage__parameterized14' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCode' does not match port width (3) of module 'ALUAdderStage__parameterized14' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [Synth 8-324] index 16 out of range [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:77]
+WARNING: [Synth 8-324] index 16 out of range [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:79]
+WARNING: [Synth 8-689] width (4) of port connection 'OpCodeOut' does not match port width (3) of module 'ALUAdderStage__parameterized14' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+INFO: [Synth 8-6157] synthesizing module 'ALUSetup' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ALUSetup' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'opCodeOut' does not match port width (3) of module 'ALUSetup' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:47]
+INFO: [Synth 8-6157] synthesizing module 'ALUFinalStage' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUFinalStage.v:4]
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUFinalStage.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'ALUFinalStage' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUFinalStage.v:4]
+WARNING: [Synth 8-689] width (4) of port connection 'opCode' does not match port width (3) of module 'ALUFinalStage' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:102]
+INFO: [Synth 8-6155] done synthesizing module 'EighteenStageALU' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Execute' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Execute.v:6]
+INFO: [Synth 8-6157] synthesizing module 'MemoryAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemoryAccess.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ThreeStageMem' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ThreeStageMem.v:6]
+INFO: [Synth 8-6157] synthesizing module 'MemAccess' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:3]
+INFO: [Synth 8-3876] $readmem data file 'Mem0.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:146]
+INFO: [Synth 8-3876] $readmem data file 'Mem1.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:147]
+INFO: [Synth 8-3876] $readmem data file 'Mem2.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:148]
+INFO: [Synth 8-3876] $readmem data file 'Mem3.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:149]
+INFO: [Synth 8-3876] $readmem data file 'Mem4.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:150]
+INFO: [Synth 8-3876] $readmem data file 'Mem5.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:151]
+INFO: [Synth 8-3876] $readmem data file 'Mem6.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:152]
+INFO: [Synth 8-3876] $readmem data file 'Mem7.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:153]
+INFO: [Synth 8-3876] $readmem data file 'Mem8.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:154]
+INFO: [Synth 8-3876] $readmem data file 'Mem9.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:155]
+INFO: [Synth 8-3876] $readmem data file 'Mem10.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:156]
+INFO: [Synth 8-3876] $readmem data file 'Mem11.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:157]
+INFO: [Synth 8-3876] $readmem data file 'Mem12.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:158]
+INFO: [Synth 8-3876] $readmem data file 'Mem13.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:159]
+INFO: [Synth 8-3876] $readmem data file 'Mem14.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:160]
+INFO: [Synth 8-3876] $readmem data file 'Mem15.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:161]
+INFO: [Synth 8-3876] $readmem data file 'Mem16.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:162]
+INFO: [Synth 8-3876] $readmem data file 'Mem17.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:163]
+INFO: [Synth 8-3876] $readmem data file 'Mem18.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:164]
+INFO: [Synth 8-3876] $readmem data file 'Mem19.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:165]
+INFO: [Synth 8-3876] $readmem data file 'Mem20.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:166]
+INFO: [Synth 8-3876] $readmem data file 'Mem21.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:167]
+INFO: [Synth 8-3876] $readmem data file 'Mem22.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:168]
+INFO: [Synth 8-3876] $readmem data file 'Mem23.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:169]
+INFO: [Synth 8-3876] $readmem data file 'Mem24.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:170]
+INFO: [Synth 8-3876] $readmem data file 'Mem25.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:171]
+INFO: [Synth 8-3876] $readmem data file 'Mem26.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:172]
+INFO: [Synth 8-3876] $readmem data file 'Mem27.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:173]
+INFO: [Synth 8-3876] $readmem data file 'Mem28.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:174]
+INFO: [Synth 8-3876] $readmem data file 'Mem29.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:175]
+INFO: [Synth 8-3876] $readmem data file 'Mem30.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:176]
+INFO: [Synth 8-3876] $readmem data file 'Mem31.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:177]
+INFO: [Synth 8-3876] $readmem data file 'Mem32.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:178]
+INFO: [Synth 8-3876] $readmem data file 'Mem33.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:179]
+INFO: [Synth 8-3876] $readmem data file 'Mem34.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:180]
+INFO: [Synth 8-3876] $readmem data file 'Mem35.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:181]
+INFO: [Synth 8-3876] $readmem data file 'Mem36.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:182]
+INFO: [Synth 8-3876] $readmem data file 'Mem37.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:183]
+INFO: [Synth 8-3876] $readmem data file 'Mem38.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:184]
+INFO: [Synth 8-3876] $readmem data file 'Mem39.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:185]
+INFO: [Synth 8-3876] $readmem data file 'Mem40.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:186]
+INFO: [Synth 8-3876] $readmem data file 'Mem41.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:187]
+INFO: [Synth 8-3876] $readmem data file 'Mem42.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:188]
+INFO: [Synth 8-3876] $readmem data file 'Mem43.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:189]
+INFO: [Synth 8-3876] $readmem data file 'Mem44.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:190]
+INFO: [Synth 8-3876] $readmem data file 'Mem45.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:191]
+INFO: [Synth 8-3876] $readmem data file 'Mem46.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:192]
+INFO: [Synth 8-3876] $readmem data file 'Mem47.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:193]
+INFO: [Synth 8-3876] $readmem data file 'Mem48.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:194]
+INFO: [Synth 8-3876] $readmem data file 'Mem49.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:195]
+INFO: [Synth 8-3876] $readmem data file 'Mem50.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:196]
+INFO: [Synth 8-3876] $readmem data file 'Mem51.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:197]
+INFO: [Synth 8-3876] $readmem data file 'Mem52.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:198]
+INFO: [Synth 8-3876] $readmem data file 'Mem53.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:199]
+INFO: [Synth 8-3876] $readmem data file 'Mem54.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:200]
+INFO: [Synth 8-3876] $readmem data file 'Mem55.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:201]
+INFO: [Synth 8-3876] $readmem data file 'Mem56.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:202]
+INFO: [Synth 8-3876] $readmem data file 'Mem57.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:203]
+INFO: [Synth 8-3876] $readmem data file 'Mem58.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:204]
+INFO: [Synth 8-3876] $readmem data file 'Mem59.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:205]
+INFO: [Synth 8-3876] $readmem data file 'Mem60.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:206]
+INFO: [Synth 8-3876] $readmem data file 'Mem61.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:207]
+INFO: [Synth 8-3876] $readmem data file 'Mem62.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:208]
+INFO: [Synth 8-3876] $readmem data file 'Mem63.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:209]
+INFO: [Synth 8-3876] $readmem data file 'Mem64.mem' is read successfully [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:210]
+INFO: [Synth 8-6155] done synthesizing module 'MemAccess' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v:3]
+INFO: [Synth 8-6157] synthesizing module 'MemParse1' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse1.v:3]
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse1.v:78]
+INFO: [Synth 8-226] default block is never used [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse1.v:148]
+INFO: [Synth 8-6155] done synthesizing module 'MemParse1' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse1.v:3]
+INFO: [Synth 8-6157] synthesizing module 'MemParse2' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse2.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MemParse2' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse2.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ThreeStageMem' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ThreeStageMem.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'MemoryAccess' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemoryAccess.v:5]
+INFO: [Synth 8-6157] synthesizing module 'WriteBack' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WriteBack.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'WriteBack' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WriteBack.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'WinRAR' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'WinRARTop' (0#1) [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRARTop.v:3]
+WARNING: [Synth 8-6014] Unused sequential element ALUOut_reg_reg was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v:39]
+WARNING: [Synth 8-3936] Found unconnected internal register 'instrMemAddress_reg_reg' and it is trimmed from '32' to '11' bits. [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v:79]
+WARNING: [Synth 8-6014] Unused sequential element enableOut_reg was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v:100]
+WARNING: [Synth 8-3848] Net nextInstruction in module/entity FetchTop does not have driver. [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v:16]
+WARNING: [Synth 8-3848] Net AdderAdd in module/entity Decode does not have driver. [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Decode.v:62]
+WARNING: [Synth 8-6014] Unused sequential element inADelayReg_reg[3] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:33]
+WARNING: [Synth 8-6014] Unused sequential element inADelayReg_reg[2] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:33]
+WARNING: [Synth 8-6014] Unused sequential element inADelayReg_reg[1] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:33]
+WARNING: [Synth 8-6014] Unused sequential element inAReg_reg[5] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:34]
+WARNING: [Synth 8-6014] Unused sequential element inAReg_reg[4] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:34]
+WARNING: [Synth 8-6014] Unused sequential element inBDelayReg_reg[4] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:35]
+WARNING: [Synth 8-6014] Unused sequential element inBDelayReg_reg[3] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:35]
+WARNING: [Synth 8-6014] Unused sequential element inBDelayReg_reg[2] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:35]
+WARNING: [Synth 8-6014] Unused sequential element inBDelayReg_reg[1] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:35]
+WARNING: [Synth 8-6014] Unused sequential element inADelayReg_reg[4] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:33]
+WARNING: [Synth 8-6014] Unused sequential element inADelayReg_reg[0] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:33]
+WARNING: [Synth 8-6014] Unused sequential element inAReg_reg[2] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:34]
+WARNING: [Synth 8-6014] Unused sequential element inAReg_reg[1] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:34]
+WARNING: [Synth 8-6014] Unused sequential element inAReg_reg[0] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:34]
+WARNING: [Synth 8-6014] Unused sequential element inBDelayReg_reg[0] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:35]
+WARNING: [Synth 8-6014] Unused sequential element inBReg_reg[4] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:36]
+WARNING: [Synth 8-6014] Unused sequential element inBReg_reg[3] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:36]
+WARNING: [Synth 8-6014] Unused sequential element inBReg_reg[2] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:36]
+WARNING: [Synth 8-6014] Unused sequential element inBReg_reg[1] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:36]
+WARNING: [Synth 8-6014] Unused sequential element inBReg_reg[0] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v:36]
+WARNING: [Synth 8-6014] Unused sequential element MemoryRead_out_reg_reg[0] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemoryAccess.v:131]
+WARNING: [Synth 8-6014] Unused sequential element MemoryRead_out_reg_reg[1] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemoryAccess.v:131]
+WARNING: [Synth 8-6014] Unused sequential element MemoryRead_out_reg_reg[2] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemoryAccess.v:131]
+WARNING: [Synth 8-6014] Unused sequential element MemoryRead_out_reg_reg[3] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemoryAccess.v:131]
+WARNING: [Synth 8-3848] Net AdderAdd_out_sig in module/entity MemoryAccess does not have driver. [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemoryAccess.v:78]
+WARNING: [Synth 8-6014] Unused sequential element rstRegs_reg[6] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:61]
+WARNING: [Synth 8-6014] Unused sequential element rstRegs_reg[4] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:61]
+WARNING: [Synth 8-6014] Unused sequential element rstRegs_reg[3] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:61]
+WARNING: [Synth 8-6014] Unused sequential element rstRegs_reg[2] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:61]
+WARNING: [Synth 8-6014] Unused sequential element rstRegs_reg[1] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:61]
+WARNING: [Synth 8-6014] Unused sequential element rstRegs_reg[0] was removed.  [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:61]
+WARNING: [Synth 8-7129] Port Instruction[31] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[30] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[29] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[28] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[27] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[26] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[25] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[24] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[23] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[22] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[21] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[10] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[9] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[8] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[7] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[6] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[5] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[4] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[3] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[2] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[1] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Instruction[0] in module WriteBack is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[10] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[9] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[8] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[7] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[6] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[5] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[4] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[3] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[2] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[1] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Addr[0] in module MemParse2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MemMode[1] in module MemoryAccess is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MemMode[0] in module MemoryAccess is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MemReadEn in module MemoryAccess is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AdderAdd in module MemoryAccess is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[29] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[28] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[27] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[26] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[25] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[24] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[23] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[22] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[21] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[20] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[19] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[18] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[17] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[16] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[15] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[14] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[13] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[12] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[11] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[10] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[9] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[8] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[7] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[6] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[5] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[4] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[3] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[2] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[1] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[0] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[29] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[28] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[27] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[26] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[25] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[24] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[23] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[22] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[21] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[20] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[19] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[18] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[17] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[16] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[15] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[14] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[13] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[12] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[11] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[10] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[9] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[8] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[7] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[6] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[5] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[4] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[3] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[2] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[1] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inB[0] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port resIn[31] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port resIn[30] in module FullAdder2Bit__parameterized14 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port inA[31] in module FullAdder2Bit__parameterized13 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1341.926 ; gain = 544.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1341.926 ; gain = 544.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1341.926 ; gain = 544.832
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.171 . Memory (MB): peak = 1341.926 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/ryfon/Documents/Code/comp/ECE369/src/xdc_files/Two4DigitDisplay.xdc]
+Finished Parsing XDC File [C:/Users/ryfon/Documents/Code/comp/ECE369/src/xdc_files/Two4DigitDisplay.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ryfon/Documents/Code/comp/ECE369/src/xdc_files/Two4DigitDisplay.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/WinRARTop_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/WinRARTop_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1451.773 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1451.773 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'Inverted_reg' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MUXController.v:45]
+WARNING: [Synth 8-327] inferring latch for variable 'ReadData1_reg' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/RegisterFile.v:92]
+WARNING: [Synth 8-327] inferring latch for variable 'ReadData2_reg' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/RegisterFile.v:93]
+WARNING: [Synth 8-327] inferring latch for variable 'opCode_reg' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUController.v:28]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 344   
+	               31 Bit    Registers := 1     
+	               30 Bit    Registers := 1     
+	               13 Bit    Registers := 5     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 65    
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 3     
+	                3 Bit    Registers := 46    
+	                2 Bit    Registers := 41    
+	                1 Bit    Registers := 360   
++---RAMs : 
+	               2K Bit	(64 X 32 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 137   
+	  65 Input   32 Bit        Muxes := 2     
+	   4 Input   32 Bit        Muxes := 2     
+	   8 Input    8 Bit        Muxes := 1     
+	  65 Input    8 Bit        Muxes := 1     
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	  21 Input    3 Bit        Muxes := 1     
+	   9 Input    3 Bit        Muxes := 1     
+	  13 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 16    
+	  14 Input    2 Bit        Muxes := 2     
+	  21 Input    1 Bit        Muxes := 10    
+	  14 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 34    
+	  32 Input    1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3936] Found unconnected internal register 'cpu/fetch_instance/Fetch_inst/instrMemAddress_reg_reg' and it is trimmed from '11' to '10' bits. [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v:79]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cpu/fetch_instance/InstrMemAccess_inst/memAccess/AddressOut_reg' and it is trimmed from '13' to '8' bits. [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v:31]
+WARNING: [Synth 8-3332] Sequential element (cpu/execute/aluController/opCode_reg[2]) is unused and will be removed from module WinRARTop.
+WARNING: [Synth 8-3332] Sequential element (cpu/execute/aluController/opCode_reg[1]) is unused and will be removed from module WinRARTop.
+WARNING: [Synth 8-3332] Sequential element (cpu/execute/aluController/opCode_reg[0]) is unused and will be removed from module WinRARTop.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:27 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++--------------+----------------+---------------+----------------+
+|Module Name   | RTL Object     | Depth x Width | Implemented As | 
++--------------+----------------+---------------+----------------+
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|FullAdder2Bit | tempRes        | 32x2          | LUT            | 
+|FullAdder2Bit | carryOut       | 32x1          | LUT            | 
+|MemAccess     | Mem0           | 64x8          | LUT            | 
+|MemAccess     | Mem1           | 64x8          | LUT            | 
+|MemAccess     | Mem2           | 64x8          | LUT            | 
+|MemAccess     | Mem3           | 64x8          | LUT            | 
+|MemAccess     | Mem4           | 64x8          | LUT            | 
+|MemAccess     | Mem5           | 64x8          | LUT            | 
+|MemAccess     | Mem6           | 64x8          | LUT            | 
+|MemAccess     | Mem7           | 64x8          | LUT            | 
+|MemAccess     | Mem8           | 64x8          | LUT            | 
+|MemAccess     | Mem9           | 64x8          | LUT            | 
+|MemAccess     | Mem10          | 64x8          | LUT            | 
+|MemAccess     | Mem11          | 64x8          | LUT            | 
+|MemAccess     | Mem12          | 64x8          | LUT            | 
+|MemAccess     | Mem13          | 64x8          | LUT            | 
+|MemAccess     | Mem14          | 64x8          | LUT            | 
+|MemAccess     | Mem15          | 64x8          | LUT            | 
+|MemAccess     | Mem16          | 64x8          | LUT            | 
+|MemAccess     | Mem17          | 64x8          | LUT            | 
+|MemAccess     | Mem18          | 64x8          | LUT            | 
+|MemAccess     | Mem19          | 64x8          | LUT            | 
+|MemAccess     | Mem20          | 64x8          | LUT            | 
+|MemAccess     | Mem21          | 64x8          | LUT            | 
+|MemAccess     | Mem22          | 64x8          | LUT            | 
+|MemAccess     | Mem23          | 64x8          | LUT            | 
+|MemAccess     | Mem24          | 64x8          | LUT            | 
+|MemAccess     | Mem25          | 64x8          | LUT            | 
+|MemAccess     | Mem26          | 64x8          | LUT            | 
+|MemAccess     | Mem27          | 64x8          | LUT            | 
+|MemAccess     | Mem28          | 64x8          | LUT            | 
+|MemAccess     | Mem29          | 64x8          | LUT            | 
+|MemAccess     | Mem30          | 64x8          | LUT            | 
+|MemAccess     | Mem31          | 64x8          | LUT            | 
+|MemAccess     | Mem32          | 64x8          | LUT            | 
+|MemAccess     | Mem33          | 64x8          | LUT            | 
+|MemAccess     | Mem34          | 64x8          | LUT            | 
+|MemAccess     | Mem35          | 64x8          | LUT            | 
+|MemAccess     | Mem36          | 64x8          | LUT            | 
+|MemAccess     | Mem37          | 64x8          | LUT            | 
+|MemAccess     | Mem38          | 64x8          | LUT            | 
+|MemAccess     | Mem39          | 64x8          | LUT            | 
+|MemAccess     | Mem40          | 64x8          | LUT            | 
+|MemAccess     | Mem41          | 64x8          | LUT            | 
+|MemAccess     | Mem42          | 64x8          | LUT            | 
+|MemAccess     | Mem43          | 64x8          | LUT            | 
+|MemAccess     | Mem44          | 64x8          | LUT            | 
+|MemAccess     | Mem45          | 64x8          | LUT            | 
+|MemAccess     | Mem46          | 64x8          | LUT            | 
+|MemAccess     | Mem47          | 64x8          | LUT            | 
+|MemAccess     | Mem48          | 64x8          | LUT            | 
+|MemAccess     | Mem49          | 64x8          | LUT            | 
+|MemAccess     | Mem50          | 64x8          | LUT            | 
+|MemAccess     | Mem51          | 64x8          | LUT            | 
+|MemAccess     | Mem52          | 64x8          | LUT            | 
+|MemAccess     | Mem53          | 64x8          | LUT            | 
+|MemAccess     | Mem54          | 64x8          | LUT            | 
+|MemAccess     | Mem55          | 64x8          | LUT            | 
+|MemAccess     | Mem56          | 64x8          | LUT            | 
+|MemAccess     | Mem57          | 64x8          | LUT            | 
+|MemAccess     | Mem58          | 64x8          | LUT            | 
+|MemAccess     | Mem59          | 64x8          | LUT            | 
+|MemAccess     | Mem60          | 64x8          | LUT            | 
+|MemAccess     | Mem61          | 64x8          | LUT            | 
+|MemAccess     | Mem62          | 64x8          | LUT            | 
+|MemAccess     | Mem63          | 64x8          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|ALUAdderStage | adder/tempRes  | 32x2          | LUT            | 
+|ALUAdderStage | adder/carryOut | 32x1          | LUT            | 
+|WinRARTop     | p_0_out        | 64x30         | Block RAM      | 
+|WinRARTop     | p_0_out        | 64x31         | Block RAM      | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
+|WinRARTop     | p_0_out        | 64x8          | LUT            | 
++--------------+----------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+--------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                                 | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+--------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|WinRARTop   | cpu/memory/datamemory/AccessUnit/Stack_reg | 64 x 32(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------+--------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:32 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+--------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                                 | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+--------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|WinRARTop   | cpu/memory/datamemory/AccessUnit/Stack_reg | 64 x 32(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------+--------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance cpu/memory/datamemory/AccessUnit/Stack_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[2].adderStage/inAOut_reg[7]      | 4      | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[3].adderStage/inAOut_reg[9]      | 5      | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[4].adderStage/inAOut_reg[11]     | 6      | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[5].adderStage/inAOut_reg[13]     | 7      | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[6].adderStage/inAOut_reg[15]     | 8      | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[7].adderStage/inAOut_reg[17]     | 9      | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[8].adderStage/inAOut_reg[19]     | 10     | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[9].adderStage/inAOut_reg[21]     | 11     | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[10].adderStage/inAOut_reg[23]    | 12     | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[11].adderStage/inAOut_reg[25]    | 13     | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[12].adderStage/inAOut_reg[27]    | 14     | 6     | YES          | NO                 | YES               | 6      | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[13].adderStage/inAOut_reg[31]    | 15     | 10    | YES          | NO                 | YES               | 10     | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[15].adderStage/SHLResOut_reg[31] | 17     | 162   | YES          | NO                 | YES               | 162    | 0       | 
+|WinRARTop   | cpu/execute/ALU32BitFast/adder_stages[15].adderStage/adder/res_reg[3]  | 16     | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|WinRARTop   | cpu/memory/FullInstruction_out_reg[20]                                 | 30     | 5     | YES          | NO                 | YES               | 0      | 5       | 
+|WinRARTop   | cpu/memory/WBDest_out_reg                                              | 30     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|WinRARTop   | cpu/execute/MemWriteEnOut_reg                                          | 25     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|WinRARTop   | cpu/execute/DataAtInstruction20_16_reg[31]                             | 24     | 32    | YES          | NO                 | YES               | 0      | 32      | 
+|WinRARTop   | cpu/memory/DataWriteVal_out_reg                                        | 30     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|WinRARTop   | cpu/memory/ALU_out_reg[31]                                             | 7      | 18    | YES          | NO                 | YES               | 18     | 0       | 
+|WinRARTop   | cpu/memory/ALU_out_reg[14]                                             | 5      | 14    | YES          | NO                 | YES               | 14     | 0       | 
+|WinRARTop   | cpu/memory/wb_ra_out_reg                                               | 30     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|WinRARTop   | cpu/writeback_instance/NextInstrOut_reg                                | 31     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|WinRARTop   | cpu/writeback_instance/RegWriteEnabledOut_reg                          | 31     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|WinRARTop   | cpu/enable_reg[33][0]                                                  | 34     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|WinRARTop   | cpu/fetch_instance/Fetch_inst/imm_reg_reg[7]                           | 31     | 8     | YES          | NO                 | YES               | 0      | 8       | 
+|WinRARTop   | cpu/writeback_instance/SumOut_reg                                      | 31     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|WinRARTop   | cpu/execute/ForceInstrOut_reg[2]                                       | 25     | 3     | YES          | NO                 | YES               | 0      | 3       | 
+|WinRARTop   | cpu/memory/FullInstruction_out_reg[11]                                 | 29     | 5     | YES          | NO                 | YES               | 0      | 5       | 
++------------+------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |     9|
+|3     |LUT1     |     4|
+|4     |LUT2     |   536|
+|5     |LUT3     |   154|
+|6     |LUT4     |    87|
+|7     |LUT5     |   221|
+|8     |LUT6     |  1225|
+|9     |MUXF7    |   348|
+|10    |RAMB18E1 |     3|
+|13    |SRL16E   |   272|
+|14    |SRLC32E  |    61|
+|15    |FDRE     |  3208|
+|16    |FDSE     |    37|
+|17    |LD       |    65|
+|18    |IBUF     |     2|
+|19    |OBUF     |    15|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 1451.773 ; gain = 654.680
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:36 . Memory (MB): peak = 1451.773 ; gain = 544.832
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:39 . Memory (MB): peak = 1451.773 ; gain = 654.680
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1451.773 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 425 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1451.773 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 65 instances were transformed.
+  LD => LDCE: 65 instances
+
+Synth Design complete, checksum: de1da379
+INFO: [Common 17-83] Releasing license: Synthesis
+241 Infos, 194 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:43 . Memory (MB): peak = 1451.773 ; gain = 1048.859
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ryfon/Documents/Code/comp/ECE369/Lab_4/frank2022/frank2022.runs/synth_1/WinRARTop.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file WinRARTop_utilization_synth.rpt -pb WinRARTop_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  7 14:08:06 2024...
