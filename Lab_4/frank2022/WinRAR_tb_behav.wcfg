@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="WinRAR_tb_func_impl.wdb" id="1">
+         <top_modules>
+            <top_module name="WinRAR_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2,661.469080666 ms"></ZoomStartTime>
+      <ZoomEndTime time="2,690.669080667 ms"></ZoomEndTime>
+      <Cursor1Time time="2,685.802414000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="73"></NameColumnWidth>
+      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/WinRAR_tb/clk_0" type="logic">
+      <obj_property name="ElementShortName">clk_0</obj_property>
+      <obj_property name="ObjectShortName">clk_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/rst_0" type="logic">
+      <obj_property name="ElementShortName">rst_0</obj_property>
+      <obj_property name="ObjectShortName">rst_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/XPos" type="array">
+      <obj_property name="ElementShortName">XPos[31:0]</obj_property>
+      <obj_property name="ObjectShortName">XPos[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/YPos" type="array">
+      <obj_property name="ElementShortName">YPos[31:0]</obj_property>
+      <obj_property name="ObjectShortName">YPos[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[16]" type="array">
+      <obj_property name="ElementShortName">[16][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[15]" type="array">
+      <obj_property name="ElementShortName">[15][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[14]" type="array">
+      <obj_property name="ElementShortName">[14][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[13]" type="array">
+      <obj_property name="ElementShortName">[13][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[12]" type="array">
+      <obj_property name="ElementShortName">[12][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[11]" type="array">
+      <obj_property name="ElementShortName">[11][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[10]" type="array">
+      <obj_property name="ElementShortName">[10][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[9]" type="array">
+      <obj_property name="ElementShortName">[9][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[8]" type="array">
+      <obj_property name="ElementShortName">[8][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[7]" type="array">
+      <obj_property name="ElementShortName">[7][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/memory/datamemory/AccessUnit/Stack[6]" type="array">
+      <obj_property name="ElementShortName">[6][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WinRAR_tb/dut/decode_instance/reg_file/mem[17]" type="array">
+      <obj_property name="ElementShortName">[17][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+   </wvobject>
+</wave_config>

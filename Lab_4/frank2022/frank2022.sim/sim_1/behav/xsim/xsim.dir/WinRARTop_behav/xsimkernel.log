@@ -1,0 +1,7 @@
+Running: xsim.dir/WinRARTop_behav/xsimk.exe -simmode gui -wdb WinRARTop_behav.wdb -simrunnum 0 -socket 58540
+Design successfully loaded
+Design Loading Memory Usage: 8864 KB (Peak: 8864 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 9924 KB (Peak: 9924 KB)
+Simulation CPU Usage: 15 ms

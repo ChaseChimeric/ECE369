@@ -1,0 +1,78 @@
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot WinRAR_tb_func_impl xil_defaultlib.WinRAR_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'instrMemAddressOut' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v:90]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'nextInstructionOut' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v:63]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 13 for port 'Address' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstrMemStage.v:35]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'opCodeOut' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:47]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'opCode' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:102]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'OpCode' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:68]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'OpCodeOut' [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:80]
+WARNING: [VRFC 10-3705] select index 16 into 'carrySignals' is out of bounds [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:77]
+WARNING: [VRFC 10-3705] select index 16 into 'inBInt' is out of bounds [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v:79]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PCAdder
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.Fetch
+Compiling module xil_defaultlib.InstructionMemoryAccess
+Compiling module xil_defaultlib.InstructionMemoryParse
+Compiling module xil_defaultlib.InstrMemAccess
+Compiling module xil_defaultlib.FetchTop
+Compiling module xil_defaultlib.MUXController
+Compiling module xil_defaultlib.MemController
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.Decode
+Compiling module xil_defaultlib.SignExtension
+Compiling module xil_defaultlib.ALUController
+Compiling module xil_defaultlib.ALUSetup
+Compiling module xil_defaultlib.FullAdder2Bit
+Compiling module xil_defaultlib.ALUAdderStage
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=1)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=1)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=2)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=2)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=3)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=3)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=4)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=4)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=5)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=5)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=6)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=6)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=7)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=7)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=8)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=8)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=9)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=9)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=10)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=10)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=11)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=11)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=12)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=12)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=13)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=13)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=14)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=14)
+Compiling module xil_defaultlib.FullAdder2Bit(SEQUENCEVAL=15)
+Compiling module xil_defaultlib.ALUAdderStage(SEQUENCEVAL=15)
+Compiling module xil_defaultlib.ALUFinalStage
+Compiling module xil_defaultlib.EighteenStageALU_default
+Compiling module xil_defaultlib.Execute
+Compiling module xil_defaultlib.MemAccess
+Compiling module xil_defaultlib.MemParse1
+Compiling module xil_defaultlib.MemParse2
+Compiling module xil_defaultlib.ThreeStageMem
+Compiling module xil_defaultlib.MemoryAccess
+Compiling module xil_defaultlib.WriteBack
+Compiling module xil_defaultlib.WinRAR
+Compiling module xil_defaultlib.WinRAR_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot WinRAR_tb_func_impl

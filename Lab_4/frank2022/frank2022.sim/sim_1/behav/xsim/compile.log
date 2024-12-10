@@ -1,0 +1,58 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/18StageALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUSetup
+INFO: [VRFC 10-311] analyzing module ALUFinalStage
+INFO: [VRFC 10-311] analyzing module FullAdder2Bit
+INFO: [VRFC 10-311] analyzing module ALUAdderStage
+INFO: [VRFC 10-311] analyzing module EighteenStageALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUAdderStage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUController
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUFinalStage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ALUSetup.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUXController
+INFO: [VRFC 10-311] analyzing module MemController
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-311] analyzing module Decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Execute.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtension
+INFO: [VRFC 10-311] analyzing module Execute
+WARNING: [VRFC 10-3380] identifier 'SignExtendedInstrImm' is used before its declaration [C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Execute.v:173]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/Fetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-311] analyzing module Fetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FetchTop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemoryAccess
+INFO: [VRFC 10-311] analyzing module InstructionMemoryParse
+INFO: [VRFC 10-311] analyzing module InstrMemAccess
+INFO: [VRFC 10-311] analyzing module FetchTop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/FullAdder2Bit.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstrMemStage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/InstructionMemoryParse.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MUXController.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemAccess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemAccess
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemController.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemParse1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/MemParse2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MemParse2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/SignExtension.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/ThreeStageMem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ThreeStageMem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WinRAR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-311] analyzing module MemoryAccess
+INFO: [VRFC 10-311] analyzing module WriteBack
+INFO: [VRFC 10-311] analyzing module WinRAR
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/Verilog/WriteBack.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/src/TestBenches/WinRAR_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WinRAR_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ryfon/Documents/Code/comp/ECE369/Lab_4/frank2022/frank2022.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
