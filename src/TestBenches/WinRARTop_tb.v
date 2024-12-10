@@ -1,4 +1,4 @@
-
+`timescale 1ns / 1ps
 module WinRARTop_tb;
 
   // Parameters
@@ -18,12 +18,12 @@ module WinRARTop_tb;
     .led(led)
   );
 
-always #5  clk = ! clk ;
+always #2  clk = ! clk ;
 
     initial begin
         clk <= 0;
         rst <= 1;
-        #1000000;
+        #1000;
         rst <= 0;
     end
 

@@ -138,7 +138,7 @@ module MemAccess (
     reg [7:0] Mem62     [63:0];
     reg [7:0] Mem63     [63:0];
     reg [7:0] Window    [63:0];
-    reg [31:0] Stack    [63:0];
+    reg [31:0] Stack    [64:0];
 
     // For Comp
     integer i;

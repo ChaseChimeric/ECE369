@@ -44,7 +44,7 @@ module WinRAR_tb;
   // Clock generation
   initial begin
     clk_0 = 0;
-    forever #10 clk_0 = ~clk_0;  // Clock period = 10ns (100 MHz)
+    forever #2 clk_0 = ~clk_0;  // Clock period = 10ns (100 MHz)
     
   end
 
@@ -66,4 +66,3 @@ module WinRAR_tb;
   end
 
 endmodule
-

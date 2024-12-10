@@ -148,7 +148,6 @@ always @(posedge Clk) begin
         NextInstrAddress_out <= 0; 
         FullInstruction_out <= 0; 
         WBDest_out <= 0;
-        AdderAdd_out <= 0;
         RegWrite_out <= 0;
         NextInstrAddressFlag_out <= 0;
     end else begin
